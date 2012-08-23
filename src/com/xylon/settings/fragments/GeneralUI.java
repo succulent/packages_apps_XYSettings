@@ -81,6 +81,7 @@ public class GeneralUI extends SettingsPreferenceFragment {
     CheckBoxPreference mShowActionOverflow;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
+    Preference mLcdDensity;
     // ListPreference mUserModeUI;
 
     String mCustomLabelText = null;
@@ -115,6 +116,15 @@ public class GeneralUI extends SettingsPreferenceFragment {
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
+
+        mLcdDensity = findPreference("lcd_density_setup");
+        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
+        try {
+            newDensityValue = Integer.parseInt(currentProperty);
+        } catch (Exception e) {
+            getPreferenceScreen().removePreference(mLcdDensity);
+        }
+        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
    /**     mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
         int uiMode = Settings.System.getInt(mContext.getContentResolver(),
@@ -264,6 +274,10 @@ public class GeneralUI extends SettingsPreferenceFragment {
             })
             .create()
             .show();
+            return true;
+        } else if (preference == mLcdDensity) {
+            ((PreferenceActivity) getActivity())
+                    .startPreferenceFragment(new DensityChanger(), true);
             return true;
         }
         

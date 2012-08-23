@@ -9,6 +9,13 @@
         android:icon="@drawable/ic_xy_settings_general_ui"
         android:summary="@string/header_summary_general_ui" />
 
+    <header
+        android:id="@+id/propmodder_initd"
+        android:title="@string/propmodder_title"
+        android:fragment="com.xylon.settings.fragments.PropModder"
+        android:summary="@string/propmodder_title_summary"
+        android:icon="@drawable/ic_xy_settings_propmodder" />
+
      <header
         android:id="@+id/power_menu"
         android:fragment="com.xylon.settings.fragments.PowerMenu"
