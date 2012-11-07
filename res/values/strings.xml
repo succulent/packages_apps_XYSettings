@@ -22,6 +22,12 @@
     <string name="power_menu">Power Menu</string>
     <string name="led_options">LED</string>
     <string name="pie">PIE™</string>
+    <string name="spen_options">S Pen Gestures</string>
+    <string name="header_system">System</string>
+    <string name="sound">Sound</string>
+    <string name="lockscreen_options">Lockscreen</string>
+    <string name="weather">Weather</string>
+    <string name="tools">Tools</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_general_ui">General UI</string>
@@ -30,6 +36,7 @@
     <string name="title_statusbar_signal">Statusbar Signal</string>
     <string name="title_statusbar">Statusbar</string>
     <string name="title_navbar">Navigation Bar</string>
+    <string name="title_spen">S Pen Gestures</string>
     <string name="title_navring">Navigation Ring</string>
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led_control">LED Control</string>
@@ -52,6 +59,7 @@
     <string name="header_summary_led">@null</string>
     <string name="header_summary_pie">@null</string>
     <string name="header_summary_statusbar">@null</string>
+    <string name="header_summary_spen">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
@@ -66,6 +74,16 @@
     <string name="select_custom_app_title">Select custom application</string>
     <string name="text_on">On</string>
     <string name="text_off">Off</string>
+
+    <!-- S Pen -->
+    <string name="spen_left_title">Action on swipe left</string>
+    <string name="spen_right_title">Action on swipe right</string>
+    <string name="spen_up_title">Action on swipe up</string>
+    <string name="spen_down_title">Action on swipe down</string>
+    <string name="spen_double_title">Action on double tap</string>
+    <string name="spen_long_title">Action on long press</string>
+    <string name="spen_enable">Enable S Pen Gestures</string>
+    <string name="spen_enable_summary">Set custom actions for S Pen gestures</string>
 
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>

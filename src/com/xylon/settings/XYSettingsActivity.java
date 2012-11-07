@@ -40,6 +40,7 @@ public class XYSettingsActivity extends PreferenceActivity implements ButtonBarH
     private static final String TAG = "XY_Settings";
 
     private static boolean hasNotificationLed;
+    private static boolean hasSPen;
     private static String KEY_USE_ENGLISH_LOCALE = "use_english_locale";
 
     protected HashMap<Integer, Integer> mHeaderIndexMap = new HashMap<Integer, Integer>();
@@ -60,6 +61,7 @@ public class XYSettingsActivity extends PreferenceActivity implements ButtonBarH
 
         
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
+        hasSPen = getResources().getBoolean(R.bool.config_stylusGestures);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
         setLocale();
@@ -162,12 +164,22 @@ public class XYSettingsActivity extends PreferenceActivity implements ButtonBarH
      * Populate the activity with the top-level headers.
      */
     @Override
-    public void onBuildHeaders(List<Header> headers) {
-        loadHeadersFromResource(R.xml.preference_headers, headers);
-
-        updateHeaderList(headers);
-
-        mHeaders = headers;
+    public void onBuildHeaders(List<Header> target) {
+        loadHeadersFromResource(R.xml.preference_headers, target);
+        for (int i=0; i<target.size(); i++) {
+            Header header = target.get(i);
+            if (header.id == R.id.led) {
+                if (!hasNotificationLed) {
+                    target.remove(i);
+                }
+            } else if (header.id == R.id.spen) {
+                if (!hasSPen) {
+                    target.remove(i);
+                }
+            }
+        }
+        updateHeaderList(target);
+        mHeaders = target;
     }
 
     /**
