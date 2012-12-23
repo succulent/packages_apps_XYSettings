@@ -4,13 +4,13 @@ package com.xylon.settings.fragments;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 
 import com.xylon.settings.R;
 import com.xylon.settings.R.xml;
+import com.xylon.settings.SettingsPreferenceFragment;
 
 public class PowerMenu extends PreferenceFragment {
 
