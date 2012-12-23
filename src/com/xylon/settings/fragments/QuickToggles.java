@@ -36,7 +36,7 @@ import android.widget.TextView;
 import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.R;
 import com.xylon.settings.Utils;
-import com.xylon.settings.fragments.TouchInterceptor;
+import com.xylon.settings.widgets.TouchInterceptor;
 import com.xylon.settings.widgets.SeekBarPreference;
 
 import java.util.Arrays;

@@ -1,6 +1,3 @@
-
-package com.xylon.settings.widgets;
-
 /*
  * Copyright (C) 2008 The Android Open Source Project
  *
@@ -8,7 +5,7 @@ package com.xylon.settings.widgets;
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,6 +13,10 @@ package com.xylon.settings.widgets;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.xylon.settings.widgets;
+
+import com.xylon.settings.R;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -33,8 +34,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.xylon.settings.R;
-
 public class TouchInterceptor extends ListView {
 
     private ImageView mDragView;
@@ -42,9 +41,10 @@ public class TouchInterceptor extends ListView {
     private WindowManager.LayoutParams mWindowParams;
     private int mDragPos; // which item is being dragged
     private int mFirstDragPos; // where was the dragged item originally
-    private int mDragPoint; // at what offset inside the item did the user grab it
-    private int mCoordOffset; // the difference between screen coordinates and coordinates in this
-                              // view
+    private int mDragPoint; // at what offset inside the item did the user grab
+                            // it
+    private int mCoordOffset; // the difference between screen coordinates and
+                              // coordinates in this view
     private DragListener mDragListener;
     private DropListener mDropListener;
     private int mUpperBound;
@@ -83,11 +83,14 @@ public class TouchInterceptor extends ListView {
                     View dragger = item.findViewById(R.id.grabber);
                     Rect r = mTempRect;
                     dragger.getDrawingRect(r);
-                    // The dragger icon itself is quite small, so pretend the touch area is bigger
+                    // The dragger icon itself is quite small, so pretend the
+                    // touch area is bigger
                     if (x < r.right * 2) {
                         item.setDrawingCacheEnabled(true);
-                        // Create a copy of the drawing cache so that it does not get recycled
-                        // by the framework when the list tries to clean up memory
+                        // Create a copy of the drawing cache so that it does
+                        // not get recycled
+                        // by the framework when the list tries to clean up
+                        // memory
                         Bitmap bitmap = Bitmap.createBitmap(item.getDrawingCache());
                         startDragging(bitmap, y);
                         mDragPos = itemnum;
@@ -106,8 +109,8 @@ public class TouchInterceptor extends ListView {
     }
 
     /*
-     * pointToPosition() doesn't consider invisible views, but we need to, so implement a slightly
-     * different version.
+     * pointToPosition() doesn't consider invisible views, but we need to, so
+     * implement a slightly different version.
      */
     private int myPointToPosition(int x, int y) {
 
@@ -185,12 +188,13 @@ public class TouchInterceptor extends ListView {
     }
 
     /*
-     * Adjust visibility and size to make it appear as though an item is being dragged around and
-     * other items are making room for it: If dropping the item would result in it still being in
-     * the same place, then make the dragged listitem's size normal, but make the item invisible.
-     * Otherwise, if the dragged listitem is still on screen, make it as small as possible and
-     * expand the item below the insert point. If the dragged item is not on screen, only expand the
-     * item below the current insertpoint.
+     * Adjust visibility and size to make it appear as though an item is being
+     * dragged around and other items are making room for it: If dropping the
+     * item would result in it still being in the same place, then make the
+     * dragged listitem's size normal, but make the item invisible. Otherwise,
+     * if the dragged listitem is still on screen, make it as small as possible
+     * and expand the item below the insert point. If the dragged item is not on
+     * screen, only expand the item below the current insertpoint.
      */
     private void doExpansion() {
         int childnum = mDragPos - getFirstVisiblePosition();
@@ -270,7 +274,8 @@ public class TouchInterceptor extends ListView {
                         if (speed != 0) {
                             int ref = pointToPosition(0, mHeight / 2);
                             if (ref == AdapterView.INVALID_POSITION) {
-                                // we hit a divider or an invisible view, check somewhere else
+                                // we hit a divider or an invisible view, check
+                                // somewhere else
                                 ref = pointToPosition(0, mHeight / 2 + getDividerHeight() + 64);
                             }
                             View v = getChildAt(ref - getFirstVisiblePosition());
@@ -307,7 +312,8 @@ public class TouchInterceptor extends ListView {
 
         Context context = getContext();
         ImageView v = new ImageView(context);
-        int backGroundColor = 0xE0103010;
+        int backGroundColor = context.getResources().getColor(android.R.color.holo_blue_dark);
+        v.setAlpha((float) 0.7);
         v.setBackgroundColor(backGroundColor);
         v.setImageBitmap(bm);
         mDragBitmap = bm;
@@ -324,6 +330,7 @@ public class TouchInterceptor extends ListView {
 
     private void stopDragging() {
         if (mDragView != null) {
+            mDragView.setVisibility(GONE);
             WindowManager wm = (WindowManager) getContext().getSystemService("window");
             wm.removeView(mDragView);
             mDragView.setImageDrawable(null);
