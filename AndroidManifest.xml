@@ -1,0 +1,124 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xylon.settings" >
+    
+    <original-package android:name="com.xylon.settings" />
+
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BIND_APPWIDGET" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo"
+        android:uiOptions="none" >
+        <activity
+            android:name=".XYSettingsActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+  
+        <activity
+            android:name=".fragments.GeneralUI"
+            android:label="@string/title_general_ui" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+          <activity
+            android:name=".fragments.NavigationBar"
+            android:label="@string/title_navbar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.PowerMenu"
+            android:label="@string/title_power_menu" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+	    android:name=".fragments.QuickToggles"
+	    android:label="@string/title_quick_toggles" >
+	    <intent-filter>
+	        <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+	    </intent-filter>
+	</activity>
+        <activity
+            android:name=".fragments.StatusBar"
+            android:label="@string/title_statusbar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+              </intent-filter>
+        </activity>
+	<activity
+            android:name=".fragments.StatusBarClock"
+            android:label="@string/title_statusbar_clock" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+	<activity
+            android:name=".fragments.StatusBarSignal"
+            android:label="@string/title_statusbar_signal" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+ 	    android:name=".ShareToClipboard"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+ 	    android:label="@string/title_clipboard_share" >
+            <intent-filter>
+ 	         <action android:name="android.intent.action.SEND"/>
+
+ 	         <category android:name="android.intent.category.ALTERNATIVE"/>
+ 	         <category android:name="android.intent.category.DEFAULT"/>
+
+ 	         <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
+        <activity
+ 	    android:name="CreateShortcut"
+             android:theme="@style/Theme.CreateShortCut" >
+ 	  <intent-filter>
+               <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
+  	       <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+        </activity>
+        </application>
+</manifest>
+  

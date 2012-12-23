@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:aokp="http://schemas.android.com/apk/res/com.aokp.romcontrol">
+
+    <Preference
+        android:key="enabled_toggles"
+        android:summary="@string/enabled_toggles_summary"
+        android:title="@string/enabled_toggles_title" />
+
+    <Preference
+        android:key="toggles"
+        android:summary="@string/toggles_order_summary"
+        android:title="@string/toggles_order_title" />
+
+    <ListPreference
+        android:entries="@array/toggles_per_row_entries"
+        android:entryValues="@array/toggles_per_row_values"
+        android:key="toggles_per_row"
+        android:title="@string/toggles_per_row_title"
+        android:summary="@string/toggles_per_row_summary" />
+
+    <Preference
+        android:key="toggle_fav_contact"
+        android:summary="@string/toggle_favcontact_summary"
+        android:title="@string/toggle_favcontact_title" />
+
+    <ListPreference
+        android:entries="@array/quicksettings_theme_style_entries"
+        android:entryValues="@array/quicksettings_theme_style_values"
+        android:key="quick_theme_style"
+        android:title="@string/quicksettings_theme_style"
+        android:summary="@string/quicksettings_theme_style_summary" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="quick_text_color"
+        android:title="@string/quick_text_color_title"
+        android:defaultValue="#ffcccccc" />
+
+    <ListPreference
+       android:key="quick_pulldown"
+       android:title="@string/toggle_quick_pulldown_title"
+       android:entries="@array/quick_pulldown_entries"
+       android:entryValues="@array/quick_pulldown_values"
+       android:persistent="false" />
+
+</PreferenceScreen>
