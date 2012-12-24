@@ -12,7 +12,7 @@ import com.xylon.settings.R;
 import com.xylon.settings.R.xml;
 import com.xylon.settings.SettingsPreferenceFragment;
 
-public class PowerMenu extends PreferenceFragment {
+public class PowerMenu extends SettingsPreferenceFragment {
 
     private static final String PREF_SCREENSHOT = "show_screenshot";
     private static final String PREF_AIRPLANE_TOGGLE = "show_airplane_toggle";
