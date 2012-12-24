@@ -83,12 +83,12 @@ public class ShortcutPickerHelper {
 
         ArrayList<ShortcutIconResource> shortcutIcons = new ArrayList<ShortcutIconResource>();
         shortcutIcons.add(ShortcutIconResource.fromContext(mParent.getActivity(),
-                android.R.drawable.ic_launcher));
+                R.drawable.ic_launcher));
         bundle.putParcelableArrayList(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, shortcutIcons);
 
         Intent pickIntent = new Intent(Intent.ACTION_PICK_ACTIVITY);
         pickIntent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_CREATE_SHORTCUT));
-        pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(R.string.use_custom_app_title));
+        pickIntent.putExtra(Intent.EXTRA_TITLE, mParent.getText(R.string.select_custom_app_title));
         pickIntent.putExtras(bundle);
 
         mParent.startActivityForResult(pickIntent, REQUEST_PICK_SHORTCUT);
@@ -137,7 +137,7 @@ public class ShortcutPickerHelper {
                     final int id = resources.getIdentifier(iconResource.resourceName, null, null);
                     bmp = BitmapFactory.decodeResource(resources, id);
                 } catch (Exception e) {
-                    Log.w("ROMControl.ShortcutPicker", "Could not load shortcut icon: " + extra);
+                    Log.w("XYSettings.ShortcutPicker", "Could not load shortcut icon: " + extra);
                 }
             }
         }
