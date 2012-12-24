@@ -1,25 +1,20 @@
+
 package com.xylon.settings;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.ServiceManager;
+import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.IWindowManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,8 +29,12 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 
-public class XYSettingsActivity extends PreferenceActivity implements ButtonBarHandler {
+public class XYActivity extends PreferenceActivity implements ButtonBarHandler {
 
     private static final String TAG = "XY_Settings";
 
@@ -53,13 +52,13 @@ public class XYSettingsActivity extends PreferenceActivity implements ButtonBarH
 
     Locale defaultLocale;
 
+    Vibrator mVibrator;
     protected boolean isShortcut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-        
         hasNotificationLed = getResources().getBoolean(R.bool.has_notification_led);
+        mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         defaultLocale = Locale.getDefault();
         Log.i(TAG, "defualt locale: " + defaultLocale.getDisplayName());
         setLocale();
@@ -78,16 +77,44 @@ public class XYSettingsActivity extends PreferenceActivity implements ButtonBarH
 
         if ("com.xylon.settings.START_NEW_FRAGMENT".equals(getIntent().getAction())) {
             String className = getIntent().getStringExtra("xylon_fragment_name").toString();
-            if (!className.equals("com.xylon.settings.XYSettingsActivity")) {
+            Class<?> cls = null;
+            try {
+                cls = Class.forName(className);
+            } catch (ClassNotFoundException e1) {
+                // can't find the class at all, die
+                return;
+            }
+
+            try {
+                cls.asSubclass(XYSettingsActivity.class);
+                return;
+            } catch (ClassCastException e) {
+                // fall through
+            }
+
+            try {
+                cls.asSubclass(Fragment.class);
                 Bundle b = new Bundle();
                 b.putBoolean("started_from_shortcut", true);
                 isShortcut = true;
                 startWithFragment(className, b, null, 0);
                 finish(); // close current activity
+                return;
+            } catch (ClassCastException e) {
+            }
+
+            try {
+                cls.asSubclass(Activity.class);
+                isShortcut = true;
+                Intent activity = new Intent(getApplicationContext(), cls);
+                activity.putExtra("started_from_shortcut", true);
+                startActivity(activity);
+                finish(); // close current activity
+                return;
+            } catch (ClassCastException e) {
             }
         }
 
-        
     }
 
     @Override
@@ -127,8 +154,8 @@ public class XYSettingsActivity extends PreferenceActivity implements ButtonBarH
                 recreate();
                 return true;
             case android.R.id.home:
- 	        onBackPressed();
- 	        return true;
+                onBackPressed();
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
@@ -162,12 +189,22 @@ public class XYSettingsActivity extends PreferenceActivity implements ButtonBarH
      * Populate the activity with the top-level headers.
      */
     @Override
-    public void onBuildHeaders(List<Header> headers) {
-        loadHeadersFromResource(R.xml.preference_headers, headers);
-
-        updateHeaderList(headers);
-
-        mHeaders = headers;
+    public void onBuildHeaders(List<Header> target) {
+        loadHeadersFromResource(R.xml.preference_headers, target);
+        for (int i=0; i<target.size(); i++) {
+            Header header = target.get(i);
+            if (header.id == R.id.led) {
+                if (!hasNotificationLed) {
+                    target.remove(i);
+                }
+            } else if (header.id == R.id.vibrations) {
+                if (mVibrator == null || !mVibrator.hasVibrator()) {
+                    target.remove(i);
+                }
+            }
+        }
+        updateHeaderList(target);
+        mHeaders = target;
     }
 
     /**
