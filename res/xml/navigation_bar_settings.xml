@@ -78,7 +78,7 @@
             android:layout="?android:attr/preferenceLayoutChild"
             android:persistent="true"
             android:title="@string/navbar_bg_color"
-            android:defaultValue="#000000"
+            android:defaultValue="#cc000000"
             alphaSlider="true" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference

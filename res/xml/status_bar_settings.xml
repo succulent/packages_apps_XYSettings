@@ -15,7 +15,7 @@
             android:layout="?android:attr/preferenceLayoutChild"
             android:persistent="true"
             android:title="@string/statusbar_background_color"
-            android:defaultValue="#000000"
+            android:defaultValue="#cc000000"
             alphaSlider="true" />
 
     <PreferenceCategory
