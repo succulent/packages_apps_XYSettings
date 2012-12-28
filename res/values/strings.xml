@@ -177,11 +177,10 @@
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggle_favcontact_title">Favorite contact</string>
     <string name="toggle_favcontact_summary">Choose your favorite contact</string>
-    <string name="toggle_quick_pulldown_title">Quick pulldown</string>
-    <string name="toggle_quick_pulldown_summary">edge of the status bar pulls down Quick Settings</string>
-    <string name="quick_pulldown_off">Off</string>
-    <string name="quick_pulldown_left">Left</string>
-    <string name="quick_pulldown_right">Right</string>
+    <string name="toggle_enable_fasttoggle_title">Enable fast toggle</string>
+    <string name="toggle_enable_fasttoggle_summary">Ability to pull your toggles directly instead the default behaviour directs to notifications.</string>
+    <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
+    <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle should be.</string>
 
     <!-- holo theme style for Quick Setting tiles -->
     <string name="holo_dark">Holo dark</string>

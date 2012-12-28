@@ -54,8 +54,9 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     private static final String PREF_TOGGLES_PER_ROW = "toggles_per_row";
     private static final String PREF_TOGGLE_FAV_CONTACT = "toggle_fav_contact";
     private static final String PREF_QUICK_THEME_STYLE = "quick_theme_style";
-    private static final String PREF_QUICK_TEXT_COLOR = "quick_text_color"; 
-    private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String PREF_QUICK_TEXT_COLOR = "quick_text_color";
+    private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
+    private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side"; 
 
     private final int PICK_CONTACT = 1;
 
@@ -86,16 +87,6 @@ public class QuickToggles extends SettingsPreferenceFragment implements
 
         mLayout = findPreference("toggles");
 
-        mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
-        if (!Utils.isPhone(getActivity())) {
-            prefSet.removePreference(mQuickPulldown);
-        } else {
-            mQuickPulldown.setOnPreferenceChangeListener(this);
-            int statusQuickPulldown = Settings.System.getInt(resolver, Settings.System.QS_QUICK_PULLDOWN, 0);
-            mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
-            updatePulldownSummary();
-        }
-
         mFavContact = findPreference(PREF_TOGGLE_FAV_CONTACT);
         final String[] entries = getResources().getStringArray(R.array.available_toggles_entries);
         List<String> allToggles = Arrays.asList(entries);
@@ -113,11 +104,23 @@ public class QuickToggles extends SettingsPreferenceFragment implements
 
         mTextColor = (ColorPickerPreference) findPreference(PREF_QUICK_TEXT_COLOR);
         mTextColor.setOnPreferenceChangeListener(this);
+
+        mFastToggle = (CheckBoxPreference) findPreference(PREF_ENABLE_FASTTOGGLE);
+        mFastToggle.setOnPreferenceChangeListener(this);
+
+        mChooseFastToggleSide = (ListPreference) findPreference(PREF_CHOOSE_FASTTOGGLE_SIDE);
+        mChooseFastToggleSide.setOnPreferenceChangeListener(this);
+        mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
+
+        if (isTablet(mContext)) {
+            getPreferenceScreen().removePreference(mFastToggle);
+            getPreferenceScreen().removePreference(mChooseFastToggleSide);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
         if (preference == mTogglesPerRow) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -135,19 +138,25 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.QUICK_TEXT_COLOR, intHex);
-        } else if (preference == mQuickPulldown) {
-            int statusQuickPulldown = Integer.valueOf((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.QS_QUICK_PULLDOWN,
-                    statusQuickPulldown);
-            updatePulldownSummary();
+        } else if (preference == mFastToggle) {
+            boolean val = (Boolean) newValue;
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.FAST_TOGGLE, val);
+            getActivity().getBaseContext().getContentResolver().notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
             return true;
+        } else if (preference == mChooseFastToggleSide) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.CHOOSE_FASTTOGGLE_SIDE, val);
+            getActivity().getBaseContext().getContentResolver().notifyChange(Settings.System.getUriFor(Settings.System.CHOOSE_FASTTOGGLE_SIDE), null);
+            mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
         }
         return false;
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
         if (preference == mEnabledToggles) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -234,30 +243,6 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void updatePulldownSummary() {
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
-        int summaryId;
-        int directionId;
-        summaryId = R.string.toggle_quick_pulldown_summary;
-        String value = Settings.System.getString(resolver, Settings.System.QS_QUICK_PULLDOWN);
-        String[] pulldownArray = getResources().getStringArray(R.array.quick_pulldown_values);
-        if (pulldownArray[0].equals(value)) {
-            directionId = R.string.quick_pulldown_off;
-            mQuickPulldown.setValueIndex(0);
-            mQuickPulldown.setSummary(getResources().getString(directionId));
-        } else if (pulldownArray[1].equals(value)) {
-            directionId = R.string.quick_pulldown_right;
-            mQuickPulldown.setValueIndex(1);
-            mQuickPulldown.setSummary(getResources().getString(directionId)
-                    + " " + getResources().getString(summaryId));
-        } else {
-            directionId = R.string.quick_pulldown_left;
-            mQuickPulldown.setValueIndex(2);
-            mQuickPulldown.setSummary(getResources().getString(directionId)
-                    + " " + getResources().getString(summaryId));
-        }
     }
 
     public void addToggle(Context context, String key) {
