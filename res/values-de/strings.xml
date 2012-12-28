@@ -152,11 +152,10 @@
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
     <string name="toggle_favcontact_title">Bevorzugter Kontakt</string>
     <string name="toggle_favcontact_summary">Wähle deinen nevorzugten Kontakt</string>
-    <string name="toggle_quick_pulldown_title">Quick pulldown</string>
-    <string name="toggle_quick_pulldown_summary">edge of the status bar pulls down Quick Settings</string>
-    <string name="quick_pulldown_off">Off</string>
-    <string name="quick_pulldown_left">Left</string>
-    <string name="quick_pulldown_right">Right</string>
+    <string name="toggle_enable_fasttoggle_title">Aktiviere fast toggle</string>
+    <string name="toggle_enable_fasttoggle_summary">Möglichkeit, die toggle direkt zu ziehen im Gegensatz zum Standard JB Verhalten</string>
+    <string name="toggle_choose_fasttoggle_side_title">Wähle fast toggle Seite</string>
+    <string name="toggle_choose_fasttoggle_side_summary">Wähle, auf welcher Seite das fast toggle erscheint</string>
 
     <!-- holo theme style for Quick Setting tiles -->
     <string name="quicksettings_theme_style_summary">Wähle zwischen holo light oder holo dark</string>
