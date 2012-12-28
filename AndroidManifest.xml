@@ -120,12 +120,6 @@
           </intent-filter>
         </activity>
         <receiver
-            android:name=".service.BootReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-        <receiver
             android:name=".service.ChangeFastChargeStateReceiver" >
             <intent-filter>
                 <action android:name="com.xylon.settings.ACTION_CHANGE_FCHARGE_STATE" />

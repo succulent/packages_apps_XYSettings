@@ -178,7 +178,7 @@
     <string name="toggle_favcontact_title">Favorite contact</string>
     <string name="toggle_favcontact_summary">Choose your favorite contact</string>
     <string name="toggle_enable_fasttoggle_title">Enable fast toggle</string>
-    <string name="toggle_enable_fasttoggle_summary">Ability to pull your toggles directly instead the default behaviour directs to notifications.</string>
+    <string name="toggle_enable_fasttoggle_summary">Allows you to pull your toggles directly instead the default behavior pull directly to notifications.</string>
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle should be.</string>
 
@@ -361,4 +361,5 @@
     <string name="phablet_mode_ui">Phablet - NavBar stays at bottom in landscape</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
     <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
+
 </resources>
