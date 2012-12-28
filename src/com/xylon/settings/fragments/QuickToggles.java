@@ -64,9 +64,10 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     Preference mLayout;
     ListPreference mTogglesPerRow;
     Preference mFavContact;
+    CheckBoxPreference mFastToggle;
+    ListPreference mChooseFastToggleSide;
     ListPreference mThemeStyle;
     ColorPickerPreference mTextColor;
-    ListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
