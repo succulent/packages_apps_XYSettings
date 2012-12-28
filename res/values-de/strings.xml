@@ -49,14 +49,14 @@
     <string name="dpi">DPI</string>
 
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
+    <string name="dialog_color_picker">Farbe wählen</string>
     <string name="press_color_to_apply">Auf die Farbe drücken zum bestätigen</string>   
 
     <!-- Power Menu -->
     <string name="title_show_screenshot">Zeige Screenshot</string>
-    <string name="title_show_airplane_toggle">Show airplane toggle</string>
-    <string name="power_menu_expanded_desktop">Show expanded desktop</string>
-    <string name="title_show_navbar_hide">Show navigation bar toggle</string>
+    <string name="title_show_airplane_toggle">Aktiviere Flugzeugmodus toggle</string>
+    <string name="power_menu_expanded_desktop">Aktiviere erweiterten Desktop</string>
+    <string name="title_show_navbar_hide">Aktiviere navigation bar toggle</string>
 
     <!-- Status Bar Headers -->
     <string name="status_bar_clock_header">Uhr</string>
@@ -70,24 +70,24 @@
     <string name="clock_title_enable">Aussehen der Uhr</string>
     <string name="title_clock_ampm_entries">AM/PM Stil</string>
     <string name="enable_clock_weekday">Tag der Woche</string>
-    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+    <string name="enable_clock_weekday_summary">Abkürzung des Tages, der vor der Uhrzeit steht</string>
     <string name="statusbar_background_color">Statusbar Farbe</string>
     <string name="clock_color_title">Farbe der Uhr</string>
     <string name="alarm">Alarme</string>
     <string name="clock_options">Uhr optionen</string>
     <string name="nothing">Nichts</string>
-    <string name="today">Calendar for today</string>
+    <string name="today">Kalender für heute</string>
     <string name="event">Calendar new event</string>
-    <string name="voiceassist">Voice commands</string>
-    <string name="title_clock_doubleclick">Clock double click actions</string>
-    <string name="title_clock_longclick">Clock long click actions</string>
-    <string name="title_clock_shortclick">Clock short click actions</string>
-    <string name="battery_icon_title">Icon Style</string>
+    <string name="voiceassist">Sprachsteuerung</string>
+    <string name="title_clock_doubleclick">Doppeldrück Uhr-Aktionen</string>
+    <string name="title_clock_longclick">Langdrück Uhr-Aktionen </string>
+    <string name="title_clock_shortclick">Kurzdrück Uhr-Aktionen</string>
+    <string name="battery_icon_title">Symbol Style</string>
 
     <!-- Battery Bar -->
-    <string name="battery_bar">Battery bar location</string>
-    <string name="battery_bar_color">Battery bar color</string>
-    <string name="battery_bar_cat">Battery bar options</string>
+    <string name="battery_bar">Battery bar Ort</string>
+    <string name="battery_bar_color">Battery bar Farbe</string>
+    <string name="battery_bar_cat">Battery bar Optionen</string>
     <string name="battery_bar_style_title">Battery bar style</string>
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Lade-Animation</string>
@@ -102,19 +102,19 @@
     <string name="wifi_signal_color_title">Wi-Fi Signal color</string>
 
     <!-- signal style -->
-    <string name="show_signal_bars">Show signal bars</string>
-    <string name="show_signal_text">Show signal text</string>
-    <string name="show_with_dbm">Show with dBm</string>
+    <string name="show_signal_bars">Zeige Signalleiste</string>
+    <string name="show_signal_text">Zeige Signaltext</string>
+    <string name="show_with_dbm">Zeige mit dBm</string>
 
     <!-- Statusbar | Clock -->
-    <string name="right_clock">Right clock</string>
-    <string name="center_clock">Center clock</string>
+    <string name="right_clock">Uhr rechts</string>
+    <string name="center_clock">Uhr links</string>
     <string name="no_clock">Keine Uhr</string>
-    <string name="dont_show">Don\'t show</string>
-    <string name="small_am_pm">Small AM/PM</string>
-    <string name="regular_am_pm">Regular AM/PM</string>
-    <string name="small_weekday">Small weekday</string>
-    <string name="regular_weekday">Regular weekday</string>
+    <string name="dont_show">Ausblenden</string>
+    <string name="small_am_pm">Kleines AM/PM</string>
+    <string name="regular_am_pm">Normales AM/PM</string>
+    <string name="small_weekday">Kleiner Wochentag</string>
+    <string name="regular_weekday">Normaler Wochentag</string>
 
     <!-- Statusbar + Navigationbar Background color -->
     <string name="navbar_bg">Navbar Hintergrund</string>
@@ -123,15 +123,15 @@
     <string name="bgs_color">Color/Alpha only</string>
     <string name="bgs_defaultbg_plus_color">Default Background + Color/Alpha</string>
     <string name="bgs_defaultbg">Default Background only</string>
-    <string name="statusbar_bg">Statusbar background</string>
-    <string name="navbar_bg_color">Navigation bar Hintergrund</string>
+    <string name="statusbar_bg">Statusleisten Hintergrung</string>
+    <string name="navbar_bg_color">Navigationsleiste Hintergrund</string>
 
     <!-- Quick Toggles | AOKP -->
     <string name="toggle_airplane_mode">Flugzeugmodus</string>
     <string name="toggle_auto_rotate">Auto Rotation</string>
     <string name="toggle_silent">Ruhe</string>
     <string name="toggle_sync">Sync</string>
-    <string name="toggle_torch">Taschenlampe</string>
+    <string name="toggle_torch">Lampe</string>
     <string name="toggle_vibrate">Vibration</string>
     <string name="toggle_user">Benutzer</string>
     <string name="toggle_favorite_contact">Bevorzugter Kontakt</string>
@@ -143,15 +143,15 @@
     <string name="toggle_screen">Bildschirm aus</string>
 
     <string name="toggles_display_dialog">Choose which toggles to use</string>
-    <string name="enabled_toggles_title">Enabled toggles</string>
+    <string name="enabled_toggles_title">Aktiviere toggles</string>
     <string name="enabled_toggles_summary">Choose toggles to display</string>
-    <string name="toggles_display_close">Close</string>
-    <string name="toggles_order_title">Toggle order</string>
+    <string name="toggles_display_close">Schließen</string>
+    <string name="toggles_order_title">Toggle Reihenfolge</string>
     <string name="toggles_order_summary">Choose the order which your toggles are displayed</string>
-    <string name="toggles_per_row_title">Toggles per row</string>
+    <string name="toggles_per_row_title">Toggles pro Reihe</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
-    <string name="toggle_favcontact_title">Favorite contact</string>
-    <string name="toggle_favcontact_summary">Choose your favorite contact</string>
+    <string name="toggle_favcontact_title">Bevorzugter Kontakt</string>
+    <string name="toggle_favcontact_summary">Wähle deinen nevorzugten Kontakt</string>
     <string name="toggle_quick_pulldown_title">Quick pulldown</string>
     <string name="toggle_quick_pulldown_summary">edge of the status bar pulls down Quick Settings</string>
     <string name="quick_pulldown_off">Off</string>
