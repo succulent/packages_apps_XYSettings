@@ -87,14 +87,15 @@
 
     <!-- Battery styles -->
     <string-array name="battery_icon_entries">
-        <item>Icon only</item>
-        <item>Text only</item>
-        <item>Icon with text</item>
-        <item>Icon with centered text</item>
-        <item>CircleMOD</item>
-        <item>CM Circle</item>
-        <item>CM Circle with percent</item>
-        <item>Hide</item>
+        <item>@string/icon_only</item>
+        <item>@string/text_only</item>
+        <item>@string/icon_w_text</item>
+        <item>@string/icon_w_center_text</item>
+        <item>@string/circlemod</item>
+        <item>@string/circle_battery</item>
+        <item>@string/circle_battery_w_percent</item>
+        <item>@string/circle_dotted_w_percent</item>
+        <item>@string/hide</item>
     </string-array>
     <string-array name="battery_icon_values" translatable="false">
         <item>0</item>
@@ -105,10 +106,23 @@
         <item>5</item>
         <item>6</item>
         <item>7</item>
+        <item>8</item>
     </string-array>
 
-  <!-- Battery Bar -->
+    <string-array name="circle_battery_animation_speed_entries" >
+        <item>@string/circle_battery_animation_speed_none</item>
+        <item>@string/circle_battery_animation_speed_slow</item>
+        <item>@string/circle_battery_animation_speed_stock</item>
+        <item>@string/circle_battery_animation_speed_fast</item>
+    </string-array>
+    <string-array name="circle_battery_animation_speed_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+    </string-array>
 
+    <!-- Battery Bar -->
     <string-array name="battery_bar_entries">
         <item>Hide</item>
         <item>Statusbar</item>

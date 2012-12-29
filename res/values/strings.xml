@@ -94,7 +94,27 @@
     <string name="title_clock_doubleclick">Clock double click actions</string>
     <string name="title_clock_longclick">Clock long click actions</string>
     <string name="title_clock_shortclick">Clock short click actions</string>
+
+    <!-- Battery style -->
     <string name="battery_icon_title">Icon Style</string>
+    <string name="icon_only">Icon only</string>
+    <string name="text_only">Text only</string>
+    <string name="icon_w_text">Icon with text</string>
+    <string name="icon_w_center_text">Icon with centered text</string>
+    <string name="circlemod">CircleMOD</string>
+    <string name="circle_battery">CM Circle</string>
+    <string name="circle_battery_w_percent">CM Circle w/ percent</string>
+    <string name="circle_dotted_w_percent">CM Dotted w/ percent</string>
+    <string name="hide">Hide</string>
+    <string name="circle_battery_color">Circle color</string>
+    <string name="circle_battery_text_color">Circle text color</string>
+    <string name="circle_battery_animation_speed">Circle animation speed</string>
+    <string name="circle_battery_animation_speed_none">None</string>
+    <string name="circle_battery_animation_speed_slow">Slow</string>
+    <string name="circle_battery_animation_speed_stock">Normal</string>
+    <string name="circle_battery_animation_speed_fast">Fast</string>
+    <string name="circle_battery_reset_title">Reset circle colors</string>
+    <string name="circle_battery_reset_summary">Reset circle colors to apply installed theme engine colors</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar">Battery bar location</string>
