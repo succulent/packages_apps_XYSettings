@@ -26,6 +26,7 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -85,6 +86,9 @@ public class GeneralUI extends SettingsPreferenceFragment {
     // ListPreference mUserModeUI;
 
     String mCustomLabelText = null;
+
+    int newDensityValue;
+    DensityChanger densityFragment;
 
     private int seekbarProgress;
 

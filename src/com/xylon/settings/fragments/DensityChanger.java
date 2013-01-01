@@ -1,5 +1,5 @@
 
-package com.baked.romcontrol.fragments;
+package com.xylon.settings.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -23,13 +23,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import com.baked.romcontrol.BAKEDPreferenceFragment;
-import com.baked.romcontrol.R;
-import com.baked.romcontrol.util.CMDProcessor;
-import com.baked.romcontrol.util.CMDProcessor.CommandResult;
-import com.baked.romcontrol.util.Helpers;
+import com.xylon.settings.SettingsPreferenceFragment;
+import com.xylon.settings.R;
+import com.xylon.settings.util.CMDProcessor;
+import com.xylon.settings.util.CMDProcessor.CommandResult;
+import com.xylon.settings.util.Helpers;
 
-public class DensityChanger extends BAKEDPreferenceFragment implements
+public class DensityChanger extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String TAG = "DensityChanger";
