@@ -198,13 +198,4 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         }
         return null;
     }
-
-    @Override
-    public boolean onPreferenceClick(Preference pref) {
-        if (pref.equals(mResetColor)) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_COLOR, -1);
-        }
-        return false;
-    }
 }
