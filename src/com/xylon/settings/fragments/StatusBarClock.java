@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -93,15 +94,6 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         mClockDoubleClick = (ListPreference) findPreference(PREF_CLOCK_DOUBLECLICK);
         mClockDoubleClick.setOnPreferenceChangeListener(this);
         mClockDoubleClick.setSummary(getProperSummary(mClockDoubleClick));
-    }
-
-    @Override
-    public boolean onPreferenceClick(Preference pref) {
-        if (pref.equals(mResetColor)) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_COLOR, -1);
-        }
-        return false;
     }
 
     @Override
@@ -210,5 +202,14 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
             return mPicker.getFriendlyNameForUri(uri);
         }
         return null;
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference pref) {
+        if (pref.equals(mResetColor)) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_COLOR, -1);
+        }
+        return false;
     }
 }

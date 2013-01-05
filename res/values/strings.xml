@@ -383,6 +383,8 @@
     <string name="phablet_mode_ui">Phablet - NavBar stays at bottom in landscape</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
     <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
+    <string name="recents_rambar_title">Enhance recents panel</string>
+    <string name="recents_rambar_summary">Add a memory usage bar to the recents panel</string>
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>
