@@ -19,11 +19,12 @@ import com.xylon.settings.util.ShortcutPickerHelper;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBarClock extends SettingsPreferenceFragment implements
-                ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
+                ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener, OnPreferenceClickListener {
 
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
     private static final String PREF_COLOR_PICKER = "clock_color";
+    private static final String PREF_RESET_CLOCK_COLOR_DEF = "reset_clock_color_default";
     private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
     private static final String PREF_CLOCK_SHORTCLICK = "clock_shortclick";
     private static final String PREF_CLOCK_LONGCLICK = "clock_longclick";
@@ -44,6 +45,7 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
     ListPreference mClockShortClick;
     ListPreference mClockLongClick;
     ListPreference mClockDoubleClick;
+    Preference mResetColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,9 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
         mColorPicker.setOnPreferenceChangeListener(this);
 
+        mResetColor = (Preference) findPreference(PREF_RESET_CLOCK_COLOR_DEF);
+        mResetColor.setOnPreferenceClickListener(this);
+
         mClockWeekday = (ListPreference) findPreference(PREF_CLOCK_WEEKDAY);
         mClockWeekday.setOnPreferenceChangeListener(this);
         mClockWeekday.setValue(Integer.toString(Settings.System.getInt(getActivity()
@@ -88,6 +93,15 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         mClockDoubleClick = (ListPreference) findPreference(PREF_CLOCK_DOUBLECLICK);
         mClockDoubleClick.setOnPreferenceChangeListener(this);
         mClockDoubleClick.setSummary(getProperSummary(mClockDoubleClick));
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference pref) {
+        if (pref.equals(mResetColor)) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_COLOR, -1);
+        }
+        return false;
     }
 
     @Override
