@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+        <ListPreference
+                android:key="clock_color_style"
+                android:layout="?android:attr/preferenceLayoutChild"
+                android:persistent="true"
+                android:entries="@array/clock_color_style_entries"
+                android:entryValues="@array/clock_color_style_values"
+                android:title="@string/clock_color_style_title" />
 
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
 		android:key="clock_color"
