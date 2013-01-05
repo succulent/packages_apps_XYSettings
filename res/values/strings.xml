@@ -83,8 +83,6 @@
     <string name="title_clock_ampm_entries">AM/PM style</string>
     <string name="enable_clock_weekday">Day of the week</string>
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
-    <string name="reset_clock_color">Restore stock clock color</string>
-    <string name="reset_clock_color_summary">This will restore the original color in the theme.</string>
     <string name="statusbar_background_color">Statusbar color</string>
     <string name="clock_color_title">Clock color</string>
     <string name="alarm">Alarms</string>
