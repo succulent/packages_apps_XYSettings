@@ -25,6 +25,7 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "clock_am_pm_style";
     private static final String PREF_COLOR_PICKER = "clock_color";
+    private static final String PREF_CLOCK_COLOR_STYLE = "clock_color_style";
     private static final String PREF_CLOCK_WEEKDAY = "clock_weekday";
     private static final String PREF_CLOCK_SHORTCLICK = "clock_shortclick";
     private static final String PREF_CLOCK_LONGCLICK = "clock_longclick";
@@ -41,6 +42,7 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
     ListPreference mClockStyle;
     ListPreference mClockAmPmstyle;
     ColorPickerPreference mColorPicker;
+    ListPreference mClockColorStyle;
     ListPreference mClockWeekday;
     ListPreference mClockShortClick;
     ListPreference mClockLongClick;
@@ -72,6 +74,9 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
         mColorPicker.setOnPreferenceChangeListener(this);
 
+        mClockColorStyle = (ListPreference) findPreference(PREF_CLOCK_COLOR_STYLE);
+        mClockColorStyle.setOnPreferenceChangeListener(this);
+
         mClockWeekday = (ListPreference) findPreference(PREF_CLOCK_WEEKDAY);
         mClockWeekday.setOnPreferenceChangeListener(this);
         mClockWeekday.setValue(Integer.toString(Settings.System.getInt(getActivity()
@@ -89,6 +94,18 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         mClockDoubleClick = (ListPreference) findPreference(PREF_CLOCK_DOUBLECLICK);
         mClockDoubleClick.setOnPreferenceChangeListener(this);
         mClockDoubleClick.setSummary(getProperSummary(mClockDoubleClick));
+
+        updateVisibility();
+    }
+
+    private void updateVisibility() {
+        int visible = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.CLOCK_COLOR_STYLE, 1);
+        if (visible == 1) {
+            mColorPicker.setEnabled(false);
+        } else {
+            mColorPicker.setEnabled(true);
+        }
     }
 
     @Override
@@ -96,17 +113,23 @@ public class StatusBarClock extends SettingsPreferenceFragment implements
         boolean result = false;
 
         if (preference == mClockAmPmstyle) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, val);
-
         } else if (preference == mClockStyle) {
-
             int val = Integer.parseInt((String) newValue);
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_STYLE, val);
-
+        } else if (preference == mClockColorStyle) {
+            int value = Integer.valueOf((String) newValue);
+            int index = mClockColorStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.CLOCK_COLOR_STYLE, value);
+            preference.setSummary(mClockColorStyle.getEntries()[index]);
+            updateVisibility();
+            if (value == 1)
+                Helpers.restartSystemUI();
+            return true;
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));
