@@ -16,6 +16,7 @@ import android.util.Log;
 import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.R;
 import com.xylon.settings.util.ShortcutPickerHelper;
+import com.xylon.settings.util.Helpers;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
