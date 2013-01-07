@@ -59,7 +59,7 @@ import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.Utils;
 import com.xylon.settings.util.Helpers;
 
-public class GeneralUI extends SettingsPreferenceFragment {
+public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";

@@ -385,7 +385,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         } else if (preference == mButtonAlpha) {
             float val = Float.parseFloat((String) newValue);
             Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, val / 100);
+                    Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, val * 0.01f);
             return true;
         } else if (preference == mNavigationBarWidth) {
             String newVal = (String) newValue;
