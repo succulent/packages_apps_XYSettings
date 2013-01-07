@@ -68,7 +68,8 @@ public class GeneralUI extends SettingsPreferenceFragment {
     private static final String SYSTEMUI_RECENTS_MEM_DISPLAY = "interface_recents_mem_display";
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
-    // private static final String PREF_USER_MODE_UI = "user_mode_ui";
+    private static final String PREF_USER_MODE_UI = "user_mode_ui";
+    private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -85,7 +86,8 @@ public class GeneralUI extends SettingsPreferenceFragment {
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
     Preference mLcdDensity;
-    // ListPreference mUserModeUI;
+    ListPreference mUserModeUI;
+    CheckBoxPreference mDualpane;
 
     String mCustomLabelText = null;
 
@@ -132,12 +134,17 @@ public class GeneralUI extends SettingsPreferenceFragment {
         }
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
-   /**     mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
+        mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
         int uiMode = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.CURRENT_UI_MODE, 0);
         mUserModeUI.setValue(Integer.toString(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.USER_UI_MODE, uiMode)));
-        mUserModeUI.setOnPreferenceChangeListener(this); **/
+        mUserModeUI.setOnPreferenceChangeListener(this);
+
+        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
+        mDualpane.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
+                        com.android.internal.R.bool.preferences_prefer_dual_pane)));
 
         mMembar = (CheckBoxPreference) getPreferenceScreen().findPreference(SYSTEMUI_RECENTS_MEM_DISPLAY);
             if (mMembar != null) {
@@ -297,13 +304,18 @@ public class GeneralUI extends SettingsPreferenceFragment {
                     Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, checked ? 1 : 0);
                     
             Helpers.restartSystemUI();
-        return true;
+            return true;
+        } else if (preference == mDualpane) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.FORCE_DUAL_PANEL,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
         }
         
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-   /** @Override
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mUserModeUI) {
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -311,7 +323,7 @@ public class GeneralUI extends SettingsPreferenceFragment {
             return true;
         }
         return false;
-    } **/
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
