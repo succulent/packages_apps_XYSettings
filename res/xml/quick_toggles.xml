@@ -46,6 +46,7 @@
         android:entryValues="@array/choose_toggle_side_values"
         android:key="choose_fast_toggle_side"
         android:summary="@string/toggle_choose_fasttoggle_side_summary"
-        android:title="@string/toggle_choose_fasttoggle_side_title" />
+        android:title="@string/toggle_choose_fasttoggle_side_title"
+        android:dependency="enable_fast_toggle" />
 
 </PreferenceScreen>
