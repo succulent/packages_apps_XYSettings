@@ -5,7 +5,6 @@
 
     <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
@@ -23,27 +22,10 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
-    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
-    <uses-permission android:name="android.permission.ACCESS_WIMAX_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIMAX_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
-    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/>
-    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
-    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
-    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES"/>
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
-    <uses-permission android:name="android.permission.MOVE_PACKAGE" />
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.BACKUP" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.READ_SYNC_STATS" />
-    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.STATUS_BAR" />
 
     <application
@@ -99,25 +81,11 @@
 	    </intent-filter>
 	</activity>
         <activity
-            android:name=".fragments.PropModder">
+            android:name=".fragments.DensityChanger">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="com.xylon.settings.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="fragments.DensityChanger">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="com.xylon.settings.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".util.ShowBuildProp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
         <activity
@@ -161,7 +129,7 @@
             </intent-filter>
         </activity>
         <activity
- 	    android:name="CreateShortcut"
+ 	    android:name=".CreateShortcut"
              android:theme="@style/Theme.CreateShortCut" >
  	  <intent-filter>
                <action android:name="android.intent.action.CREATE_SHORTCUT" />
@@ -179,4 +147,3 @@
             android:exported="false" />
     </application>
 </manifest>
-  
