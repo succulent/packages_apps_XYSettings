@@ -69,6 +69,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_USER_MODE_UI = "user_mode_ui";
+    private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
@@ -87,6 +88,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     Preference mWallpaperAlpha;
     Preference mLcdDensity;
     ListPreference mUserModeUI;
+    CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
 
     String mCustomLabelText = null;
@@ -104,6 +106,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         addPreferencesFromResource(R.xml.general_ui_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver cr = mContext.getContentResolver();
 
         mCustomLabel = prefSet.findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -118,7 +121,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                 Settings.System.STATUS_BAR_NOTIF_COUNT, false));
 
         mStatusbarSliderPreference = (CheckBoxPreference) prefSet.findPreference(PREF_STATUSBAR_BRIGHTNESS);
-        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(cr,
                 Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, true));
 
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
@@ -135,16 +138,20 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
         mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
-        int uiMode = Settings.System.getInt(mContext.getContentResolver(),
+        int uiMode = Settings.System.getInt(cr,
                 Settings.System.CURRENT_UI_MODE, 0);
         mUserModeUI.setValue(Integer.toString(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.USER_UI_MODE, uiMode)));
         mUserModeUI.setOnPreferenceChangeListener(this);
 
         mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
-        mDualpane.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+        mDualpane.setChecked(Settings.System.getBoolean(cr,
                         Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
                         com.android.internal.R.bool.preferences_prefer_dual_pane)));
+
+        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras.setChecked(Settings.System.getBoolean(cr,
+                        Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
 
         mMembar = (CheckBoxPreference) getPreferenceScreen().findPreference(SYSTEMUI_RECENTS_MEM_DISPLAY);
             if (mMembar != null) {
@@ -310,6 +317,11 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.FORCE_DUAL_PANEL,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
+        } else if (preference == mHideExtras) {
+            Settings.System.putBoolean(mContext.getContentResolver(),
+                    Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true;
         }
         
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -320,6 +332,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         if (preference == mUserModeUI) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.USER_UI_MODE, Integer.parseInt((String) newValue));
+            Helpers.restartSystemUI();
             return true;
         }
         return false;

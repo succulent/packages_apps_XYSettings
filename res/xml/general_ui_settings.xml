@@ -41,6 +41,10 @@
             android:key="notification_wallpaper_alpha"
             android:title="@string/notif_wallpaper_alpha_title" />
 
+        <PreferenceCategory
+                android:key="tablet_cat"
+                android:title="@string/tablet_cat">
+
         <ListPreference
             android:key="user_mode_ui"
             android:title="@string/user_mode_ui"
@@ -49,9 +53,17 @@
             android:entryValues="@array/user_mode_ui_values" />
 
         <CheckBoxPreference
+            android:key="hide_extras"
+            android:title= "@string/hide_extras"
+            android:summary= "@string/hide_extras_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
             android:key="force_dualpanel"
             android:title="@string/multipane_ui"
             android:summary="@string/multipane_ui_summary"
             android:defaultValue="false" />
+
+        </PreferenceCategory>
 
 </PreferenceScreen>
