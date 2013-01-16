@@ -64,6 +64,14 @@
                         android:title="@string/navigation_bar_width_title"
                         android:summary="@string/navigation_bar_width_summary" />
 
+        <com.xylon.settings.widgets.SeekBarPreference
+            android:key="width_port"
+            android:title="@string/width_port_title" />
+
+        <com.xylon.settings.widgets.SeekBarPreference
+            android:key="width_land"
+            android:title="@string/width_land_title" />
+
         <ListPreference
             android:key="navbar_bg_style"
             android:layout="?android:attr/preferenceLayoutChild"
