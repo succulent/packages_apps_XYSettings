@@ -9,6 +9,9 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.xylon.settings.R;
 import com.xylon.settings.SettingsPreferenceFragment;
@@ -30,14 +33,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
     private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
-    private static final String PREF_STATUSBAR_BACKGROUND_STYLE = "statusbar_background_style";
-    private static final String PREF_STATUSBAR_BACKGROUND_COLOR = "statusbar_background_color";
 
-    ColorPickerPreference mStatusbarBgColor;
     ColorPickerPreference mCircleColor;
     ColorPickerPreference mCircleTextColor;
     ColorPickerPreference mBatteryBarColor;
-    ListPreference mStatusbarBgStyle;
     ListPreference mBatteryIcon;
     ListPreference mCircleAnimSpeed;
     ListPreference mBatteryBar;
@@ -96,12 +95,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                 Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1))
                 + "");
 
-        mStatusbarBgColor = (ColorPickerPreference) prefSet.findPreference(PREF_STATUSBAR_BACKGROUND_COLOR);
-        mStatusbarBgColor.setOnPreferenceChangeListener(this);
-
-        mStatusbarBgStyle = (ListPreference) prefSet.findPreference(PREF_STATUSBAR_BACKGROUND_STYLE);
-        mStatusbarBgStyle.setOnPreferenceChangeListener(this);
-
         mCircleColor = (ColorPickerPreference) findPreference(PREF_STATUS_BAR_CIRCLE_BATTERY_COLOR);
         mCircleColor.setOnPreferenceChangeListener(this);
         defaultColor = getResources().getColor(
@@ -132,18 +125,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         if (Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CIRCLE_BATTERY_RESET, 0) == 1) {
             circleColorReset();
-        }
-
-        updateVisibility();
-    }
-
-    private void updateVisibility() {
-        int visible = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_BACKGROUND_STYLE, 2);
-        if (visible == 2) {
-            mStatusbarBgColor.setEnabled(false);
-        } else {
-            mStatusbarBgColor.setEnabled(true);
         }
     }
 
@@ -226,24 +207,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             return Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
 
-        } else if (preference == mStatusbarBgStyle) {
-            int value = Integer.valueOf((String) newValue);
-            int index = mStatusbarBgStyle.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUSBAR_BACKGROUND_STYLE, value);
-            preference.setSummary(mStatusbarBgStyle.getEntries()[index]);
-            updateVisibility();
-            return true;
-
-        } else if (preference == mStatusbarBgColor) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
-                    .valueOf(newValue)));
-            preference.setSummary(hex);
-
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_BACKGROUND_COLOR, intHex);
-            Log.e("BAKED", intHex + "");
         }
         return false;
     }

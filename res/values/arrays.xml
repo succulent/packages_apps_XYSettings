@@ -344,20 +344,6 @@
         <item>5</item>
     </string-array>
 
-  <!-- Navigation Bar + Status Bar Color arrays -->
-
-    <!-- Navigation Bar + Statusbar Background Style -->
-    <string-array name="background_entries">
-        <item>@string/bgs_color</item>
-        <item>@string/bgs_defaultbg_plus_color</item>
-        <item>@string/bgs_defaultbg</item>
-    </string-array>
-    <string-array name="background_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
   <!-- Quick Settings -->
 
     <!-- Generic toggle overlay. Should be set per device in overlay -->

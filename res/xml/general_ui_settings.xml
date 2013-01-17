@@ -41,6 +41,10 @@
             android:key="notification_wallpaper_alpha"
             android:title="@string/notif_wallpaper_alpha_title" />
 
+        <com.xylon.settings.widgets.SeekBarPreference
+            android:key="navigation_bar_alpha"
+            android:title="@string/navigation_bar_alpha_title" />
+
         <PreferenceCategory
                 android:key="tablet_cat"
                 android:title="@string/tablet_cat">

@@ -83,7 +83,7 @@
     <string name="title_clock_ampm_entries">AM/PM style</string>
     <string name="enable_clock_weekday">Day of the week</string>
     <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
-    <string name="statusbar_background_color">Statusbar color</string>
+    <string name="status_bar_color_title">Status bar color</string>
     <string name="clock_color_title">Clock color</string>
     <string name="clock_color_style_title">Clock color style</string>
     <string name="clock_color">Color of your choice</string>
@@ -150,16 +150,6 @@
     <string name="regular_am_pm">Regular AM/PM</string>
     <string name="small_weekday">Small weekday</string>
     <string name="regular_weekday">Regular weekday</string>
-
-    <!-- Statusbar + Navigationbar Background color -->
-    <string name="navbar_bg">Navbar background</string>
-    <string name="navbar_button_colors">Navbar button color</string>
-    <string name="background_style">Background Color Style</string>
-    <string name="bgs_color">Color/Alpha only</string>
-    <string name="bgs_defaultbg_plus_color">Default Background + Color/Alpha</string>
-    <string name="bgs_defaultbg">Default Background only</string>
-    <string name="statusbar_bg">Statusbar background</string>
-    <string name="navbar_bg_color">Navigation bar background</string>
 
     <!-- Quick Toggles | AOKP -->
     <string name="toggle_airplane_mode">Airplane Mode</string>
@@ -285,11 +275,13 @@
     <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_tint_title">Navigation bar color</string>
+    <string name="navigation_bar_color_title">Navigation bar color</string>
+    <string name="navigation_bar_tint_title">Navigation bar buttons color</string>
     <string name="navigation_bar_glow_tint_title">Navigation bar glow color</string>
     <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
+    <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Super quick</string>
