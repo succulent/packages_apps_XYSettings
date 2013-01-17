@@ -237,6 +237,7 @@
     <string name="always_show">Always show</string>
     <string name="default_jb_with_invincible_icons_when_hidden">Default JB with invisible icons when hidden</string>
     <string name="navbar_button_cat">Navigation bar buttons</string>
+    <string name="navbar_hide">NavBar Hide Options</string>
     <string name="title_pref_menu_display">Menu location</string>
     <string name="summary_pref_menu_display">Remember to remove your menu buttons if you\'re using the big menu button!</string>
     <string name="title_pref_navigation_menu_display">Menu visibility</string>
@@ -283,6 +284,9 @@
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
+    <string name="navbar_hide_enable_title">Hidden Navbar Enable</string>
+    <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
+    <string name="summary_navbar_timeout">Timeout time for Hidden Navbar Window</string>
     <string name="glow_times_title">Button glow animation</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Super quick</string>
