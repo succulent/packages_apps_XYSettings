@@ -135,6 +135,8 @@
     <string name="hide_signal_summary">Updates when signal strength changes</string>
     <string name="wifi_signal_style">Wi-Fi Signal text style</string>
     <string name="wifi_signal_color_title">Wi-Fi Signal color</string>
+    <string name="alt_signal_title">Alt signal layout</string>
+    <string name="alt_signal_summary">Use alternate (GB style) signal cluster</string>
 
     <!-- signal style -->
     <string name="show_signal_bars">Show signal bars</string>
@@ -196,14 +198,14 @@
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle should be.</string>
 
-    <!-- holo theme style for Quick Setting tiles -->
+    <!-- Quick Toggles | Themes -->
     <string name="holo_dark">Holo dark</string>
     <string name="holo_light">Holo light</string>
     <string name="quicksettings_theme_style">Holo</string>
     <string name="quicksettings_theme_style_summary">Choose between holo light or holo dark</string>
     <string name="quick_text_color_title">Text color</string>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar (Targets) -->
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="both">Both</string>
@@ -236,6 +238,41 @@
     <string name="always_show_invincible_icons">Always show invisible icons</string>
     <string name="always_show">Always show</string>
     <string name="default_jb_with_invincible_icons_when_hidden">Default JB with invisible icons when hidden</string>
+    <string name="navbar_action_home">Home</string>
+    <string name="navbar_action_back">Back</string>
+    <string name="navbar_action_recents">Recents</string>
+    <string name="navbar_action_search">Search</string>
+    <string name="navbar_action_screenshot">Screenshot</string>
+    <string name="navbar_action_menu">Menu</string>
+    <string name="navbar_action_ime">Open IME Switcher</string>
+    <string name="navbar_action_kill">Kill task</string>
+    <string name="navbar_action_power">Power</string>
+    <string name="navbar_action_notifications">Notifications</string>
+    <string name="navbar_action_none">Empty</string>
+    <string name="glow_times_off">Off</string>
+    <string name="glow_times_superquick">Super quick</string>
+    <string name="glow_times_quick">Quick</string>
+    <string name="glow_times_normal">Normal</string>
+    <string name="size_42_dp_default">42 dp (default)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (default)</string>
+    <string name="size_44_dp">44 dp</string>
+    <string name="size_40_dp">40 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="statusbar">Statusbar</string>
+    <string name="top_of_navbar">Top of navbar</string>
+    <string name="bottom_of_navbar">Bottom of navbar</string>
+    <string name="regular">Regular</string>
+    <string name="center_mirrored">Center-mirrored</string>
+    <string name="size_0_dp">0 dp (off)</string>
+    <string name="size_1_dp">1 dp</string>
+    <string name="size_2_dp">2 dp</string>
+    <string name="size_3_dp">3 dp</string>
+    <string name="size_4_dp">4 dp</string>
+
+    <!-- Navigation Bar (Strings) -->
     <string name="navbar_button_cat">Navigation bar buttons</string>
     <string name="navbar_hide">NavBar Hide Options</string>
     <string name="title_pref_menu_display">Menu location</string>
@@ -251,17 +288,6 @@
     <string name="width_port_title">Combined bar width port</string>
     <string name="width_land_title">Combined bar width land</string>
     <string name="navbar_longpress_title">Button %1$s longpress action</string>
-    <string name="navbar_action_home">Home</string>
-    <string name="navbar_action_back">Back</string>
-    <string name="navbar_action_recents">Recents</string>
-    <string name="navbar_action_search">Search</string>
-    <string name="navbar_action_screenshot">Screenshot</string>
-    <string name="navbar_action_menu">Menu</string>
-    <string name="navbar_action_ime">Open IME Switcher</string>
-    <string name="navbar_action_kill">Kill task</string>
-    <string name="navbar_action_power">Power</string>
-    <string name="navbar_action_notifications">Notifications</string>
-    <string name="navbar_action_none">Empty</string>
     <string name="navbar_enable_bar">Enable bar</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
@@ -288,28 +314,6 @@
     <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
     <string name="summary_navbar_timeout">Timeout time for Hidden Navbar Window</string>
     <string name="glow_times_title">Button glow animation</string>
-    <string name="glow_times_off">Off</string>
-    <string name="glow_times_superquick">Super quick</string>
-    <string name="glow_times_quick">Quick</string>
-    <string name="glow_times_normal">Normal</string>
-    <string name="size_42_dp_default">42 dp (default)</string>
-    <string name="size_36_dp">36 dp</string>
-    <string name="size_30_dp">30 dp</string>
-    <string name="size_24_dp">24 dp</string>
-    <string name="size_48_dp_default">48 dp (default)</string>
-    <string name="size_44_dp">44 dp</string>
-    <string name="size_40_dp">40 dp</string>
-    <string name="size_42_dp">42 dp</string>
-    <string name="statusbar">Statusbar</string>
-    <string name="top_of_navbar">Top of navbar</string>
-    <string name="bottom_of_navbar">Bottom of navbar</string>
-    <string name="regular">Regular</string>
-    <string name="center_mirrored">Center-mirrored</string>
-    <string name="size_0_dp">0 dp (off)</string>
-    <string name="size_1_dp">1 dp</string>
-    <string name="size_2_dp">2 dp</string>
-    <string name="size_3_dp">3 dp</string>
-    <string name="size_4_dp">4 dp</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Navigation Bar Widgets</string>
