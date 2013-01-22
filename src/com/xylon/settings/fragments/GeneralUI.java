@@ -1,21 +1,13 @@
 
 package com.xylon.settings.fragments;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.util.Random;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -53,6 +45,17 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.xylon.settings.R;
 import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.Utils;
@@ -61,6 +64,9 @@ import com.xylon.settings.util.Helpers;
 import com.xylon.settings.widgets.SeekBarPreference;
 
 public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+
+    private static final String TAG = "General User Interface";
+    private static final String XPOSED_SETTINGS = "xposed_settings";
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
@@ -114,9 +120,8 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         updateCustomLabelTextSummary();
 
         mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
-        mShowActionOverflow.setChecked((Settings.System.getInt(getActivity().
-                        getApplicationContext().getContentResolver(),
-                        Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1));
+        mShowActionOverflow.setChecked(Settings.System.getBoolean(cr,
+                        Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(), 
@@ -163,6 +168,9 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             mMembar.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0) == 1);
             }
+
+        // Dont display these preference if its not installed
+        removePreferenceIfPackageNotInstalled(findPreference(XPOSED_SETTINGS));
 
         setHasOptionsMenu(true);
     }
@@ -225,11 +233,11 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, checked ? true : false);
             return true;
         } else if (preference == mShowActionOverflow) {
-            boolean enabled = mShowActionOverflow.isChecked();
-            Settings.System.putInt(getContentResolver(), Settings.System.UI_FORCE_OVERFLOW_BUTTON,
-                    enabled ? 1 : 0);
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.UI_FORCE_OVERFLOW_BUTTON, checked ? true : false);
             // Show toast appropriately
-            if (enabled) {
+            if (checked) {
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
                         Toast.LENGTH_LONG).show();
             } else {
@@ -419,5 +427,23 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         }
         in.close();
         out.close();
+    }
+
+    private boolean removePreferenceIfPackageNotInstalled(Preference preference) {
+        String intentUri = ((PreferenceScreen) preference).getIntent().toUri(1);
+        Pattern pattern = Pattern.compile("component=([^/]+)/");
+        Matcher matcher = pattern.matcher(intentUri);
+
+        String packageName = matcher.find() ? matcher.group(1) : null;
+        if (packageName != null) {
+            try {
+                getPackageManager().getPackageInfo(packageName, 0);
+            } catch (NameNotFoundException e) {
+                Log.e(TAG, "package " + packageName + " not installed, hiding preference.");
+                getPreferenceScreen().removePreference(preference);
+                return true;
+            }
+        }
+        return false;
     }
 }

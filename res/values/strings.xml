@@ -422,4 +422,8 @@
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
+    <!-- Per App Dpi (XPOSED) -->
+    <string name="xposed_dpi_settings">Per-App Settings</string>
+    <string name="xposed_frameworks_settings">Modules Management</string>
+
 </resources>
