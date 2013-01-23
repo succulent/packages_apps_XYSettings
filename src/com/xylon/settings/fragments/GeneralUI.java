@@ -66,7 +66,9 @@ import com.xylon.settings.widgets.SeekBarPreference;
 public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "General User Interface";
-    private static final String XPOSED_SETTINGS = "xposed_settings";
+
+    private static final String FRAMEWORKS_SETTINGS = "frameworks_settings";
+    private static final String DPI_SETTINGS = "dpi_settings";
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
@@ -170,7 +172,8 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             }
 
         // Dont display these preference if its not installed
-        removePreferenceIfPackageNotInstalled(findPreference(XPOSED_SETTINGS));
+        removePreferenceIfPackageNotInstalled(findPreference(FRAMEWORKS_SETTINGS));
+        removePreferenceIfPackageNotInstalled(findPreference(DPI_SETTINGS));
 
         setHasOptionsMenu(true);
     }
