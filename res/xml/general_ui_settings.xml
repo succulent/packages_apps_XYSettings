@@ -82,8 +82,8 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="de.robv.android.xposed.mods.appsettings"
                     android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-        </PreferenceScreen>
+        </PreferenceScreen-->
 
-        </PreferenceCategory -->
+        </PreferenceCategory>
 
 </PreferenceScreen>
