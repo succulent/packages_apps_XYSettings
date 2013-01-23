@@ -68,7 +68,7 @@
             android:summary="@string/multipane_ui_summary"
             android:defaultValue="false" />
 
-        <PreferenceScreen
+        <!-- PreferenceScreen
             android:key="frameworks_settings"
             android:title="@string/xposed_frameworks_settings">
             <intent android:action="android.intent.action.MAIN"
@@ -84,6 +84,6 @@
                     android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
         </PreferenceScreen>
 
-        </PreferenceCategory>
+        </PreferenceCategory -->
 
 </PreferenceScreen>

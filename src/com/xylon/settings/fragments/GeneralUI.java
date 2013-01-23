@@ -172,8 +172,8 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             }
 
         // Dont display these preference if its not installed
-        removePreferenceIfPackageNotInstalled(findPreference(FRAMEWORKS_SETTINGS));
-        removePreferenceIfPackageNotInstalled(findPreference(DPI_SETTINGS));
+        // removePreferenceIfPackageNotInstalled(findPreference(FRAMEWORKS_SETTINGS));
+        // removePreferenceIfPackageNotInstalled(findPreference(DPI_SETTINGS));
 
         setHasOptionsMenu(true);
     }
