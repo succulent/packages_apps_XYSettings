@@ -130,11 +130,11 @@
 
     <!-- Statusbar | Signal -->
     <string name="signal_style">Signal text style</string>
-    <string name="signal_color_title">Signal color</string>
+    <string name="signal_color_title">Signal text color</string>
     <string name="hide_signal_title">Hide signal bars</string>
     <string name="hide_signal_summary">Updates when signal strength changes</string>
     <string name="wifi_signal_style">Wi-Fi Signal text style</string>
-    <string name="wifi_signal_color_title">Wi-Fi Signal color</string>
+    <string name="wifi_signal_color_title">Wi-Fi Signal text color</string>
     <string name="alt_signal_title">Alt signal layout</string>
     <string name="alt_signal_summary">Use alternate (GB style) signal cluster</string>
 
