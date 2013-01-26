@@ -167,6 +167,7 @@
     <string name="toggle_sync">Sync</string>
     <string name="toggle_torch">Torch</string>
     <string name="toggle_2g">2G</string>
+    <string name="toggle_3g">3G</string>
     <string name="toggle_usb_tether">USB Tether</string>
     <string name="toggle_vibrate">Vibrate</string>
     <string name="toggle_wifi_tether">Wifi Tether</string>
