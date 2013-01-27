@@ -99,15 +99,14 @@
     <string name="title_clock_shortclick">Clock short click actions</string>
 
     <!-- Battery style -->
-    <string name="battery_icon_title">Icon Style</string>
-    <string name="icon_only">Icon only</string>
-    <string name="text_only">Text only</string>
-    <string name="icon_w_text">Icon with text</string>
-    <string name="icon_w_center_text">Icon with centered text</string>
-    <string name="circlemod">CircleMOD</string>
-    <string name="circle_battery">CM Circle</string>
-    <string name="circle_battery_w_percent">CM Circle w/ percent</string>
-    <string name="circle_dotted_w_percent">CM Dotted w/ percent</string>
+    <string name="battery_icon_title">Battery Style</string>
+    <string name="icon_only">Icon (No Text)</string>
+    <string name="text_only">Text (No Icon)</string>
+    <string name="icon_w_text">Icon (Offset Text)</string>
+    <string name="icon_w_center_text">Icon (Center Text)</string>
+    <string name="circle_battery">Circle (No %)</string>
+    <string name="circle_battery_w_percent">Circle (With % No Dotted)</string>
+    <string name="circle_dotted_w_percent">Circle (With % + Dotted)</string>
     <string name="hide">Hide</string>
     <string name="circle_battery_color">Circle color</string>
     <string name="circle_battery_text_color">Circle text color</string>
