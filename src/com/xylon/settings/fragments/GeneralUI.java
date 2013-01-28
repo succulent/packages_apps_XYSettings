@@ -26,6 +26,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.MediaStore;
@@ -79,6 +80,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String SYSTEMUI_RECENTS_MEM_DISPLAY = "interface_recents_mem_display";
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
+    private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String PREF_USER_MODE_UI = "user_mode_ui";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
@@ -111,6 +113,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     ListPreference mUserModeUI;
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
+    CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     ListPreference mPieMode;
     ListPreference mPieSize;
     ListPreference mPieGravity;
@@ -173,6 +176,16 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mUserModeUI.setValue(Integer.toString(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.USER_UI_MODE, uiMode)));
         mUserModeUI.setOnPreferenceChangeListener(this);
+
+        mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
+        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
+
+        // hide option if device is already set to never wake up
+        if(!mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
+            ((PreferenceGroup) findPreference("misc")).removePreference(mWakeUpWhenPluggedOrUnplugged);
+        }
 
         mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
         mDualpane.setChecked(Settings.System.getBoolean(cr,
@@ -418,6 +431,11 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
+        } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
+                    ((CheckBoxPreference) preference).isChecked());
+            return true; 
         } else if (preference == mPieControls) {
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.PIE_CONTROLS,
