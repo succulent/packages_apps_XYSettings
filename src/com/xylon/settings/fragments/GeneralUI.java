@@ -9,6 +9,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -60,8 +61,9 @@ import com.xylon.settings.R;
 import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.Utils;
 import com.xylon.settings.util.Helpers;
-
 import com.xylon.settings.widgets.SeekBarPreference;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -80,6 +82,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_USER_MODE_UI = "user_mode_ui";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
+    private static final String PIE_CONTROLS = "pie_controls";
+    private static final String PIE_GRAVITY = "pie_gravity";
+    private static final String PIE_MODE = "pie_mode";
+    private static final String PIE_SIZE = "pie_size";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -100,6 +106,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
     SeekBarPreference mNavBarAlpha;
+    ListPreference mPieMode;
+    ListPreference mPieSize;
+    ListPreference mPieGravity;
+    CheckBoxPreference mPieControls;
 
     String mCustomLabelText = null;
 
@@ -107,6 +117,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     DensityChanger densityFragment;
 
     private int seekbarProgress;
+    private int mAllowedLocations;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -171,11 +182,41 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0) == 1);
             }
 
+        mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
+        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_CONTROLS, 0) == 1));
+
+        mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
+        int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_GRAVITY, 3);
+        mPieGravity.setValue(String.valueOf(pieGravity));
+        mPieGravity.setOnPreferenceChangeListener(this);
+
+        mPieMode = (ListPreference) prefSet.findPreference(PIE_MODE);
+        int pieMode = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_MODE, 2);
+        mPieMode.setValue(String.valueOf(pieMode));
+        mPieMode.setOnPreferenceChangeListener(this);
+
+        mPieSize = (ListPreference) prefSet.findPreference(PIE_SIZE);
+        String pieSize = Settings.System.getString(mContext.getContentResolver(),
+                Settings.System.PIE_SIZE);
+        mPieSize.setValue(pieSize != null && !pieSize.isEmpty() ? pieSize : "1");
+        mPieSize.setOnPreferenceChangeListener(this);
+
         // Dont display these preference if its not installed
         // removePreferenceIfPackageNotInstalled(findPreference(FRAMEWORKS_SETTINGS));
         // removePreferenceIfPackageNotInstalled(findPreference(DPI_SETTINGS));
 
         setHasOptionsMenu(true);
+        checkControls();
+    }
+
+    private void checkControls() {
+        boolean pieCheck = mPieControls.isChecked();
+        mPieGravity.setEnabled(pieCheck);
+        mPieMode.setEnabled(pieCheck);
+        mPieSize.setEnabled(pieCheck);
     }
 
     @Override
@@ -349,6 +390,11 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.HIDE_EXTRAS_SYSTEM_BAR,
                     ((CheckBoxPreference) preference).isChecked());
             return true;
+        } else if (preference == mPieControls) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.PIE_CONTROLS,
+                    mPieControls.isChecked() ? 1 : 0);
+            checkControls();
         }
         
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -366,6 +412,21 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             return Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_ALPHA,
                     val);
+        } else if (preference == mPieMode) {
+            int pieMode = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_MODE, pieMode);
+            return true;
+        } else if (preference == mPieSize) {
+            float pieSize = Float.valueOf((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_SIZE, pieSize);
+            return true;
+        } else if (preference == mPieGravity) {
+            int pieGravity = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_GRAVITY, pieGravity);
+            return true;
         }
         return false;
     }
