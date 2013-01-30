@@ -56,9 +56,7 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class PieColor extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String PIE_COLOR_STYLE = "pie_color_style";
-//    private static final String PIE_JUICE = "pie_juice";
-//    private static final String PIE_JUICE_LOW = "pie_juice_low";
-//    private static final String PIE_JUICE_CRITICAL = "pie_juice_critical";
+    private static final String PIE_JUICE = "pie_juice";
     private static final String PIE_BACKGROUND = "pie_background";
     private static final String PIE_SELECT = "pie_select";
     private static final String PIE_OUTLINES = "pie_outlines";
@@ -66,18 +64,18 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
     private static final String PIE_STATUS = "pie_status";
     private static final String PIE_CHEVRON_LEFT = "pie_chevron_left";
     private static final String PIE_CHEVRON_RIGHT = "pie_chevron_right";
+    private static final String PIE_BUTTON_COLOR = "pie_button_color";
 
     ListPreference mColorStyle;
     ColorPickerPreference mPieBg;
-//    ColorPickerPreference mJuice;
-//    ColorPickerPreference mJuiceLow;
-//    ColorPickerPreference mJuiceCritical;
+    ColorPickerPreference mJuice;
     ColorPickerPreference mSelect;
     ColorPickerPreference mOutlines;
     ColorPickerPreference mStatusClock;
     ColorPickerPreference mStatus;
     ColorPickerPreference mChevronLeft;
     ColorPickerPreference mChevronRight;
+    ColorPickerPreference mBtnColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,14 +89,8 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
         mPieBg = (ColorPickerPreference) findPreference(PIE_BACKGROUND);
         mPieBg.setOnPreferenceChangeListener(this);
 
-//        mJuice = (ColorPickerPreference) findPreference(PIE_JUICE);
-//        mJuice.setOnPreferenceChangeListener(this);
-
-//        mJuiceLow = (ColorPickerPreference) findPreference(PIE_JUICE_LOW);
-//        mJuiceLow.setOnPreferenceChangeListener(this);
-
-//        mJuiceCritical = (ColorPickerPreference) findPreference(PIE_JUICE_CRITICAL);
-//        mJuiceCritical.setOnPreferenceChangeListener(this);
+        mJuice = (ColorPickerPreference) findPreference(PIE_JUICE);
+        mJuice.setOnPreferenceChangeListener(this);
 
         mSelect = (ColorPickerPreference) findPreference(PIE_SELECT);
         mSelect.setOnPreferenceChangeListener(this);
@@ -118,6 +110,9 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
         mChevronRight = (ColorPickerPreference) findPreference(PIE_CHEVRON_RIGHT);
         mChevronRight.setOnPreferenceChangeListener(this);
 
+        mBtnColor = (ColorPickerPreference) findPreference(PIE_BUTTON_COLOR);
+        mBtnColor.setOnPreferenceChangeListener(this);
+
         updateVisibility();
     }
 
@@ -125,6 +120,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
         int visible = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.PIE_COLOR_STYLE, 1);
         if (visible == 1) {
+            mJuice.setEnabled(false);
             mPieBg.setEnabled(false);
             mSelect.setEnabled(false);
             mOutlines.setEnabled(false);
@@ -132,7 +128,9 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
             mStatus.setEnabled(false);
             mChevronLeft.setEnabled(false);
             mChevronRight.setEnabled(false);
+            mBtnColor.setEnabled(false);
         } else {
+            mJuice.setEnabled(true);
             mPieBg.setEnabled(true);
             mSelect.setEnabled(true);
             mOutlines.setEnabled(true);
@@ -140,6 +138,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
             mStatus.setEnabled(true);
             mChevronLeft.setEnabled(true);
             mChevronRight.setEnabled(true);
+            mBtnColor.setEnabled(true);
         }
     }
 
@@ -210,6 +209,22 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PIE_CHEVRON_RIGHT, intHex);
+            return true;
+        } else if (preference == mBtnColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_BUTTON_COLOR, intHex);
+            return true;
+        } else if (preference == mJuice) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_JUICE, intHex);
             return true;
         }
         return false;

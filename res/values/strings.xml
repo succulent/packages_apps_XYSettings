@@ -129,6 +129,7 @@
     <string name="pie_status_title">Status color</string>
     <string name="pie_chevron_left_title">Left chevron color</string>
     <string name="pie_chevron_right_title">Right chevron color</string>
+    <string name="pie_juice_title">Battery juice color</string>
 
     <!-- Battery style -->
     <string name="battery_icon_title">Battery Style</string>
