@@ -86,8 +86,8 @@
     <string name="status_bar_color_title">Status bar color</string>
     <string name="clock_color_title">Clock color</string>
     <string name="clock_color_style_title">Clock color style</string>
-    <string name="clock_color">Color of your choice</string>
-    <string name="stock_color">Stock Clock color (default)</string>
+    <string name="all_color">Colors Everywhere!</string>
+    <string name="stock_color">Default Colors (Stock/Theme)</string>
     <string name="alarm">Alarms</string>
     <string name="clock_options">Clock Options</string>
     <string name="nothing">Nothing</string>
@@ -119,6 +119,16 @@
     <string name="pie_size_default">@string/pie_mode_default</string>
     <string name="pie_size_large">Large</string>
     <string name="pie_size_gigantic">Gigantic</string>
+
+    <string name="pie_color_title">Pie color settings</string>
+    <string name="pie_color_style_title">Pie color style</string>
+    <string name="pie_background_title">Background color</string>
+    <string name="pie_select_title">Selection color</string>
+    <string name="pie_outlines_title">Outlines color</string>
+    <string name="pie_status_clock_title">Clock color</string>
+    <string name="pie_status_title">Status color</string>
+    <string name="pie_chevron_left_title">Left chevron color</string>
+    <string name="pie_chevron_right_title">Right chevron color</string>
 
     <!-- Battery style -->
     <string name="battery_icon_title">Battery Style</string>

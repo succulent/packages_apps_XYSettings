@@ -120,4 +120,9 @@
             android:entries="@array/entries_pie_mode"
             android:entryValues="@array/values_pie_mode" />
 
+        <PreferenceScreen
+            android:key="pie_color"
+            android:title="@string/pie_color_title"
+            android:fragment="com.xylon.settings.fragments.PieColor" />
+
 </PreferenceScreen>
