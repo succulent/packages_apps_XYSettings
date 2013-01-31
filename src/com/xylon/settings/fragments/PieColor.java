@@ -151,8 +151,6 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PIE_COLOR_STYLE, value);
             preference.setSummary(mColorStyle.getEntries()[index]);
             updateVisibility();
-            if (value == 1)
-                Helpers.restartSystemUI();
             return true;
         } else if (preference == mPieBg) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
