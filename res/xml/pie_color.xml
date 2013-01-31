@@ -49,7 +49,7 @@
 
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
 		android:key="pie_chevron_right"
-		android:title="@string/pie_chevron_left_title"
+		android:title="@string/pie_chevron_right_title"
 		android:defaultValue="#33b5e5" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
