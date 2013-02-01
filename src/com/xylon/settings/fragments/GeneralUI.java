@@ -86,6 +86,9 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PIE_GRAVITY = "pie_gravity";
     private static final String PIE_MODE = "pie_mode";
     private static final String PIE_SIZE = "pie_size";
+    private static final String PIE_TRIGGER = "pie_trigger";
+    private static final String PIE_GAP = "pie_gap";
+    private static final String PIE_NOTIFICATIONS = "pie_notifications";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -109,7 +112,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     ListPreference mPieMode;
     ListPreference mPieSize;
     ListPreference mPieGravity;
+    ListPreference mPieTrigger;
+    ListPreference mPieGap;
     CheckBoxPreference mPieControls;
+    CheckBoxPreference mPieNotifi;
 
     String mCustomLabelText = null;
 
@@ -204,6 +210,22 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mPieSize.setValue(pieSize != null && !pieSize.isEmpty() ? pieSize : "1");
         mPieSize.setOnPreferenceChangeListener(this);
 
+        mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
+        String pieTrigger = Settings.System.getString(mContext.getContentResolver(),
+                Settings.System.PIE_TRIGGER);
+        mPieTrigger.setValue(pieTrigger != null && !pieTrigger.isEmpty() ? pieTrigger : "1");
+        mPieTrigger.setOnPreferenceChangeListener(this);
+
+        mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
+        int pieGap = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_GAP, 1);
+        mPieGap.setValue(String.valueOf(pieGap));
+        mPieGap.setOnPreferenceChangeListener(this);
+
+        mPieNotifi = (CheckBoxPreference) prefSet.findPreference(PIE_NOTIFICATIONS);
+        mPieNotifi.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.PIE_NOTIFICATIONS, 0) == 1));
+
         // Dont display these preference if its not installed
         // removePreferenceIfPackageNotInstalled(findPreference(FRAMEWORKS_SETTINGS));
         // removePreferenceIfPackageNotInstalled(findPreference(DPI_SETTINGS));
@@ -217,6 +239,9 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mPieGravity.setEnabled(pieCheck);
         mPieMode.setEnabled(pieCheck);
         mPieSize.setEnabled(pieCheck);
+        mPieTrigger.setEnabled(pieCheck);
+        mPieGap.setEnabled(pieCheck);
+        mPieNotifi.setEnabled(pieCheck);
     }
 
     @Override
@@ -395,9 +420,14 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.PIE_CONTROLS,
                     mPieControls.isChecked() ? 1 : 0);
             checkControls();
+            Helpers.restartSystemUI();
+        } else if (preference == mPieNotifi) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.PIE_NOTIFICATIONS,
+                    mPieNotifi.isChecked() ? 1 : 0);
         }
-        
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+
     }
 
     @Override
@@ -426,6 +456,16 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             int pieGravity = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PIE_GRAVITY, pieGravity);
+            return true;
+        } else if (preference == mPieGap) {
+            int pieGap = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.PIE_GAP, pieGap);
+            return true;
+        } else if (preference == mPieTrigger) {
+            float pierigger = Float.valueOf((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.PIE_TRIGGER, pierigger);
             return true;
         }
         return false;
