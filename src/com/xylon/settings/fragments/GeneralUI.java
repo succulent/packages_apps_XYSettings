@@ -89,6 +89,9 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PIE_TRIGGER = "pie_trigger";
     private static final String PIE_GAP = "pie_gap";
     private static final String PIE_NOTIFICATIONS = "pie_notifications";
+    private static final String PIE_MENU = "pie_menu";
+    private static final String PIE_SEARCH = "pie_search";
+
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -116,6 +119,8 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     ListPreference mPieGap;
     CheckBoxPreference mPieControls;
     CheckBoxPreference mPieNotifi;
+    CheckBoxPreference mPieMenu;
+    CheckBoxPreference mPieSearch;
 
     String mCustomLabelText = null;
 
@@ -205,15 +210,20 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mPieMode.setOnPreferenceChangeListener(this);
 
         mPieSize = (ListPreference) prefSet.findPreference(PIE_SIZE);
-        String pieSize = Settings.System.getString(mContext.getContentResolver(),
-                Settings.System.PIE_SIZE);
-        mPieSize.setValue(pieSize != null && !pieSize.isEmpty() ? pieSize : "1");
-        mPieSize.setOnPreferenceChangeListener(this);
-
         mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
-        String pieTrigger = Settings.System.getString(mContext.getContentResolver(),
-                Settings.System.PIE_TRIGGER);
-        mPieTrigger.setValue(pieTrigger != null && !pieTrigger.isEmpty() ? pieTrigger : "1");
+        try {
+            float pieSize = Settings.System.getFloat(mContext.getContentResolver(),
+                    Settings.System.PIE_SIZE);
+            mPieSize.setValue(String.valueOf(pieSize));
+  
+            float pieTrigger = Settings.System.getFloat(mContext.getContentResolver(),
+                    Settings.System.PIE_TRIGGER);
+            mPieTrigger.setValue(String.valueOf(pieTrigger));
+        } catch(Settings.SettingNotFoundException ex) {
+            // So what
+        }
+
+        mPieSize.setOnPreferenceChangeListener(this);
         mPieTrigger.setOnPreferenceChangeListener(this);
 
         mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
@@ -223,8 +233,16 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mPieGap.setOnPreferenceChangeListener(this);
 
         mPieNotifi = (CheckBoxPreference) prefSet.findPreference(PIE_NOTIFICATIONS);
-        mPieNotifi.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_NOTIFICATIONS, 0) == 1));
+        mPieNotifi.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.PIE_NOTIFICATIONS, 0) == 1);
+
+        mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
+        mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_MENU, 0) == 1);
+
+        mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
+        mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_SEARCH, 1) == 1);
 
         // Dont display these preference if its not installed
         // removePreferenceIfPackageNotInstalled(findPreference(FRAMEWORKS_SETTINGS));
@@ -425,6 +443,12 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.PIE_NOTIFICATIONS,
                     mPieNotifi.isChecked() ? 1 : 0);
+        } else if (preference == mPieMenu) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
+        } else if (preference == mPieSearch) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_SEARCH, mPieSearch.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
@@ -463,9 +487,9 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.PIE_GAP, pieGap);
             return true;
         } else if (preference == mPieTrigger) {
-            float pierigger = Float.valueOf((String) newValue);
+            float pieTrigger = Float.valueOf((String) newValue);
             Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.PIE_TRIGGER, pierigger);
+                    Settings.System.PIE_TRIGGER, pieTrigger);
             return true;
         }
         return false;

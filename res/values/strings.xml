@@ -100,11 +100,11 @@
 
     <!-- Pie controls -->
     <string name="pie_controls_title">Pie controls</string>
-    <string name="pie_controls_summary">Allows navigation and status report on expanded desktop mode</string>
+    <string name="pie_controls_summary">@null</string>
 
     <!-- The Gravity -->
     <string name="pie_gravity_title">Pie gravity</string>
-    <string name="pie_gravity_summary">Select the location where the pie will be placed at</string>
+    <string name="pie_gravity_summary">Select the location where Pie will be placed at</string>
     <string name="pie_gravity_top">Top</string>
     <string name="pie_gravity_bottom">Bottom</string>
     <string name="pie_gravity_right">Right</string>
@@ -127,23 +127,29 @@
     <string name="pie_size_gigantic">Gigantic</string>
 
     <!-- The Gap -->
-    <string name="pie_gap_title">Pie gap</string>
-    <string name="pie_gap_summary">Adjust the gap in between pie elements</string>
-    <string name="pie_gap_closed">Closed</string>
+    <string name="pie_gap_title">Item gap</string>
+    <string name="pie_gap_summary">Adjust the gap that separates pie elements</string>
+    <string name="pie_gap_none">None</string>
     <string name="pie_gap_small">Small (default)</string>
     <string name="pie_gap_big">Big</string>
     <string name="pie_gap_huge">Huge</string>
 
     <!-- The trigger -->
-    <string name="pie_trigger_title">Trigger size</string>
+    <string name="pie_trigger_title">Trigger area</string>
     <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
     <string name="pie_trigger_small">@string/pie_gap_small</string>
     <string name="pie_trigger_big">@string/pie_gap_big</string>
     <string name="pie_trigger_huge">@string/pie_gap_huge</string>
 
     <!-- The Loner -->
-    <string name="pie_notifications_title">Enable Chevron Targets</string>
-    <string name="pie_notifications_summary">Enabling, will let the Notification panels and QuickSettings active when swipe.</string>
+    <string name="pie_notifications_title">Chevron Targets</string>
+    <string name="pie_notifications_summary">Enable this will let the Notification panels and QuickSettings be active when swiping it up.</string>
+
+    <string name="pie_menu_title">Persistent menu button</string>
+    <string name="pie_menu_summary">Always show menu button even when it\'s not necessary</string>
+
+    <string name="pie_search_title">Search button</string>
+    <string name="pie_search_summary">Enable search button on pie controls</string>
 
     <!-- The Colors -->
     <string name="pie_color_title">Pie color settings</string>
