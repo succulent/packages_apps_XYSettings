@@ -23,10 +23,11 @@ import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
@@ -61,7 +62,6 @@ import com.xylon.settings.R;
 import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.Utils;
 import com.xylon.settings.util.Helpers;
-import com.xylon.settings.widgets.SeekBarPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -111,7 +111,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     ListPreference mUserModeUI;
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
-    SeekBarPreference mNavBarAlpha;
     ListPreference mPieMode;
     ListPreference mPieSize;
     ListPreference mPieGravity;
@@ -158,9 +157,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
-
-        mNavBarAlpha = (SeekBarPreference) findPreference("navigation_bar_alpha");
-        mNavBarAlpha.setOnPreferenceChangeListener(this);
 
         mLcdDensity = findPreference("lcd_density_setup");
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
@@ -260,17 +256,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mPieTrigger.setEnabled(pieCheck);
         mPieGap.setEnabled(pieCheck);
         mPieNotifi.setEnabled(pieCheck);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if(mNavBarAlpha != null) {
-            final float defaultNavAlpha = Settings.System.getFloat(getActivity()
-                    .getContentResolver(), Settings.System.NAVIGATION_BAR_ALPHA,
-                    0.8f);
-            mNavBarAlpha.setInitValue(Math.round(defaultNavAlpha * 100));
-        }
     }
 
     private void updateCustomLabelTextSummary() {
@@ -461,11 +446,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.USER_UI_MODE, Integer.parseInt((String) newValue));
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mNavBarAlpha) {
-            float val = (float) (Integer.parseInt((String)newValue) * 0.01);
-            return Settings.System.putFloat(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_ALPHA,
-                    val);
         } else if (preference == mPieMode) {
             int pieMode = Integer.valueOf((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
