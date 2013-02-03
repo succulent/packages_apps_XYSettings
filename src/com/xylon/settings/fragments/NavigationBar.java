@@ -90,6 +90,8 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     private static final String PREF_MENU_ARROWS = "navigation_bar_menu_arrow_keys";
     private static final String NAVBAR_HIDE_ENABLE = "navbar_hide_enable";
     private static final String NAVBAR_HIDE_TIMEOUT = "navbar_hide_timeout";
+    private static final String NAVBAR_HIDE_VISIBLE = "navbar_hide_visible";
+    private static final String DRAG_HANDLE_WIDTH = "drag_handle_width";
 
 
     public static final int REQUEST_PICK_CUSTOM_ICON = 200;
@@ -122,6 +124,8 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     Preference mConfigureWidgets;
     CheckBoxPreference mNavBarHideEnable;
     ListPreference mNavBarHideTimeout;
+    CheckBoxPreference mNavBarHideVisible;
+    SeekBarPreference mDragHandleWidth;
 
     private File customnavImage;
     private File customnavTemp;
@@ -197,6 +201,16 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         mNavBarHideEnable = (CheckBoxPreference) findPreference(NAVBAR_HIDE_ENABLE);
         mNavBarHideEnable.setChecked(Settings.System.getBoolean(getContentResolver(),
                 Settings.System.NAV_HIDE_ENABLE, false));
+
+        mNavBarHideVisible = (CheckBoxPreference) findPreference(NAVBAR_HIDE_VISIBLE);
+        mNavBarHideVisible.setChecked(Settings.System.getBoolean(getContentResolver(),
+                Settings.System.DRAG_HANDLE_VISIBLE, true));
+
+        final int defaultDragWidth = Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.DRAG_HANDLE_WEIGHT, 5);
+        mDragHandleWidth = (SeekBarPreference) findPreference(DRAG_HANDLE_WIDTH);
+        mDragHandleWidth.setInitValue((int) (defaultDragWidth));
+        mDragHandleWidth.setOnPreferenceChangeListener(this);
 
         mNavBarHideTimeout = (ListPreference) findPreference(NAVBAR_HIDE_TIMEOUT);
         mNavBarHideTimeout.setOnPreferenceChangeListener(this);
@@ -344,6 +358,11 @@ public class NavigationBar extends SettingsPreferenceFragment implements
             Helpers.restartSystemUI();
             refreshSettings();
             return true;
+        } else if (preference == mNavBarHideVisible) {
+
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.DRAG_HANDLE_VISIBLE,
+                    ((CheckBoxPreference) preference).isChecked());
         } else if (preference == mEnableNavringLong) {
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
@@ -447,6 +466,19 @@ public class NavigationBar extends SettingsPreferenceFragment implements
             float val = Float.parseFloat((String) newValue);
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, val * 0.01f);
+            return true;
+        /* } else if (preference == mDragHandleWidth) {
+            float val = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                     Settings.System.DRAG_HANDLE_WEIGHT, val);
+            refreshSettings();
+            return true; */
+        } else if (preference == mDragHandleWidth) {
+            String newVal = (String) newValue;
+            int dp = Integer.parseInt(newVal);
+            //int height = mapChosenDpToPixels(dp);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DRAG_HANDLE_WEIGHT, dp);
             return true;
         } else if (preference == mWidthPort) {
             float val = Float.parseFloat((String) newValue);
@@ -794,8 +826,12 @@ public class NavigationBar extends SettingsPreferenceFragment implements
                 .getDisplayMetrics());
 
         Bitmap d = ((BitmapDrawable) image).getBitmap();
-        Bitmap bitmapOrig = Bitmap.createScaledBitmap(d, px, px, false);
-        return new BitmapDrawable(mContext.getResources(), bitmapOrig);
+        if (d == null) {
+            return getResources().getDrawable(R.drawable.ic_sysbar_null);
+        } else {
+            Bitmap bitmapOrig = Bitmap.createScaledBitmap(d, px, px, false);
+            return new BitmapDrawable(mContext.getResources(), bitmapOrig);
+        }
     }
 
     private Drawable getNavbarIconImage(int index, boolean landscape) {
