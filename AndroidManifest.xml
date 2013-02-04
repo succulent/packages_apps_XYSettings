@@ -116,6 +116,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".fragments.Pie"
+            android:label="SHITIT'zPIE! :O" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+              </intent-filter>
+        </activity>
+        <activity
             android:name=".fragments.PieColor"
             android:label="PieColorEMERGERD" >
             <intent-filter>

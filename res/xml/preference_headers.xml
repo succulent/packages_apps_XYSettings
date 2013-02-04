@@ -23,6 +23,13 @@
         android:icon="@drawable/ic_xy_settings_navigation_bar"
         android:summary="@string/header_summary_navigation_bar" />
 
+     <header
+        android:id="@+id/pie"
+        android:fragment="com.xylon.settings.fragments.Pie"
+        android:title="@string/pie"
+        android:icon="@drawable/ic_xy_settings_pie"
+        android:summary="@string/header_summary_pie" />
+
   <header android:title="@string/header_statusbar" />
 
      <header

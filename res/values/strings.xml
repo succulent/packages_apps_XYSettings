@@ -15,6 +15,7 @@
     <string name="others">Others</string>
     <string name="navigation_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
+    <string name="pie">PIE™</string>
     <string name="tools">Tools</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
@@ -25,6 +26,7 @@
     <string name="title_statusbar">Statusbar</string>
     <string name="title_navbar">Navigation Bar</string>
     <string name="title_power_menu">Power Menu</string>
+    <string name="title_pie">PIE™</string>
     <string name="title_navring">Navigation Ring</string>
     <string name="title_clipboard_share">Share to Clipboard</string>
 
@@ -35,6 +37,7 @@
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_signal">@null</string>
     <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_pie">@null</string>
     <string name="header_summary_statusbar">Battery and colors...</string>
 
     <!-- Menu Strings -->
@@ -99,8 +102,9 @@
     <string name="title_clock_shortclick">Clock short click actions</string>
 
     <!-- Pie controls -->
-    <string name="pie_controls_title">Pie controls</string>
+    <string name="pie_controls_title">Controls</string>
     <string name="pie_controls_summary">@null</string>
+    <string name="pie_targets_title">Targets</string>
 
     <!-- The Gravity -->
     <string name="pie_gravity_title">Pie gravity</string>
@@ -152,8 +156,8 @@
     <string name="pie_search_summary">Enable search button on pie controls</string>
 
     <!-- The Colors -->
-    <string name="pie_color_title">Pie color settings</string>
-    <string name="pie_color_style_title">Pie color style</string>
+    <string name="pie_color_title">Color Settings</string>
+    <string name="pie_color_style_title">Enable custom colors</string>
     <string name="pie_background_title">Background color</string>
     <string name="pie_select_title">Selection color</string>
     <string name="pie_outlines_title">Outlines color</string>
@@ -505,9 +509,5 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
-
-    <!-- Per App Dpi (XPOSED) -->
-    <string name="xposed_dpi_settings">Per-App Settings</string>
-    <string name="xposed_frameworks_settings">Modules Management</string>
 
 </resources>
