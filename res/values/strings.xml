@@ -68,10 +68,16 @@
     <string name="ics_color">ICS</string>
 
     <!-- Power Menu -->
-    <string name="title_show_screenshot">Show screenshot</string>
-    <string name="title_show_airplane_toggle">Show airplane toggle</string>
-    <string name="power_menu_expanded_desktop">Show expanded desktop</string>
-    <string name="title_show_navbar_hide">Show navigation bar toggle</string>
+    <string name="title_show_screenshot">Screenshot</string>
+    <string name="title_show_airplane_toggle">Airplane mode</string>
+    <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="summary_expanded_desktop">%1$s</string>
+    <string name="expanded_desktop_summary_status_bar">With status bar</string>
+    <string name="expanded_desktop_summary_no_status_bar">Without status bar</string>
+    <string name="expanded_desktop_disabled">Off</string>
+    <string name="expanded_desktop_status_bar">With status bar</string>
+    <string name="expanded_desktop_no_status_bar">Without status bar</string>
+    <string name="title_show_navbar_hide">Navigation bar menu</string>
 
     <!-- Status Bar Headers -->
     <string name="status_bar_clock_header">Clock</string>
@@ -146,9 +152,6 @@
     <string name="pie_trigger_huge">@string/pie_gap_huge</string>
 
     <!-- The Loner -->
-    <string name="pie_notifications_title">Chevron Targets</string>
-    <string name="pie_notifications_summary">Enable this will let the Notification panels and QuickSettings be active when swiping it up.</string>
-
     <string name="pie_menu_title">Persistent menu button</string>
     <string name="pie_menu_summary">Always show menu button even when it\'s not necessary</string>
 

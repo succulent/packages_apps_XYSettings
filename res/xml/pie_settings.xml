@@ -10,12 +10,6 @@
         android:key="toolbar_pie_controls"
         android:title="@string/pie_controls_title" >
 
-        <CheckBoxPreference
-            android:key="pie_controls"
-            android:title="@string/pie_controls_title"
-            android:summary="@string/pie_controls_summary"
-            android:defaultValue="false" />
-
         <ListPreference
             android:key="pie_trigger"
             android:dialogTitle="@string/pie_trigger_title"
@@ -55,12 +49,6 @@
             android:summary="@string/pie_gap_summary"
             android:entries="@array/entries_pie_gap"
             android:entryValues="@array/values_pie_gap" />
-
-        <CheckBoxPreference
-            android:key="pie_notifications"
-            android:title="@string/pie_notifications_title"
-            android:summary="@string/pie_notifications_summary"
-            android:defaultValue="false" />
 
     </PreferenceCategory>
 

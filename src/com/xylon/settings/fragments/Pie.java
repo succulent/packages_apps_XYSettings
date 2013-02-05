@@ -70,13 +70,11 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
     private static final String TAG = "Paranoid Android PIE";
 
-    private static final String PIE_CONTROLS = "pie_controls";
     private static final String PIE_GRAVITY = "pie_gravity";
     private static final String PIE_MODE = "pie_mode";
     private static final String PIE_SIZE = "pie_size";
     private static final String PIE_TRIGGER = "pie_trigger";
     private static final String PIE_GAP = "pie_gap";
-    private static final String PIE_NOTIFICATIONS = "pie_notifications";
     private static final String PIE_MENU = "pie_menu";
     private static final String PIE_SEARCH = "pie_search";
 
@@ -85,8 +83,6 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     ListPreference mPieGravity;
     ListPreference mPieTrigger;
     ListPreference mPieGap;
-    CheckBoxPreference mPieControls;
-    CheckBoxPreference mPieNotifi;
     CheckBoxPreference mPieMenu;
     CheckBoxPreference mPieSearch;
 
@@ -98,10 +94,6 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         addPreferencesFromResource(R.xml.pie_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
-        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_CONTROLS, 0) == 1));
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
@@ -138,10 +130,6 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         mPieGap.setValue(String.valueOf(pieGap));
         mPieGap.setOnPreferenceChangeListener(this);
 
-        mPieNotifi = (CheckBoxPreference) prefSet.findPreference(PIE_NOTIFICATIONS);
-        mPieNotifi.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.PIE_NOTIFICATIONS, 0) == 1);
-
         mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
         mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_MENU, 0) == 1);
@@ -150,34 +138,11 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_SEARCH, 1) == 1);
 
-        checkControls();
-    }
-
-    private void checkControls() {
-        boolean pieCheck = mPieControls.isChecked();
-        mPieGravity.setEnabled(pieCheck);
-        mPieMode.setEnabled(pieCheck);
-        mPieSize.setEnabled(pieCheck);
-        mPieTrigger.setEnabled(pieCheck);
-        mPieGap.setEnabled(pieCheck);
-        mPieNotifi.setEnabled(pieCheck);
-        mPieMenu.setEnabled(pieCheck);
-        mPieSearch.setEnabled(pieCheck);
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mPieControls) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.PIE_CONTROLS,
-                    mPieControls.isChecked() ? 1 : 0);
-            checkControls();
-            Helpers.restartSystemUI();
-        } else if (preference == mPieNotifi) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.PIE_NOTIFICATIONS,
-                    mPieNotifi.isChecked() ? 1 : 0);
-        } else if (preference == mPieMenu) {
+        if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
         } else if (preference == mPieSearch) {
