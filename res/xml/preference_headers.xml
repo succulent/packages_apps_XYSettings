@@ -1,6 +1,7 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
 
-  <header android:title="@string/user_interface" />
+   <header
+        android:title="@string/user_interface" />
 
      <header
         android:id="@+id/general_ui"
@@ -30,7 +31,8 @@
         android:icon="@drawable/ic_xy_settings_pie"
         android:summary="@string/header_summary_pie" />
 
-  <header android:title="@string/header_statusbar" />
+   <header
+     android:title="@string/header_statusbar" />
 
      <header
         android:id="@+id/statusbar_clock"
@@ -59,5 +61,15 @@
         android:title="@string/others"
         android:icon="@drawable/ic_xy_settings_statusbar"
         android:summary="@string/header_summary_statusbar" />
+
+   <header
+        android:title="@string/tools" />
+
+    <header
+        android:id="@+id/led"
+        android:fragment="com.xylon.settings.fragments.LEDControl"
+        android:title="@string/led_options"
+        android:icon="@drawable/ic_xy_settings_led"
+        android:summary="@string/header_summary_led" />
 
 </preference-headers>

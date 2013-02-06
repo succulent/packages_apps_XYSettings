@@ -72,6 +72,8 @@ public class CreateShortcut extends LauncherActivity {
             return R.drawable.ic_xy_settings_statusbar;
         else if (c.equals("PIE"))
             return R.drawable.ic_xy_settings_pie;
+        else if (c.equals("LED"))
+            return R.drawable.ic_xy_settings_led;
         else
             return R.mipmap.ic_launcher;
     }

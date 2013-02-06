@@ -117,7 +117,7 @@
         </activity>
         <activity
             android:name=".fragments.Pie"
-            android:label="SHITIT'zPIE! :O" >
+            android:label="@string/title_pie" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -126,12 +126,21 @@
         </activity>
         <activity
             android:name=".fragments.PieColor"
-            android:label="PieColorEMERGERD" >
+            android:label="ColorPIE" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="com.xylon.settings.SHORTCUT" />
               </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.LEDControl"
+            android:label="@string/title_led_control" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
         </activity>
         <activity
  	    android:name=".ShareToClipboard"

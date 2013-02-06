@@ -15,6 +15,7 @@
     <string name="others">Others</string>
     <string name="navigation_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
+    <string name="led_options">LED</string>
     <string name="pie">PIE™</string>
     <string name="tools">Tools</string>
 
@@ -26,6 +27,7 @@
     <string name="title_statusbar">Statusbar</string>
     <string name="title_navbar">Navigation Bar</string>
     <string name="title_power_menu">Power Menu</string>
+    <string name="title_led_control">LED Control</string>
     <string name="title_pie">PIE™</string>
     <string name="title_navring">Navigation Ring</string>
     <string name="title_clipboard_share">Share to Clipboard</string>
@@ -37,6 +39,7 @@
     <string name="header_summary_clock">@null</string>
     <string name="header_summary_signal">@null</string>
     <string name="header_summary_toggles">@null</string>
+    <string name="header_summary_led">@null</string>
     <string name="header_summary_pie">@null</string>
     <string name="header_summary_statusbar">Battery and colors...</string>
 
@@ -157,6 +160,9 @@
 
     <string name="pie_search_title">Search button</string>
     <string name="pie_search_summary">Enable search button on pie controls</string>
+
+    <string name="pie_lastapp_title">Last App button</string>
+    <string name="pie_lastapp_summary">Enable last app button on pie controls</string>
 
     <!-- The Colors -->
     <string name="pie_color_title">Color Settings</string>
@@ -512,5 +518,56 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
+
+    <!-- LED -->
+    <string name="led_on">LED On</string>
+    <string name="led_time_on">Time Light Is On</string>
+    <string name="led_off">LED Off</string>
+    <string name="led_time_off">Time Light Is Off</string>
+    <string name="led_time_seconds">" seconds"</string>
+    <string name="led_color_click">Click on the LED to change the color</string>
+    <string name="title_led_screen_on">LED flash while screen ON</string>
+    <string name="led_custom_app">Selected App</string>
+    <string name="led_custom_default">Default</string>
+    <string name="led_change_app">Change</string>
+    <string name="led_delete_app">Delete</string>
+    <string name="led_keep_app">Keep</string>
+    <string name="led_custom_title">Custom LED Apps</string>
+    <string name="led_custom_message">"Would you like to change the app: "</string>
+    <string name="led_edit_button">-</string>
+    <string name="led_test_notification">Test LED</string>
+    <string name="led_test_notification_message_now">"Now testing LED for: "</string>
+    <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup till you're done viewing the LED color."</string>
+    <string name="led_test_ok">OK</string>
+    <string name="title_charging_led_on">Enable LED while charging (needs reboot)</string>
+    <string name="led_change_brightness">Change brightness</string>
+    <string name="led_brightness_default">Default brightness: 31</string>
+
+    <!-- LED Values -->
+    <string name="time_0_seconds_off">Off</string>
+    <string name="time_0_2_seconds">.2 seconds</string>
+    <string name="time_0_5_seconds">.5 seconds</string>
+    <string name="time_1_second">1 second</string>
+    <string name="time_1_5_seconds">1.5 seconds</string>
+    <string name="time_2_seconds">2 seconds</string>
+    <string name="time_2_5_seconds">2.5 seconds</string>
+    <string name="time_3_seconds">3 seconds</string>
+    <string name="time_3_5_seconds">3.5 seconds</string>
+    <string name="time_4_seconds">4 seconds</string>
+    <string name="time_4_5_seconds">4.5 seconds</string>
+    <string name="time_5_seconds">5 seconds</string>
+    <string name="time_5_5_seconds">5.5 seconds</string>
+    <string name="time_6_seconds">6 seconds</string>
+    <string name="time_7_seconds">7 seconds</string>
+    <string name="time_8_seconds">8 seconds</string>
+    <string name="time_9_seconds">9 seconds</string>
+    <string name="time_10_seconds">10 seconds</string>
+
+    <!-- LED brightness entries -->
+    <string name="low">low</string>
+    <string name="medium">medium</string>
+    <string name="high">high</string>
+    <string name="very_high">very high</string>
+    <string name="laserbeam">laserbeam</string>
 
 </resources>
