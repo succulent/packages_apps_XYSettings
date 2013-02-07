@@ -82,7 +82,8 @@
         <CheckBoxPreference
             android:key="pie_search"
             android:title="@string/pie_search_title"
-            android:summary="@string/pie_search_summary" />
+            android:summary="@string/pie_search_summary"
+            android:dependency="pie_controls" />
 
     </PreferenceCategory>
 
