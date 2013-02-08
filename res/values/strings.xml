@@ -4,20 +4,21 @@
     <string name="app_name">Xylon Settings</string>
 
     <!-- Header Strings -->
-    <string name="user_interface">Interface</string>
-    <string name="header_statusbar">Status Bar</string>
+    <string name="user_interface">Main Interface</string>
+    <string name="bars">Bar Interface</string>
+    <string name="system">System</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="general_ui">General UI</string>
     <string name="clock">Clock</string>
     <string name="signal">Signal</string>
     <string name="quick_toggles">Quick Toggles</string>
+    <string name="statusbar">Status Bar</string>
     <string name="others">Others</string>
     <string name="navigation_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
     <string name="led_options">LED</string>
     <string name="pie">PIE™</string>
-    <string name="tools">Tools</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_general_ui">General UI</string>

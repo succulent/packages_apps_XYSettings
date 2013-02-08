@@ -11,11 +11,17 @@
         android:summary="@string/header_summary_general_ui" />
 
      <header
-        android:id="@+id/power_menu"
-        android:fragment="com.xylon.settings.fragments.PowerMenu"
-        android:title="@string/power_menu"
-        android:icon="@drawable/ic_xy_settings_power_menu"
-        android:summary="@string/header_summary_power_menu" />
+         android:id="@+id/themes"
+         android:icon="@drawable/ic_xy_settings_themes"
+         android:title="@string/themes_title">
+         <intent
+             android:action="android.intent.action.MAIN"
+             android:targetPackage="com.tmobile.themechooser"
+             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+     </header>
+
+   <header
+     android:title="@string/bars" />
 
      <header
         android:id="@+id/navigation_bar"
@@ -25,14 +31,11 @@
         android:summary="@string/header_summary_navigation_bar" />
 
      <header
-        android:id="@+id/pie"
-        android:fragment="com.xylon.settings.fragments.Pie"
-        android:title="@string/pie"
-        android:icon="@drawable/ic_xy_settings_pie"
-        android:summary="@string/header_summary_pie" />
-
-   <header
-     android:title="@string/header_statusbar" />
+        android:id="@+id/statusbar"
+        android:fragment="com.xylon.settings.fragments.StatusBar"
+        android:title="@string/statusbar"
+        android:icon="@drawable/ic_xy_settings_statusbar"
+        android:summary="@string/header_summary_statusbar" />
 
      <header
         android:id="@+id/statusbar_clock"
@@ -56,14 +59,14 @@
         android:summary="@string/header_summary_toggles" />
 
      <header
-        android:id="@+id/statusbar"
-        android:fragment="com.xylon.settings.fragments.StatusBar"
-        android:title="@string/others"
-        android:icon="@drawable/ic_xy_settings_statusbar"
-        android:summary="@string/header_summary_statusbar" />
+        android:id="@+id/pie"
+        android:fragment="com.xylon.settings.fragments.Pie"
+        android:title="@string/pie"
+        android:icon="@drawable/ic_xy_settings_pie"
+        android:summary="@string/header_summary_pie" />
 
    <header
-        android:title="@string/tools" />
+        android:title="@string/system" />
 
     <header
         android:id="@+id/led"
@@ -72,14 +75,13 @@
         android:icon="@drawable/ic_xy_settings_led"
         android:summary="@string/header_summary_led" />
 
-    <header
-        android:id="@+id/themes"
-        android:icon="@drawable/ic_xy_settings_themes"
-        android:title="@string/themes_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
+     <header
+        android:id="@+id/power_menu"
+        android:fragment="com.xylon.settings.fragments.PowerMenu"
+        android:title="@string/power_menu"
+        android:icon="@drawable/ic_xy_settings_power_menu"
+        android:summary="@string/header_summary_power_menu" />
+
+
 
 </preference-headers>
