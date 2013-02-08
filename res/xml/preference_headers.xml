@@ -72,4 +72,14 @@
         android:icon="@drawable/ic_xy_settings_led"
         android:summary="@string/header_summary_led" />
 
+    <header
+        android:id="@+id/themes"
+        android:icon="@drawable/ic_xy_settings_themes"
+        android:title="@string/themes_title">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.tmobile.themechooser"
+            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </header>
+
 </preference-headers>

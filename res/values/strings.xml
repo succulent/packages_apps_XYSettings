@@ -32,6 +32,9 @@
     <string name="title_navring">Navigation Ring</string>
     <string name="title_clipboard_share">Share to Clipboard</string>
 
+    <!-- T-Mobile Theme chooser settings  -->
+    <string name="themes_title">Themes</string>
+
     <!-- Header Summaries -->
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_power_menu">@null</string>
