@@ -45,7 +45,7 @@
     <string name="header_summary_toggles">@null</string>
     <string name="header_summary_led">@null</string>
     <string name="header_summary_pie">@null</string>
-    <string name="header_summary_statusbar">Battery and colors...</string>
+    <string name="header_summary_statusbar">@null</string>
 
     <!-- Menu Strings -->
     <string name="menu_nav_bar_reset">Reset nav bar</string>
