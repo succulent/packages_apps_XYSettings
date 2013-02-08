@@ -13,7 +13,7 @@
     <string name="clock">Clock</string>
     <string name="signal">Signal</string>
     <string name="quick_toggles">Quick Toggles</string>
-    <string name="statusbar">Status Bar</string>
+    <string name="status_bar">Status Bar</string>
     <string name="others">Others</string>
     <string name="navigation_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
