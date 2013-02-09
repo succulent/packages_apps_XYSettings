@@ -118,7 +118,7 @@ public class LEDControl extends Fragment implements ColorPickerDialog.OnColorCha
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getActivity().setTitle(R.string.title_led);
+        getActivity().setTitle(R.string.title_led_control);
         mOnTime = (Button) mActivity.findViewById(R.id.ontime);
         mOffTime = (Button) mActivity.findViewById(R.id.offtime);
         mEditApp = (Button) mActivity.findViewById(R.id.edit_button);
