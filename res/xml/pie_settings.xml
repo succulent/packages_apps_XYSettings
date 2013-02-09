@@ -10,13 +10,20 @@
         android:key="toolbar_pie_controls"
         android:title="@string/pie_controls_title" >
 
+        <CheckBoxPreference
+            android:key="pie_controls"
+            android:title="@string/pie_controls_title"
+            android:summary="@string/pie_controls_summary"
+            android:defaultValue="false" />
+
         <ListPreference
             android:key="pie_trigger"
             android:dialogTitle="@string/pie_trigger_title"
             android:title="@string/pie_trigger_title"
             android:summary="@string/pie_trigger_summary"
             android:entries="@array/entries_pie_trigger"
-            android:entryValues="@array/values_pie_trigger" />
+            android:entryValues="@array/values_pie_trigger"
+            android:dependency="pie_controls" />
 
         <ListPreference
             android:key="pie_mode"
@@ -24,7 +31,8 @@
             android:title="@string/pie_mode_title"
             android:summary="@string/pie_mode_summary"
             android:entries="@array/entries_pie_mode"
-            android:entryValues="@array/values_pie_mode" />
+            android:entryValues="@array/values_pie_mode"
+            android:dependency="pie_controls" />
 
         <ListPreference
             android:key="pie_gravity"
@@ -32,7 +40,8 @@
             android:title="@string/pie_gravity_title"
             android:summary="@string/pie_gravity_summary"
             android:entries="@array/entries_pie_gravity"
-            android:entryValues="@array/values_pie_gravity" />
+            android:entryValues="@array/values_pie_gravity"
+            android:dependency="pie_controls" />
 
         <ListPreference
             android:key="pie_size"
@@ -40,7 +49,8 @@
             android:title="@string/pie_size_title"
             android:summary="@string/pie_size_summary"
             android:entries="@array/entries_pie_size"
-            android:entryValues="@array/values_pie_size" />
+            android:entryValues="@array/values_pie_size"
+            android:dependency="pie_controls" />
 
         <ListPreference
             android:key="pie_gap"
@@ -48,7 +58,8 @@
             android:title="@string/pie_gap_title"
             android:summary="@string/pie_gap_summary"
             android:entries="@array/entries_pie_gap"
-            android:entryValues="@array/values_pie_gap" />
+            android:entryValues="@array/values_pie_gap"
+            android:dependency="pie_controls" />
 
     </PreferenceCategory>
 
@@ -59,12 +70,14 @@
         <CheckBoxPreference
             android:key="pie_lastapp"
             android:title="@string/pie_lastapp_title"
-            android:summary="@string/pie_lastapp_summary" />
+            android:summary="@string/pie_lastapp_summary"
+            android:dependency="pie_controls" />
 
         <CheckBoxPreference
             android:key="pie_menu"
             android:title="@string/pie_menu_title"
-            android:summary="@string/pie_menu_summary" />
+            android:summary="@string/pie_menu_summary"
+            android:dependency="pie_controls" />
 
         <CheckBoxPreference
             android:key="pie_search"

@@ -47,7 +47,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
         PreferenceScreen prefSet = getPreferenceScreen();
         mExpandedDesktopPref = (ListPreference) prefSet.findPreference(PREF_EXPANDED_DESKTOP);
         mExpandedDesktopPref.setOnPreferenceChangeListener(this);
-        int expandedDesktopValue = Settings.System.getInt(getContentResolver(), Settings.System.EXPANDED_DESKTOP_STATUS_BAR_STATE, 0);
+        int expandedDesktopValue = Settings.System.getInt(getContentResolver(), Settings.System.EXPANDED_DESKTOP_STYLE, 0);
         mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
         updateExpandedDesktopSummary(expandedDesktopValue);
 
@@ -86,7 +86,7 @@ public class PowerMenu extends SettingsPreferenceFragment implements OnPreferenc
         if (preference == mExpandedDesktopPref) {
             int expandedDesktopValue = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.EXPANDED_DESKTOP_STATUS_BAR_STATE, expandedDesktopValue);
+                    Settings.System.EXPANDED_DESKTOP_STYLE, expandedDesktopValue);
             updateExpandedDesktopSummary(expandedDesktopValue);
             return true;
         }

@@ -70,6 +70,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
     private static final String TAG = "Paranoid Android PIE";
 
+    private static final String PIE_CONTROLS = "pie_controls";
     private static final String PIE_GRAVITY = "pie_gravity";
     private static final String PIE_MODE = "pie_mode";
     private static final String PIE_SIZE = "pie_size";
@@ -84,6 +85,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     ListPreference mPieGravity;
     ListPreference mPieTrigger;
     ListPreference mPieGap;
+    CheckBoxPreference mPieControls;
     CheckBoxPreference mPieMenu;
     CheckBoxPreference mPieLastApp;
     CheckBoxPreference mPieSearch;
@@ -96,6 +98,10 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         addPreferencesFromResource(R.xml.pie_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
+        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_CONTROLS, 0) == 1));
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
@@ -148,7 +154,12 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mPieMenu) {
+        if (preference == mPieControls) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.PIE_CONTROLS,
+                    mPieControls.isChecked() ? 1 : 0);
+            Helpers.restartSystemUI();
+        } else if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
         } else if (preference == mPieLastApp) {

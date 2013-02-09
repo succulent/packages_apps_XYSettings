@@ -89,7 +89,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     private static final String PREF_MENU_ARROWS = "navigation_bar_menu_arrow_keys";
     private static final String NAVBAR_HIDE_ENABLE = "navbar_hide_enable";
     private static final String NAVBAR_HIDE_TIMEOUT = "navbar_hide_timeout";
-    private static final String NAVBAR_HIDE_VISIBLE = "navbar_hide_visible";
+    private static final String DRAG_HANDLE_OPACITY = "drag_handle_opacity";
     private static final String DRAG_HANDLE_WIDTH = "drag_handle_width";
 
 
@@ -123,7 +123,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     Preference mConfigureWidgets;
     CheckBoxPreference mNavBarHideEnable;
     ListPreference mNavBarHideTimeout;
-    CheckBoxPreference mNavBarHideVisible;
+    SeekBarPreference mDragHandleOpacity;
     SeekBarPreference mDragHandleWidth;
 
     private File customnavImage;
@@ -197,9 +197,11 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         mNavBarHideEnable.setChecked(Settings.System.getBoolean(getContentResolver(),
                 Settings.System.NAV_HIDE_ENABLE, false));
 
-        mNavBarHideVisible = (CheckBoxPreference) findPreference(NAVBAR_HIDE_VISIBLE);
-        mNavBarHideVisible.setChecked(Settings.System.getBoolean(getContentResolver(),
-                Settings.System.DRAG_HANDLE_VISIBLE, true));
+        final int defaultDragOpacity = Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.DRAG_HANDLE_OPACITY,50);
+        mDragHandleOpacity = (SeekBarPreference) findPreference(DRAG_HANDLE_OPACITY);
+        mDragHandleOpacity.setInitValue((int) (defaultDragOpacity));
+        mDragHandleOpacity.setOnPreferenceChangeListener(this);        
 
         final int defaultDragWidth = Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.DRAG_HANDLE_WEIGHT, 5);
@@ -348,17 +350,8 @@ public class NavigationBar extends SettingsPreferenceFragment implements
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.NAV_HIDE_ENABLE,
                     ((CheckBoxPreference) preference).isChecked());
-
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_SHOW_NOW, !((CheckBoxPreference) preference).isChecked());
-            Helpers.restartSystemUI();
             refreshSettings();
             return true;
-        } else if (preference == mNavBarHideVisible) {
-
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.DRAG_HANDLE_VISIBLE,
-                    ((CheckBoxPreference) preference).isChecked());
         } else if (preference == mEnableNavringLong) {
 
             Settings.System.putBoolean(getActivity().getContentResolver(),
@@ -452,12 +445,12 @@ public class NavigationBar extends SettingsPreferenceFragment implements
             Settings.System.putFloat(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_BUTTON_ALPHA, val * 0.01f);
             return true;
-        /* } else if (preference == mDragHandleWidth) {
-            float val = Float.parseFloat((String) newValue);
-            Settings.System.putFloat(getActivity().getContentResolver(),
-                     Settings.System.DRAG_HANDLE_WEIGHT, val);
-            refreshSettings();
-            return true; */
+        } else if (preference == mDragHandleOpacity) {
+            String newVal = (String) newValue;
+            int op = Integer.parseInt(newVal);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DRAG_HANDLE_OPACITY, op);
+            return true;
         } else if (preference == mDragHandleWidth) {
             String newVal = (String) newValue;
             int dp = Integer.parseInt(newVal);
