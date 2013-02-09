@@ -445,60 +445,27 @@
     <!-- LCD Density Changer -->
     <string-array name="lcd_density_entries" translatable="false">
         <item>160</item>
-        <item>164</item>
-        <item>168</item>
-        <item>172</item>
-        <item>176</item>
-        <item>180</item>
-        <item>184</item>
-        <item>188</item>
-        <item>192</item>
-        <item>196</item>
+        <item>182</item>
         <item>200</item>
-        <item>204</item>
-        <item>208</item>
-        <item>212</item>
-        <item>216</item>
         <item>220</item>
-        <item>224</item>
-        <item>228</item>
-        <item>232</item>
-        <item>236</item>
         <item>240</item>
-        <item>244</item>
-        <item>248</item>
-        <item>252</item>
-        <item>256</item>
-        <item>260</item>
-        <item>264</item>
+        <item>241</item>
         <item>268</item>
-        <item>272</item>
-        <item>276</item>
         <item>280</item>
-        <item>284</item>
-        <item>288</item>
-        <item>292</item>
-        <item>296</item>
         <item>300</item>
-        <item>304</item>
-        <item>308</item>
-        <item>312</item>
-        <item>316</item>
         <item>320</item>
-        <item>324</item>
-        <item>328</item>
-        <item>332</item>
-        <item>336</item>
         <item>340</item>
+        <item>@string/custom_density</item>
     </string-array>
 
     <string-array name="lcd_density_stock_entries">
-        <item>160 -- mdpi</item>
+        <item>213 -- nexus7</item>
         <item>240 -- hdpi</item>
         <item>320 -- xhdpi</item>
     </string-array>
+
     <string-array name="lcd_density_stock_values" translatable="false">
-        <item>160</item>
+        <item>213</item>
         <item>240</item>
         <item>320</item>
     </string-array>
