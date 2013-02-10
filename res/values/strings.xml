@@ -118,6 +118,7 @@
     <!-- Pie controls -->
     <string name="pie_controls_title">Controls</string>
     <string name="pie_controls_summary">@null</string>
+    <string name="enable_pie_title">Enable PIE</string>
     <string name="pie_targets_title">Targets</string>
 
     <!-- The Gravity -->

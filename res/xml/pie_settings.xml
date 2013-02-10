@@ -12,8 +12,7 @@
 
         <CheckBoxPreference
             android:key="pie_controls"
-            android:title="@string/pie_controls_title"
-            android:summary="@string/pie_controls_summary"
+            android:title="@string/enable_pie_title"
             android:defaultValue="false" />
 
         <ListPreference
