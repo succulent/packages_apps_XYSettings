@@ -143,7 +143,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
                 Settings.System.PIE_MENU, 0) == 1);
 
         mPieLastApp = (CheckBoxPreference) prefSet.findPreference(PIE_LASTAPP);
-        mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+        mPieLastApp.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_LAST_APP, 0) == 1);
 
         mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
