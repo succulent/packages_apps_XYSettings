@@ -279,7 +279,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         } else if (preference == mShowActionOverflow) {
             boolean enabled = mShowActionOverflow.isChecked();
             Settings.System.putBoolean(getContentResolver(),
-                    Settings.System.UI_FORCE_OVERFLOW_BUTTON, checked ? true : false);
+                    Settings.System.UI_FORCE_OVERFLOW_BUTTON, enabled ? true : false);
             // Show toast appropriately
             if (enabled) {
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
