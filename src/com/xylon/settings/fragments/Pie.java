@@ -155,9 +155,8 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mPieControls) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.PIE_CONTROLS,
-                    mPieControls.isChecked() ? 1 : 0);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_CONTROLS, mPieControls.isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
         } else if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
