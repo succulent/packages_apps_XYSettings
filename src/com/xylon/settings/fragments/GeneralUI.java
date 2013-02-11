@@ -138,7 +138,8 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         updateCustomLabelTextSummary();
 
         mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
-        mShowActionOverflow.setChecked(Settings.System.getBoolean(cr,
+        mShowActionOverflow.setChecked(Settings.System.getBoolean(getActivity().
+                        getApplicationContext().getContentResolver(),
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
@@ -276,11 +277,11 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, checked ? true : false);
             return true;
         } else if (preference == mShowActionOverflow) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
+            boolean enabled = mShowActionOverflow.isChecked();
+            Settings.System.putBoolean(getContentResolver(),
                     Settings.System.UI_FORCE_OVERFLOW_BUTTON, checked ? true : false);
             // Show toast appropriately
-            if (checked) {
+            if (enabled) {
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_enable,
                         Toast.LENGTH_LONG).show();
             } else {
