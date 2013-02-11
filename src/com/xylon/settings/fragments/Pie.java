@@ -79,6 +79,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     private static final String PIE_LASTAPP = "pie_lastapp";
     private static final String PIE_MENU = "pie_menu";
     private static final String PIE_SEARCH = "pie_search";
+    private static final String PIE_CENTER = "pie_center";
 
     ListPreference mPieMode;
     ListPreference mPieSize;
@@ -89,6 +90,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     CheckBoxPreference mPieMenu;
     CheckBoxPreference mPieLastApp;
     CheckBoxPreference mPieSearch;
+    CheckBoxPreference mPieCenter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -150,14 +152,17 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_SEARCH, 1) == 1);
 
+        mPieCenter = (CheckBoxPreference) prefSet.findPreference(PIE_CENTER);
+        mPieCenter.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_CENTER, 1) == 1);
+
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mPieControls) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.PIE_CONTROLS,
-                    mPieControls.isChecked() ? 1 : 0);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_CONTROLS, mPieControls.isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
         } else if (preference == mPieMenu) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
@@ -168,6 +173,9 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         } else if (preference == mPieSearch) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_SEARCH, mPieSearch.isChecked() ? 1 : 0);
+        } else if (preference == mPieCenter) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.PIE_CENTER, mPieCenter.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
