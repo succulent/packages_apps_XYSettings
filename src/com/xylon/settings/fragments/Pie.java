@@ -169,7 +169,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
                     Settings.System.PIE_MENU, mPieMenu.isChecked() ? 1 : 0);
 //        } else if (preference == mPieLastApp) {
 //            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.PIE_LAST_APP, mPieLastApp.isChecked() ? 1 : 0);
+//                    Settings.System.PIE_LAST_APP, mPieLastApp.isChecked() ? 1 : 0);
         } else if (preference == mPieSearch) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_SEARCH, mPieSearch.isChecked() ? 1 : 0);
