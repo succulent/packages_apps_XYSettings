@@ -192,6 +192,7 @@
     <string name="text_only">Text (No Icon)</string>
     <string name="icon_w_text">Icon (Offset Text)</string>
     <string name="icon_w_center_text">Icon (Center Text)</string>
+    <string name="circle_mod">AOKP Style Circle</string>
     <string name="circle_battery">Circle (No %)</string>
     <string name="circle_battery_w_percent">Circle (With % No Dotted)</string>
     <string name="circle_dotted_w_percent">Circle (With % + Dotted)</string>
