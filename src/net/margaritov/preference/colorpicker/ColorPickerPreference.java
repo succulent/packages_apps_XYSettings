@@ -28,7 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.xylon.settings.R;
+import com.android.settings.R;
 
 /**
  * A preference type that allows a user to choose a time
@@ -198,6 +198,16 @@ public class ColorPickerPreference extends Preference implements
      */
     public void setAlphaSliderEnabled(boolean enable) {
         mAlphaSliderEnabled = enable;
+    }
+
+    /**
+     * For custom purposes. Not used by ColorPickerPreferrence
+     *
+     * set color preview value from outside
+     * @author kufikugel
+     */
+    public void setNewPreviewColor(int color) {
+        onColorChanged(color);
     }
 
     /**

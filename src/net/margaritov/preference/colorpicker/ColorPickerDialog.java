@@ -16,7 +16,6 @@
 
 package net.margaritov.preference.colorpicker;
 
-
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -27,7 +26,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-import com.xylon.settings.R;
+import com.android.settings.R;
 
 public class ColorPickerDialog
         extends
