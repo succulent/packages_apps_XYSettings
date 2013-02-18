@@ -28,7 +28,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.android.settings.R;
+import com.xylon.settings.R;
 
 /**
  * A preference type that allows a user to choose a time
