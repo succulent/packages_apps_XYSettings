@@ -28,13 +28,6 @@
     <dimen name="navigation_bar_30">30.0dip</dimen>
     <dimen name="navigation_bar_24">24.0dip</dimen>
     <dimen name="navigation_bar_0">0.0dip</dimen>
-  
-    <!--  Size of icons in the top-level of settings  -->
-    <dimen name="header_icon_width">28dp</dimen>
-    <dimen name="appwidget_min_width">260dip</dimen>
-    <dimen name="appwidget_min_height">40dip</dimen>
-
-    <dimen name="shortcut_picker_left_padding">70dip</dimen>
 
    <!-- Default distance beyond which snaps to the matching target -->
     <dimen name="navbar_search_snap_margin">40dip</dimen>
@@ -44,4 +37,17 @@
     <dimen name="navbar_search_outerring_diameter">340dp</dimen>
     <!-- Height of search panel including navigation bar height -->
     <dimen name="navbar_search_panel_height">230dip</dimen>
+
+    <!--  Amount of Margin to offset NavRing in Portrait Mode -->
+    <dimen name="navring_left_margin_port">-600dp</dimen>
+    <!--  Amount of Margin to offset NavRing in Landscape Mode -->
+    <dimen name="navring_left_margin_land">-800dp</dimen>
+    <!--  Height of NavRing in Tablet Mode Landscape -->
+    <dimen name="navring_height_tablet_landscape">300dp</dimen>
+    <!--  Height of NavRing in Tablet Mode Portrait -->
+    <dimen name="navring_height_tablet_portrait">250dp</dimen>
+    <!--  Radius of NavRing in Tablet Mode Landscape -->
+    <dimen name="navring_radius_tablet_landscape">300dp</dimen>
+    <!--  Radius of NavRing in Tablet Mode Landscape -->
+    <dimen name="navring_radius_tablet_portrait">300dp</dimen>
 </resources>
