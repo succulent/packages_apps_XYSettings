@@ -102,9 +102,9 @@ public class NavRingTargets extends Fragment implements
         public String value() { return this.value(); }
     }
 
-    public static DialogConstant fromString(String string) {
+    public static DialogConstant funcFromString(String string) {
         DialogConstant[] allTargs = DialogConstant.values();
-        for (int i=0; i < DialogConstant.values().length; i++) {
+        for (int i=0; i < allTargs.length; i++) {
             if (string.equals(allTargs[i].value())) {
                 return allTargs[i];
             }
@@ -112,10 +112,7 @@ public class NavRingTargets extends Fragment implements
         // not in ENUM must be custom
         return DialogConstant.NOT_IN_ENUM;
     }
-    /*private String CUSTOM_APP = "**app**";
-    private String SHORT_ACTION = "**short**";
-    private String LONG_ACTION = "**long**";
-    private String ICON_ACTION = "**icon**"; */
+
     private String mString;
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -129,7 +126,6 @@ public class NavRingTargets extends Fragment implements
             Bundle savedInstanceState) {
         mContainer = container;
         setHasOptionsMenu(true);
-        
         mContext = getActivity();
         cr = mContext.getContentResolver();
 
@@ -340,7 +336,7 @@ public class NavRingTargets extends Fragment implements
 
                         }
                         Settings.System.putString(cr,
-                                Settings.System.SYSTEMUI_NAVRING[0], ACTION_ASSIST);
+                                Settings.System.SYSTEMUI_NAVRING[0], "**assist**");
                         Settings.System.putInt(cr,
                                 Settings.System.SYSTEMUI_NAVRING_AMOUNT, 1);
                         updateDrawables();
@@ -452,7 +448,7 @@ public class NavRingTargets extends Fragment implements
     }
 
     public void onValueChange(String uri) {
-        DialogConstant mFromString = fromString(uri);
+        DialogConstant mFromString = funcFromString(uri);
         switch (mFromString) {
         case CUSTOM_APP:
             mPicker.pickShortcut();
@@ -474,7 +470,7 @@ public class NavRingTargets extends Fragment implements
                 getResources().getStringArray(R.array.navring_dialog_values));
             break;
         case ICON_ACTION:
-            int width = 75;
+            int width = 85;
             int height = width;
 
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
@@ -525,7 +521,7 @@ public class NavRingTargets extends Fragment implements
             stringArray[0] = stringArray[0] + "  :  " + getProperSummary(targetActivities[mTargetIndex]);
             createDialog(
                 getResources().getString(R.string.choose_action_title), stringArray,
-                getResources().getStringArray(R.array.navring_short_dialog_values)); 
+                getResources().getStringArray(R.array.navring_short_dialog_values));
         }
     }
 
@@ -581,29 +577,42 @@ public class NavRingTargets extends Fragment implements
 
     private String getProperSummary(String uri) {
 
-        if (TextUtils.isEmpty(uri) || uri.equals(ACTION_NULL)) {
+        if (TextUtils.isEmpty(uri) || AwesomeConstant.ACTION_NULL.equals(uri)) {
                 return getResources().getString(R.string.none);
-        } else if (uri.equals(ACTION_SCREENSHOT)) {
-                return getResources().getString(R.string.take_screenshot);
-        } else if (uri.equals(ACTION_IME)) {
-                return getResources().getString(R.string.open_ime_switcher);
-        } else if (uri.equals(ACTION_VIB)) {
-                return getResources().getString(R.string.ring_vib);
-        } else if (uri.equals(ACTION_SILENT)) {
-                return getResources().getString(R.string.ring_silent);
-        } else if (uri.equals(ACTION_SILENT_VIB)) {
-                return getResources().getString(R.string.ring_vib_silent);
-        } else if (uri.equals(ACTION_KILL)) {
-                return getResources().getString(R.string.kill_app);
-        } else if (uri.equals(ACTION_LAST_APP)) {
-                return getResources().getString(R.string.lastapp);
-        } else if (uri.equals(ACTION_POWER)) {
-                return getResources().getString(R.string.screen_off);
-        } else if (uri.equals(ACTION_ASSIST)) {
-                return getResources().getString(R.string.google_now);
-        } else {
-                return mPicker.getFriendlyNameForUri(uri);
         }
+
+        String newSummary = mContext.getResources().getString(R.string.none);
+        AwesomeConstant stringEnum = fromString(uri);
+        switch (stringEnum) {
+        case ACTION_IME:
+                newSummary = getResources().getString(R.string.open_ime_switcher);
+                break;
+        case ACTION_VIB:
+                newSummary = getResources().getString(R.string.ring_vib);
+                break;
+        case ACTION_SILENT:
+                newSummary = getResources().getString(R.string.ring_silent);
+                break;
+        case ACTION_SILENT_VIB:
+                newSummary = getResources().getString(R.string.ring_vib_silent);
+                break;
+        case ACTION_KILL:
+                newSummary = getResources().getString(R.string.kill_app);
+                break;
+        case ACTION_LAST_APP:
+                newSummary = getResources().getString(R.string.lastapp);
+                break;
+        case ACTION_POWER:
+                newSummary = getResources().getString(R.string.screen_off);
+                break;
+        case ACTION_ASSIST:
+                newSummary = getResources().getString(R.string.google_now);
+                break;
+        case ACTION_APP:
+                newSummary = mPicker.getFriendlyNameForUri(uri);
+                break;
+        }
+        return newSummary;
    }
 
     private Uri getTempFileUri() {
