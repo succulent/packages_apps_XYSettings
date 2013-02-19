@@ -30,6 +30,7 @@
     <string name="title_statusbar_signal">Statusbar Signal</string>
     <string name="title_statusbar">Statusbar</string>
     <string name="title_navbar">Navigation Bar</string>
+    <string name="title_navring">Navigation Ring</string>
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led_control">LED Control</string>
     <string name="title_pie">PIE™</string>
@@ -64,6 +65,9 @@
     <string name="misc_short">Misc</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
     <string name="select_custom_app_title">Select custom application</string>
+    <string name="text_on">On</string>
+    <string name="text_off">Off</string>
+
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
     <string name="group_applications">Applications</string>
@@ -441,8 +445,7 @@
     <string name="navbar_widgets_delete">Delete widget</string>
 
     <!-- Nav Ring Targets -->
-    <string name="lockscreen_target_info">Drag the unlock icon to targets to assign targets</string>
-    <string name="navbar_ring_cat">Navigation Bar Ring Targets</string>
+    <string name="navbar_ring_cat">Navigation Ring Targets</string>
     <string name="navbar_ring">Custom Ring Targets</string>
     <string name="navring_enable_long">Enable Longpress for navigation ring</string>
     <string name="navring_target_save">Navigation rings saved</string>
@@ -454,12 +457,14 @@
     <string name="action_long_save"> set as long action</string>
     <string name="title_navring_amount">Number of navigation ring targets</string>
     <string name="summary_navring_amount">Choose number of targets in the navigation ring</string>
-    <string name="interface_navring_settings_title">Navigation bar ring</string>
-    <string name="interface_navring_settings_summary">Edit your custom navigation ring actions</string>
+    <string name="interface_navring_settings_title">Navigation Ring</string>
+    <string name="interface_navring_settings_summary">@null</string>
     <string name="navring_target_info">Drag your finger to targets to assign actions</string>
     <string name="navring_short">Short action</string>
     <string name="navring_long">Long action</string>
     <string name="navring_icon">Custom icon</string>
+    <string name="navring_target_amount_text">Current number of targets</string>
+    <string name="navring_target_longpress_text">Longpress status</string>
 
     <!-- ## COLORS EVERYWHERE | By SlimRoms ## -->
 

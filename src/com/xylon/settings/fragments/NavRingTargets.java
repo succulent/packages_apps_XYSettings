@@ -76,6 +76,8 @@ public class NavRingTargets extends Fragment implements
     private Context mContext;
 
     private GlowPadView mGlowPadView;
+    private TextView mTargetNumText;
+    private TextView mLongPressText; 
     private ShortcutPickerHelper mPicker;
     private String[] targetActivities = new String[5];
     private String[] longActivities = new String[5];
@@ -123,12 +125,55 @@ public class NavRingTargets extends Fragment implements
         super.onActivityCreated(savedInstanceState);
         mGlowPadView = ((GlowPadView) getActivity().findViewById(R.id.navring_target));
         mGlowPadView.setOnTriggerListener(this);
+        mLongPressText = ((TextView) getActivity().findViewById(R.id.navring_target_longpress_id));
+        mLongPressText.setOnClickListener(mLongPressListener);
+        mTargetNumText = ((TextView) getActivity().findViewById(R.id.navring_target_amount_id));
+        mTargetNumText.setOnClickListener(mTargetNumListener);
         updateDrawables();
     }
+
+    private TextView.OnClickListener mLongPressListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                Settings.System.SYSTEMUI_NAVRING_LONG_ENABLE, !mBoolLongPress);
+            updateDrawables();
+        }
+    };
+
+    private TextView.OnClickListener mTargetNumListener = new TextView.OnClickListener() {
+        public void onClick(View v) {
+            final DialogInterface.OnClickListener l = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int item) {
+                    final String[] values = getResources().getStringArray(R.array.pref_navring_amount_values);
+                    int val = Integer.parseInt((String) values[item]);
+                    Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.SYSTEMUI_NAVRING_AMOUNT, val);
+                    updateDrawables();
+                    dialog.dismiss();
+                    }
+                };
+
+                final AlertDialog dialog = new AlertDialog.Builder(mContext)
+                    .setTitle(R.string.title_navring_amount)
+                    .setSingleChoiceItems(R.array.pref_navring_amount_entries, -1, l)
+                    .create();
+
+                dialog.show();
+            }
+    };
 
     private void setDrawables() {
         final Context context = getActivity();
         intentCounter = 0;
+
+        String temp = mBoolLongPress ? getResources().getString(R.string.text_on) : getResources().getString(R.string.text_off);
+        mLongPressText.setText(getResources().getString(R.string.navring_target_longpress_text)
+            + "  :  " + temp);
+
+        temp = String.valueOf(mNavRingAmount);
+        mTargetNumText.setText(getResources().getString(R.string.navring_target_amount_text)
+            + "  :  " + temp);
 
         // Custom Targets
         ArrayList<TargetDrawable> storedDraw = new ArrayList<TargetDrawable>();
@@ -417,7 +462,7 @@ public class NavRingTargets extends Fragment implements
                 getResources().getStringArray(R.array.navring_dialog_entries),
                 getResources().getStringArray(R.array.navring_dialog_values));
         } else if (uri.equals(ICON_ACTION)) {
-                int width = 100;
+                int width = 75;
                 int height = width;
 
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
@@ -441,7 +486,7 @@ public class NavRingTargets extends Fragment implements
                     longActivities[mTargetIndex] = uri;
                     Toast.makeText(getActivity(), getProperSummary(uri)
                          + "  " + getResources().getString(R.string.action_long_save),
-                               Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_LONG).show();
                     break;
                 default:
                     break;
