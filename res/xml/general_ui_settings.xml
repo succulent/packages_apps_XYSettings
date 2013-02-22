@@ -57,10 +57,6 @@
             android:key="notification_wallpaper_alpha"
             android:title="@string/notif_wallpaper_alpha_title" />
 
-        <Preference
-            android:key="transparency_dialog"
-            android:title="@string/transparency_dialog_title" />
-
         <PreferenceCategory
                 android:key="tablet_cat"
                 android:title="@string/tablet_cat">

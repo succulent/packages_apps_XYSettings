@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen
+            android:fragment="com.xylon.settings.activities.StatusBarStyle"
+            android:key="status_bar_background_style"
+            android:title="@string/status_bar_background_style" />
 
     <PreferenceCategory
             android:key="battery"

@@ -39,6 +39,9 @@
     <!-- T-Mobile Theme chooser settings  -->
     <string name="themes_title">Themes</string>
 
+    <!-- Share to clipboard -->
+    <string name="clipboard_notification">Copied to clipboard.</string>
+
     <!-- Header Summaries -->
     <string name="header_summary_general_ui">@null</string>
     <string name="header_summary_power_menu">@null</string>
@@ -242,7 +245,7 @@
     <string name="alt_signal_title">Alt signal layout</string>
     <string name="alt_signal_summary">Use alternate (GB style) signal cluster</string>
 
-    <!-- signal style -->
+    <!-- Signal Styling -->
     <string name="show_signal_bars">Show signal bars</string>
     <string name="show_signal_text">Show signal text</string>
     <string name="show_with_dbm">Show with dBm</string>
@@ -412,7 +415,6 @@
     <string name="navbar_height_dialog_summary">Please reboot for height change to be added properly!</string>
     <string name="navbar_height_dialog_button_later">I\'ll reboot later</string>
     <string name="navbar_height_dialog_button_reboot">Reboot now!</string>
-    <string name="navigation_bar_color_title">Bar color</string>
     <string name="navigation_bar_tint_title">Buttons color</string>
     <string name="navigation_bar_colorall_title">Colorize all buttons</string>
     <string name="navigation_bar_colorall_summary">Enables tint on custom icons</string>
@@ -453,8 +455,31 @@
     <string name="interface_navring_settings_title">Navigation bar ring</string>
     <string name="interface_navring_settings_summary">Edit your custom nav ring apps</string>
 
-    <!-- Share to clipboard -->
-    <string name="clipboard_notification">Copied to clipboard.</string>
+    <!-- ## COLORS EVERYWHERE | By SlimRoms ## -->
+
+    <!-- Status bar background style -->
+    <string name="status_bar_transparency_title">Status bar transparency</string>
+    <string name="status_bar_color_title">Status bar color</string>
+    <string name="status_bar_background_style">Status bar background</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
+    <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
+    <string name="status_bar_alpha_mode_home">on launcher</string>
+    <string name="status_bar_alpha_mode_default">on launcher and lockscreen</string>
+    <string name="status_bar_alpha_mode_always">always</string>
+    <string name="status_bar_style_reset">Reset</string>
+
+    <!-- Navigation bar background style -->
+    <string name="nav_bar_transparency_title">Navigation bar transparency</string>
+    <string name="nav_bar_color_title">Navigation bar color</string>
+    <string name="nav_bar_background_style">Navigation bar background</string>
+    <string name="nav_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
+    <string name="nav_bar_alpha_mode_text_title">Transparency mode</string>
+    <string name="nav_bar_alpha_mode_home">on launcher</string>
+    <string name="nav_bar_alpha_mode_default">on launcher and lockscreen</string>
+    <string name="nav_bar_alpha_mode_always">always</string>
+    <string name="nav_bar_style_reset">Reset</string>
+
+    <!-- END OF THE COLORS BITCHES (very offensive indeed) -->
 
     <!-- General UI -->
     <string name="tablet_cat">Tablet options</string>
@@ -478,14 +503,6 @@
     <string name="phone_mode_ui">Phone - NavBar to side in landscape</string>
     <string name="tablet_mode_ui">Tablet - Combined NavBar and SystemBar</string>
     <string name="phablet_mode_ui">Phablet - NavBar stays at bottom in landscape</string>
-    <string name="transparency_dialog_title">Transparency settings</string>
-    <string name="transparency_dialog_linked_transparency">Link statusbar &amp; navbar alpha</string>
-    <string name="transparency_dialog_transparency_sb_and_nv">Statusbar and navigation bar</string>
-    <string name="transparency_dialog_statusbar">Statusbar</string>
-    <string name="transparency_dialog_navbar">Navigation bar</string>
-    <string name="transparency_dialog_match_keyguard_alpha">Match lockscreen alpha</string>
-    <string name="transparency_dialog_transparency">Homescreen alpha</string>
-    <string name="transparency_dialog_transparency_keyguard">Lockscreen alpha</string>
     <string name="multipane_ui">Enable Dual panel</string>
     <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
