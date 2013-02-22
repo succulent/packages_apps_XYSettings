@@ -1,4 +1,3 @@
-
 package com.xylon.settings.fragments;
 
 import android.app.Activity;
@@ -164,11 +163,13 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
         mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
-        int uiMode = Settings.System.getInt(cr,
-                Settings.System.CURRENT_UI_MODE, 0);
-        mUserModeUI.setValue(Integer.toString(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.USER_UI_MODE, uiMode)));
-        mUserModeUI.setOnPreferenceChangeListener(this);
+        if (mUserModeUI != null) {
+            int uiMode = Settings.System.getInt(cr,
+                    Settings.System.CURRENT_UI_MODE, 0);
+            mUserModeUI.setValue(Integer.toString(Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.USER_UI_MODE, uiMode)));
+            mUserModeUI.setOnPreferenceChangeListener(this);
+        }
 
         // respect device default configuration
         // true fades while false animates
@@ -183,40 +184,48 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                 electronBeamFadesConfig ? 0 : 1) == 1;
 
         mCrtOff = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_OFF);
-        mCrtOff.setChecked(isCrtOffChecked);
-        mCrtOff.setOnPreferenceChangeListener(this);
+        if (mCrtOff != null) {
+            mCrtOff.setChecked(isCrtOffChecked);
+            mCrtOff.setOnPreferenceChangeListener(this);
+        }
 
         mCrtOn = (CheckBoxPreference) findPreference(PREF_POWER_CRT_SCREEN_ON);
-        mCrtOn.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0) == 1);
-        mCrtOn.setEnabled(isCrtOffChecked);
-        mCrtOn.setOnPreferenceChangeListener(this);
+        if (mCrtOn != null) {
+            mCrtOn.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0) == 1);
+            mCrtOn.setEnabled(isCrtOffChecked);
+            mCrtOn.setOnPreferenceChangeListener(this);
+        }
 
         mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
-        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
-                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
+        if (mWakeUpWhenPluggedOrUnplugged != null) {
+            mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
+                            Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
 
-        // hide option if device is already set to never wake up
-        if(!mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
-            ((PreferenceGroup) findPreference("misc")).removePreference(mWakeUpWhenPluggedOrUnplugged);
+            // hide option if device is already set to never wake up
+            PreferenceGroup miscPrefs = (PreferenceGroup) findPreference("misc");
+            if(!mContext.getResources().getBoolean(
+                    com.android.internal.R.bool.config_unplugTurnsOnScreen) && (miscPrefs != null)) {
+                miscPrefs.removePreference(mWakeUpWhenPluggedOrUnplugged);
+            }
         }
 
         mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
-        mDualpane.setChecked(Settings.System.getBoolean(cr,
-                        Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
-                        com.android.internal.R.bool.preferences_prefer_dual_pane)));
+        if (mDualpane != null) {
+            mDualpane.setChecked(Settings.System.getBoolean(cr,
+                            Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
+                            com.android.internal.R.bool.preferences_prefer_dual_pane)));
 
-        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
-        mHideExtras.setChecked(Settings.System.getBoolean(cr,
-                        Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
+            mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+            mHideExtras.setChecked(Settings.System.getBoolean(cr,
+                            Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
+        }
 
         mMembar = (CheckBoxPreference) getPreferenceScreen().findPreference(SYSTEMUI_RECENTS_MEM_DISPLAY);
-            if (mMembar != null) {
+        if (mMembar != null) {
             mMembar.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0) == 1);
-            }
-
+                Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0) == 1);
+        }
         setHasOptionsMenu(true);
     }
 
