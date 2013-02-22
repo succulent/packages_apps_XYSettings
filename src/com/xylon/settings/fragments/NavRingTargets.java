@@ -46,6 +46,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.android.internal.util.aokp.AwesomeConstants.*;
@@ -64,6 +65,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URISyntaxException;
+import java.lang.NumberFormatException;
 
 public class NavRingTargets extends Fragment implements
         ShortcutPickerHelper.OnPickListener, GlowPadView.OnTriggerListener {

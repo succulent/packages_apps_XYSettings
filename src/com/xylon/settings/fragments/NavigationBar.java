@@ -451,14 +451,6 @@ public class NavigationBar extends SettingsPreferenceFragment implements
                     height);
             // showDialog(DIALOG_NAVBAR_HEIGHT_REBOOT);
             return true;
-        } else if (preference == mNavRingButtonQty) {
-            int val = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SYSTEMUI_NAVRING_AMOUNT, val);
-            resetNavRing();
-            refreshSettings();
-            Helpers.restartSystemUI();
-            return true;
         }  else if ((preference.getKey().startsWith("navbar_action"))
                 || (preference.getKey().startsWith("navbar_longpress"))) {
             boolean longpress = preference.getKey().startsWith("navbar_longpress_");
