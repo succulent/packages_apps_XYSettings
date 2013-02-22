@@ -78,20 +78,19 @@
             android:key="width_land"
             android:title="@string/width_land_title" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-                android:key="nav_bar_color"
-                android:title="@string/navigation_bar_color_title"
-                android:defaultValue="#000000" />
+        <PreferenceScreen
+                android:fragment="com.xylon.settings.activities.NavBarStyle"
+                android:key="nav_bar_background_style"
+                android:title="@string/nav_bar_background_style" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_button_color"
                 android:title="@string/navigation_bar_tint_title"
                 android:defaultValue="#33B5E5" />
 
-        <CheckBoxPreference
-                android:key="navigation_bar_allcolor"
-                android:title="@string/navigation_bar_colorall_title"
-                android:summary="@string/navigation_bar_colorall_summary" />
+        <com.xylon.settings.widgets.SeekBarPreference
+                android:key="button_transparency"
+                android:title="@string/button_transparency_title" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_button_glow_color"
@@ -100,13 +99,14 @@
                 android:defaultValue="#FFFFFF" />
 
         <CheckBoxPreference
+                android:key="navigation_bar_allcolor"
+                android:title="@string/navigation_bar_colorall_title"
+                android:summary="@string/navigation_bar_colorall_summary" />
+
+        <CheckBoxPreference
                 android:key="navigation_bar_menu_arrow_keys"
                 android:title="@string/navigation_bar_menu_arrow_keys_title"
                 android:summary="@string/navigation_bar_menu_arrow_keys_summary" />
-
-        <com.xylon.settings.widgets.SeekBarPreference
-                android:key="button_transparency"
-                android:title="@string/button_transparency_title" />
 
         </PreferenceCategory>
 
