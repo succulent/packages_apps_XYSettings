@@ -293,6 +293,7 @@
     <string name="toggle_powermenu">Power Menu</string>
     <string name="toggle_sound_state">Ring/Vib/Silent</string>
     <string name="toggle_navbar_hide">Navbar Auto Hide</string>
+    <string name="toggle_quickrecord">Quick Record</string>
 
     <string name="toggle_default_entries">USER|BRIGHTNESS|SETTINGS|WIFI|SIGNAL|ROTATE|BATTERY|AIRPLANE_MODE|BLUETOOTH</string>
     <string name="toggles_display_dialog">Choose which toggles to use</string>
