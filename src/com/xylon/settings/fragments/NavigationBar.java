@@ -147,7 +147,6 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         customnavImage = new File(getActivity().getFilesDir()+"navbar_icon_" + mPendingIconIndex + ".png");
         customnavTemp = new File(getActivity().getCacheDir()+"/"+"tmp_icon_" + mPendingIconIndex + ".png");
 
-<<<<<<< HEAD:src/com/xylon/settings/fragments/NavigationBar.java
         mNavigationBarColor = (ColorPickerPreference) prefSet.findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);
 
@@ -158,8 +157,6 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         mNavigationBarGlowColor = (ColorPickerPreference) prefSet.findPreference(PREF_NAV_GLOW_COLOR);
         mNavigationBarGlowColor.setOnPreferenceChangeListener(this);
 
-=======
->>>>>>> 9ff51ce... RC: Navring rework.:src/com/aokp/romcontrol/fragments/Navbar.java
         menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
         menuDisplayLocation.setOnPreferenceChangeListener(this);
         menuDisplayLocation.setValue(Settings.System.getInt(getActivity()
