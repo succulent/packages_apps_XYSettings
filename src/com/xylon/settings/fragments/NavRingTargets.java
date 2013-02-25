@@ -292,12 +292,12 @@ public class NavRingTargets extends Fragment implements
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RESET, 0, R.string.profile_reset_title)
+        menu.add(0, MENU_RESET, 0, R.string.reset)
             .setIcon(R.drawable.ic_settings_backup)
             .setAlphabeticShortcut('r')
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                 MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-        menu.add(0, MENU_SAVE, 0, R.string.wifi_save)
+        menu.add(0, MENU_SAVE, 0, R.string.save)
             .setIcon(R.drawable.ic_menu_save)
             .setAlphabeticShortcut('s')
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
@@ -324,7 +324,7 @@ public class NavRingTargets extends Fragment implements
      */
     private void resetAll() {
         final AlertDialog d = new AlertDialog.Builder(getActivity())
-                .setTitle(R.string.lockscreen_target_reset_title)
+                .setTitle(R.string.reset)
                 .setIconAttribute(android.R.attr.alertDialogIcon)
                 .setMessage(R.string.navring_target_reset_message)
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
