@@ -123,7 +123,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
         try {
             float pieSize = Settings.System.getFloat(mContext.getContentResolver(),
-                    Settings.System.PIE_SIZE);
+                    Settings.System.PIE_SIZE, 1.0f);
             mPieSize.setValue(String.valueOf(pieSize));
   
             float pieTrigger = Settings.System.getFloat(mContext.getContentResolver(),
@@ -138,17 +138,17 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
         mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
         int pieGap = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_GAP, 1);
+                Settings.System.PIE_GAP, 3);
         mPieGap.setValue(String.valueOf(pieGap));
         mPieGap.setOnPreferenceChangeListener(this);
 
         mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
         mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_MENU, 0) == 1);
+                Settings.System.PIE_MENU, 1) == 1);
 
         mPieLastApp = (CheckBoxPreference) prefSet.findPreference(PIE_LASTAPP);
         mPieLastApp.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_LAST_APP, 0) == 1);
+                Settings.System.PIE_LAST_APP, 1) == 1);
 
         mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
         mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -160,7 +160,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
 
         mPieStick = (CheckBoxPreference) prefSet.findPreference(PIE_STICK);
         mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_STICK, 0) == 1);
+                Settings.System.PIE_STICK, 1) == 1);
 
     }
 
