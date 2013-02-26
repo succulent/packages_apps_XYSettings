@@ -24,7 +24,7 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="status_bar_color"
             android:title="@string/status_bar_color_title"
-            android:defaultValue="#0xff000000" />
+            android:defaultValue="0xff000000" />
 
         <com.xylon.settings.widgets.SeekBarPreference
              android:key="status_bar_alpha"
