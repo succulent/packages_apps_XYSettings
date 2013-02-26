@@ -24,7 +24,7 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="nav_bar_color"
             android:title="@string/nav_bar_color_title"
-            android:defaultValue="#000000" />
+            android:defaultValue="0xff000000" />
 
         <com.xylon.settings.widgets.SeekBarPreference
              android:key="nav_bar_alpha"

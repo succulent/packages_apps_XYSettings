@@ -34,7 +34,7 @@
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="quick_text_color"
         android:title="@string/quick_text_color_title"
-        android:defaultValue="#ffcccccc" />
+        android:defaultValue="0xffcccccc" />
 
     <CheckBoxPreference
         android:key="enable_fast_toggle"
