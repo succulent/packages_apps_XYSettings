@@ -86,7 +86,7 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_button_color"
                 android:title="@string/navigation_bar_tint_title"
-                android:defaultValue="#33B5E5" />
+                android:defaultValue="0xff33b5e5" />
 
         <com.xylon.settings.widgets.SeekBarPreference
                 android:key="button_transparency"
@@ -96,7 +96,7 @@
                 android:key="nav_button_glow_color"
                 android:title="@string/navigation_bar_glow_tint_title"
                 android:summary="@string/navigation_bar_glow_tint_summary"
-                android:defaultValue="#FFFFFF" />
+                android:defaultValue="0xffffffff" />
 
         <CheckBoxPreference
                 android:key="navigation_bar_allcolor"

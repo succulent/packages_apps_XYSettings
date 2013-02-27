@@ -35,7 +35,7 @@
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
 		android:key="pie_status_clock"
 		android:title="@string/pie_status_clock_title"
-		android:defaultValue="0xffffff"
+		android:defaultValue="0xfffffffff"
                 android:dependency="pie_enable_color" />
 
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
