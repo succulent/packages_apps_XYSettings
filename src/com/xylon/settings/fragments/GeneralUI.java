@@ -80,7 +80,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
-    private static final String SYSTEMUI_RECENTS_MEM_DISPLAY = "interface_recents_mem_display";
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
@@ -101,7 +100,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mStatusbarSliderPreference;
     CheckBoxPreference mShowActionOverflow;
-    CheckBoxPreference mMembar;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
     Preference mLcdDensity;
@@ -221,11 +219,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                             Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
         }
 
-        mMembar = (CheckBoxPreference) getPreferenceScreen().findPreference(SYSTEMUI_RECENTS_MEM_DISPLAY);
-        if (mMembar != null) {
-            mMembar.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0) == 1);
-        }
         setHasOptionsMenu(true);
     }
 
@@ -376,13 +369,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         } else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
                     .startPreferenceFragment(new DensityChanger(), true);
-            return true;
-        } else if (preference == mMembar) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, checked ? 1 : 0);
-                    
-            Helpers.restartSystemUI();
             return true;
         } else if (preference == mDualpane) {
             Settings.System.putBoolean(mContext.getContentResolver(),

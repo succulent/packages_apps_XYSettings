@@ -521,6 +521,7 @@
     <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
     <string name="brightness_slider_title">Statusbar brightness slider</string>
     <string name="brightness_slider_summary">Allows you to slide your finger along the top of the statusbar to change the brightness. Does nothing when autobrightness is enabled.</string>
+<<<<<<< HEAD
     <string name="recents_rambar_title">Enhance recents panel</string>
     <string name="recents_rambar_summary">Add a memory usage bar to the recents panel</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
@@ -529,6 +530,8 @@
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
     <string name="system_power_crt_screen_on_title">CRT Screen On</string>
     <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
+=======
+>>>>>>> parent of d3326dc... Add Memory panel settings (2/2)
 
     <!-- LCD Density -->
     <string name="lcd_density_title">LCD Density</string>

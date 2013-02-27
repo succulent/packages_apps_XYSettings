@@ -43,11 +43,6 @@
             android:title="@string/brightness_slider_title"
             android:summary="@string/brightness_slider_summary" />
 
-        <CheckBoxPreference
-            android:key="interface_recents_mem_display"
-            android:title="@string/recents_rambar_title"
-            android:summary="@string/recents_rambar_summary" />
-
         <Preference
             android:key="notification_wallpaper"
             android:title="@string/notification_wallpaper_title"
