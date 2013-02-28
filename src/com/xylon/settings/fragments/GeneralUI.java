@@ -83,6 +83,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final String PREF_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_USER_MODE_UI = "user_mode_ui";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
@@ -97,6 +98,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
     Preference mCustomLabel;
+    Preference mRamBar;
     CheckBoxPreference mStatusBarNotifCount;
     CheckBoxPreference mStatusbarSliderPreference;
     CheckBoxPreference mShowActionOverflow;
@@ -219,12 +221,31 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                             Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
         }
 
+        mRamBar = findPreference(PREF_RECENTS_RAM_BAR);
+        updateRamBar();
+
         setHasOptionsMenu(true);
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        updateRamBar();
+    }
+
+    @Override
+    public void onPause() {
+        super.onResume();
+        updateRamBar();
+    }
+
+    private void updateRamBar() {
+        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
+        if (ramBarMode != 0)
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
+        else
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
     }
 
     private void updateCustomLabelTextSummary() {
