@@ -60,8 +60,8 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
         super.onCreate(savedInstanceState);
         setShowsDialog(true);
 
-        if (StatusBarToggles.sToggles == null) {
-            StatusBarToggles.sToggles = getArguments();
+        if (QuickToggles.sToggles == null) {
+            QuickToggles.sToggles = getArguments();
         }
         params.height = getActivity().getResources().getDimensionPixelSize(
                 R.dimen.list_toggle_height);
@@ -71,7 +71,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
 
     private void updateToggleList() {
         toggles.clear();
-        for (String t : StatusBarToggles.getEnabledToggles(getActivity())) {
+        for (String t : QuickToggles.getEnabledToggles(getActivity())) {
             toggles.add(t);
         }
     }
@@ -97,7 +97,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
             public void drop(int from, int to) {
                 String name = toggles.remove(from);
                 toggles.add(to, name);
-                StatusBarToggles.setTogglesFromStringArray(getActivity(), toggles);
+                QuickToggles.setTogglesFromStringArray(getActivity(), toggles);
                 mAdapter.notifyDataSetChanged();
             }
         });
@@ -198,7 +198,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
             TextView descriptionView = (TextView) convertView
                     .findViewById(android.R.id.text2);
 
-            titleView.setText(StatusBarToggles.lookupToggle(getActivity(),
+            titleView.setText(QuickToggles.lookupToggle(getActivity(),
                     mAdapter.getItem(position)));
             descriptionView.setText(mAdapter.getItem(position));
 
@@ -238,7 +238,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
     private void showToggleSelectionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        final ArrayList<String> allToggles = StatusBarToggles.sToggles
+        final ArrayList<String> allToggles = QuickToggles.sToggles
                 .getStringArrayList("toggles");
         Collections.sort(allToggles);
 
@@ -250,7 +250,7 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
         // set strings
         for (int i = 0; i < items.length; i++) {
             items[i] = allToggles.get(i);
-            itemStrings[i] = StatusBarToggles.lookupToggle(getActivity(), items[i]);
+            itemStrings[i] = QuickToggles.lookupToggle(getActivity(), items[i]);
         }
 
         // check current toggles
@@ -278,9 +278,9 @@ public class ArrangeTogglesFragment extends DialogFragment implements OnItemClic
                         String toggleKey = allToggles.get(which);
 
                         if (isChecked)
-                            StatusBarToggles.addToggle(getActivity(), toggleKey);
+                            QuickToggles.addToggle(getActivity(), toggleKey);
                         else
-                            StatusBarToggles.removeToggle(getActivity(), toggleKey);
+                            QuickToggles.removeToggle(getActivity(), toggleKey);
                     }
                 });
 

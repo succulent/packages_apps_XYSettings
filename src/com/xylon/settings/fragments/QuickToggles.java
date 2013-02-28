@@ -27,8 +27,6 @@ import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.R;
 import com.xylon.settings.objects.EasyPair;
 import com.xylon.settings.util.Helpers;
-import com.xylon.settings.widgets.TouchInterceptor;
-import com.xylon.settings.widgets.SeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +41,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     private static final String PREF_TOGGLES_STYLE = "toggles_style";
     private static final String PREF_TOGGLE_FAV_CONTACT = "toggle_fav_contact";
     private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
-    private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side"; 
+    private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
 
     private final int PICK_CONTACT = 1;
 
@@ -75,12 +73,9 @@ public class QuickToggles extends SettingsPreferenceFragment implements
         mContext.registerReceiver(mReceiver,
                 new IntentFilter("com.android.systemui.statusbar.toggles.ACTION_BROADCAST_TOGGLES"));
         requestAvailableToggles();
-        setTitle(R.string.title_statusbar_toggles);
+        setTitle(R.string.title_quick_toggles);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.quick_toggles);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
 
         mEnabledToggles = findPreference(PREF_ENABLE_TOGGLES);
 
@@ -98,14 +93,6 @@ public class QuickToggles extends SettingsPreferenceFragment implements
         mLayout = findPreference("toggles");
 
         mFavContact = findPreference(PREF_TOGGLE_FAV_CONTACT);
-        final String[] entries = getResources().getStringArray(R.array.available_toggles_entries);
-        List<String> allToggles = Arrays.asList(entries);
-        if (allToggles.contains("FAVCONTACT")) {
-            ArrayList<String> enabledToggles = getTogglesStringArray(getActivity());
-            mFavContact.setEnabled(enabledToggles.contains("FAVCONTACT"));
-        } else {
-            getPreferenceScreen().removePreference(mFavContact);
-        }
 
         mFastToggle = (CheckBoxPreference) findPreference(PREF_ENABLE_FASTTOGGLE);
         mFastToggle.setOnPreferenceChangeListener(this);
@@ -218,7 +205,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
             // R.array.available_toggles_entries);
             final String[] toggleValues = new String[availableToggles.size()];
             for (int i = 0; i < availableToggles.size(); i++) {
-                toggleValues[i] = StatusBarToggles.lookupToggle(mContext, availableToggles.get(i));
+                toggleValues[i] = QuickToggles.lookupToggle(mContext, availableToggles.get(i));
             }
 
             final boolean checkedToggles[] = new boolean[availableToggles.size()];
@@ -255,9 +242,9 @@ public class QuickToggles extends SettingsPreferenceFragment implements
                             String toggleKey = availableToggles.get(which);
 
                             if (isChecked)
-                                StatusBarToggles.addToggle(getActivity(), toggleKey);
+                                QuickToggles.addToggle(getActivity(), toggleKey);
                             else
-                                StatusBarToggles.removeToggle(getActivity(), toggleKey);
+                                QuickToggles.removeToggle(getActivity(), toggleKey);
 
                             if ("FAVCONTACT".equals(toggleKey)) {
                                 mFavContact.setEnabled(isChecked);
@@ -273,14 +260,15 @@ public class QuickToggles extends SettingsPreferenceFragment implements
         } else if (preference == mLayout) {
             ArrangeTogglesFragment fragment = ArrangeTogglesFragment.newInstance(sToggles);
             fragment.show(getFragmentManager(), "arrange");
-        } else if (preference == mFavContact) {
+        }
+        else if (preference == mFavContact) {
             Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
             startActivityForResult(intent, PICK_CONTACT);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
     }
-    
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {

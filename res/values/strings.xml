@@ -302,6 +302,10 @@
     <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="add_toggles">Change toggles</string>
 
+     <!-- Brightness slider -->
+    <string name="on_top">On top</string>
+    <string name="on_the_bottom">On the bottom</string>
+
     <!-- Quick Toggles | AOKP -->
     <string name="toggle_airplane_mode">Airplane Mode</string>
     <string name="toggle_auto_rotate">Auto Rotate</string>
