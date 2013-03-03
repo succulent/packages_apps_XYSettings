@@ -25,7 +25,7 @@ import java.net.URISyntaxException;
 import static com.android.internal.util.aokp.AwesomeConstants.*;
 import com.xylon.settings.SettingsPreferenceFragment;
 import com.xylon.settings.R;
-import com.xylon.settings..util.ShortcutPickerHelper;
+import com.xylon.settings.util.ShortcutPickerHelper;
 
 public class SPenGestures extends SettingsPreferenceFragment implements
         ShortcutPickerHelper.OnPickListener, OnPreferenceChangeListener {
