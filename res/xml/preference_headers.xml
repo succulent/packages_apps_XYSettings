@@ -82,7 +82,6 @@
         android:icon="@drawable/ic_xy_settings_led"
         android:summary="@string/header_summary_led" />
 
-<<<<<<< HEAD
      <header
         android:id="@+id/power_menu"
         android:fragment="com.xylon.settings.fragments.PowerMenu"
@@ -90,21 +89,11 @@
         android:icon="@drawable/ic_xy_settings_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
-
-=======
     <header
         android:id="@+id/spen"
-        android:fragment="com.aokp.romcontrol.fragments.SPenGestures"
+        android:fragment="com.xylon.settings.fragments.SPenGestures"
         android:title="@string/spen_options"
-        android:icon="@drawable/ic_rom_control_spen"
+        android:icon="@drawable/ic_xy_settings_spen"
         android:summary="@string/header_summary_spen" />
-
-    <header
-        android:id="@+id/sound"
-        android:fragment="com.aokp.romcontrol.fragments.Sound"
-        android:title="@string/sound"
-        android:icon="@drawable/ic_rom_control_sound"
-        android:summary="@string/header_summary_sound" />
->>>>>>> e40920b... Spen Options 2/2: Enable Spen options
 
 </preference-headers>
