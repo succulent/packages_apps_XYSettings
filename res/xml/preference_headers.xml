@@ -89,6 +89,11 @@
         android:icon="@drawable/ic_xy_settings_power_menu"
         android:summary="@string/header_summary_power_menu" />
 
-
+    <header
+        android:id="@+id/spen"
+        android:fragment="com.xylon.settings.fragments.SPenGestures"
+        android:title="@string/spen_options"
+        android:icon="@drawable/ic_xy_settings_spen"
+        android:summary="@string/header_summary_spen" />
 
 </preference-headers>
