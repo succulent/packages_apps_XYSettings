@@ -451,6 +451,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             Integer.valueOf(val));
             int index = mNotificationsBehavior.findIndexOfValue(val);
             mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;

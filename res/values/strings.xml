@@ -555,7 +555,7 @@
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
     <string name="alpha_dialog_title">Set alpha value</string>
     <string name="hide_extras">Hide Extras</string>
-    <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat mode button(requires UI restart)</string>
+    <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat mode button</string>
     <string name="user_mode_ui">UI Mode</string>
     <string name="user_mode_ui_summary">What style to display NavBar and Statusbar</string>
     <string name="phone_mode_ui">Phone - NavBar to side in landscape</string>
