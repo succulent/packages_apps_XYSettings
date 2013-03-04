@@ -89,6 +89,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
+    private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -106,10 +107,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     Preference mWallpaperAlpha;
     Preference mLcdDensity;
     ListPreference mUserModeUI;
+    ListPreference mNotificationsBehavior;
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
-    SeekBarPreference mNavBarAlpha;
     CheckBoxPreference mCrtOff;
     CheckBoxPreference mCrtOn;
 
@@ -220,6 +221,13 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             mHideExtras.setChecked(Settings.System.getBoolean(cr,
                             Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
         }
+
+        mNotificationsBehavior = (ListPreference) findPreference(PREF_NOTIFICATION_BEHAVIOUR);
+        int CurrentBehavior = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATIONS_BEHAVIOUR, 0);
+        mNotificationsBehavior.setValue(String.valueOf(CurrentBehavior));
+        mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
+        mNotificationsBehavior.setOnPreferenceChangeListener(this);
 
         mRamBar = findPreference(PREF_RECENTS_RAM_BAR);
         updateRamBar();
@@ -435,6 +443,15 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
                     ((Boolean) newValue).booleanValue() ? 1 : 0);
+            return true;
+        } else if (preference == mNotificationsBehavior) {
+            String val = (String) newValue;
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.NOTIFICATIONS_BEHAVIOUR,
+            Integer.valueOf(val));
+            int index = mNotificationsBehavior.findIndexOfValue(val);
+            mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
+            Helpers.restartSystemUI();
             return true;
         }
         return false;
