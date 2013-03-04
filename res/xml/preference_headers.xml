@@ -44,7 +44,14 @@
         android:icon="@drawable/ic_xy_settings_statusbar"
         android:summary="@string/header_summary_statusbar" />
 
-     <header
+    <header
+        android:id="@+id/statusbar_toggles"
+        android:title="@string/toggles_layout"
+        android:fragment="com.aokp.romcontrol.fragments.StatusBarToggles"
+        android:icon="@drawable/ic_rom_control_quick_settings"
+        android:summary="@string/header_summary_toggles" />
+
+    <header
         android:id="@+id/statusbar_clock"
         android:fragment="com.xylon.settings.fragments.StatusBarClock"
         android:title="@string/clock"
@@ -72,7 +79,8 @@
         android:icon="@drawable/ic_xy_settings_pie"
         android:summary="@string/header_summary_pie" />
 
-   <header
+    <header
+        android:id="@+id/system"
         android:title="@string/system" />
 
     <header
