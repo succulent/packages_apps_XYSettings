@@ -40,6 +40,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     private static final String PREF_TOGGLES_PER_ROW = "toggles_per_row";
     private static final String PREF_TOGGLES_STYLE = "toggles_style";
     private static final String PREF_TOGGLE_FAV_CONTACT = "toggle_fav_contact";
+    private static final String PREF_SCREENSHOT_TIMEOUT = "toggle_screenshot_timeout";
     private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
     private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
 
@@ -49,9 +50,10 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     Preference mLayout;
     ListPreference mTogglesPerRow;
     ListPreference mTogglesStyle;
+    ListPreference mChooseFastToggleSide;
+    ListPreference mScreenTimeout;
     Preference mFavContact;
     CheckBoxPreference mFastToggle;
-    ListPreference mChooseFastToggleSide;
 
     BroadcastReceiver mReceiver;
     ArrayList<String> mToggles;
@@ -101,6 +103,9 @@ public class QuickToggles extends SettingsPreferenceFragment implements
         mChooseFastToggleSide.setOnPreferenceChangeListener(this);
         mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
+
+        mScreenTimeout = (ListPreference) findPreference(PREF_SCREENSHOT_TIMEOUT);
+        mScreenTimeout.setOnPreferenceChangeListener(this);
 
         if (isSW600DPScreen(mContext) || isTablet(mContext)) {
             getPreferenceScreen().removePreference(mFastToggle);
@@ -153,6 +158,8 @@ public class QuickToggles extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean result = false;
+
         if (preference == mTogglesPerRow) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -169,6 +176,11 @@ public class QuickToggles extends SettingsPreferenceFragment implements
                     Settings.System.FAST_TOGGLE, val);
             getActivity().getBaseContext().getContentResolver()
                     .notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
+            return true;
+        } else if (preference == mScreenTimeout) {
+            int val = Integer.parseInt((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SCREENSHOT_TIMEOUT, val);
             return true;
         } else if (preference == mChooseFastToggleSide) {
             int val = Integer.parseInt((String) newValue);

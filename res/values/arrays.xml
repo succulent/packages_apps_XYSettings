@@ -786,4 +786,18 @@
         <item>3</item>
     </string-array>
 
+    <!-- Screenshot Timeout (Toggle) -->
+    <string-array name="toggle_screenshot_timeout_entries">
+        <item>Fast</item>
+        <item>Normal</item>
+        <item>Slow</item>
+        <item>Extremely Slow</item>
+    </string-array>
+    <string-array name="toggle_screenshot_timeout_values" translatable="false">
+        <item>10000</item>
+        <item>18000</item>
+        <item>22000</item>
+        <item>25000</item>
+    </string-array>
+
 </resources>
