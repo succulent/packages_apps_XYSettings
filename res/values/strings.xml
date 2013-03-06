@@ -204,6 +204,9 @@
     <string name="pie_trigger_big">@string/pie_gap_big</string>
     <string name="pie_trigger_huge">@string/pie_gap_huge</string>
 
+    <string name="pie_restart_launcher_title">Restart Launcher</string>
+    <string name="pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
+
     <!-- The Loner -->
     <string name="pie_menu_title">Persistent menu button</string>
     <string name="pie_menu_summary">Always show menu button even when it\'s not necessary</string>

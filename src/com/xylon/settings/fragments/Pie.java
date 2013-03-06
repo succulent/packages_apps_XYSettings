@@ -81,6 +81,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     private static final String PIE_SEARCH = "pie_search";
     private static final String PIE_CENTER = "pie_center";
     private static final String PIE_STICK = "pie_stick";
+    private static final String PIE_RESTART = "pie_restart_launcher";
 
     ListPreference mPieMode;
     ListPreference mPieSize;
@@ -92,7 +93,8 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
     CheckBoxPreference mPieLastApp;
     CheckBoxPreference mPieSearch;
     CheckBoxPreference mPieCenter;
-    CheckBoxPreference mPieStick; 
+    CheckBoxPreference mPieStick;
+    CheckBoxPreference mPieRestart;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -123,7 +125,7 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
         try {
             float pieSize = Settings.System.getFloat(mContext.getContentResolver(),
-                    Settings.System.PIE_SIZE, 1.0f);
+                    Settings.System.PIE_SIZE, 0.9f);
             mPieSize.setValue(String.valueOf(pieSize));
   
             float pieTrigger = Settings.System.getFloat(mContext.getContentResolver(),
@@ -162,6 +164,10 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.PIE_STICK, 1) == 1);
 
+        mPieRestart = (CheckBoxPreference) prefSet.findPreference(PIE_RESTART);
+        mPieRestart.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.EXPANDED_DESKTOP_RESTART_LAUNCHER, 1) == 1);
+
     }
 
     @Override
@@ -185,6 +191,9 @@ public class Pie extends SettingsPreferenceFragment implements OnPreferenceChang
         } else if (preference == mPieStick) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.PIE_STICK, mPieStick.isChecked() ? 1 : 0);
+        } else if (preference == mPieRestart) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.EXPANDED_DESKTOP_RESTART_LAUNCHER, mPieRestart.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 

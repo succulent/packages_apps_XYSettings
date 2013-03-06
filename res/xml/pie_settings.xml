@@ -70,6 +70,11 @@
             android:title="@string/pie_center_title"
             android:summary="@string/pie_center_summary" />
 
+        <CheckBoxPreference
+            android:key="pie_restart_launcher"
+            android:title="@string/pie_restart_launcher_title"
+            android:summary="@string/pie_restart_launcher_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
