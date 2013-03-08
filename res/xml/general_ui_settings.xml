@@ -37,6 +37,25 @@
             android:title="@string/notif_wallpaper_alpha_title" />
 
         <PreferenceCategory
+                android:key="category_animation_options"
+                android:title="@string/display_category_animation_options_title" >
+
+        <CheckBoxPreference
+            android:key="system_power_crt_screen_off"
+            android:summary="@string/system_power_crt_screen_off_summary"
+            android:title="@string/system_power_crt_screen_off_title" />
+
+        <ListPreference
+            android:key="system_power_crt_mode"
+            android:dialogTitle="@string/system_power_crt_mode_dialog_title"
+            android:title="@string/system_power_crt_mode_title"
+            android:entries="@array/entries_system_power_crt_mode"
+            android:entryValues="@array/values_system_power_crt_mode"
+            android:dependency="system_power_crt_screen_off" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
                 android:key="tablet_cat"
                 android:title="@string/tablet_cat">
 
@@ -64,16 +83,6 @@
         <PreferenceCategory
                 android:key="misc"
                 android:title="@string/misc_short">
-
-        <CheckBoxPreference
-            android:key="system_power_crt_screen_off"
-            android:summary="@string/system_power_crt_screen_off_summary"
-            android:title="@string/system_power_crt_screen_off_title" />
-
-        <CheckBoxPreference
-            android:key="system_power_crt_screen_on"
-            android:summary="@string/system_power_crt_screen_on_summary"
-            android:title="@string/system_power_crt_screen_on_title" />
 
         <CheckBoxPreference
             android:key="wakeup_when_plugged_unplugged"
