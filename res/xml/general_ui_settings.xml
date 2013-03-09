@@ -90,6 +90,12 @@
             android:summary="@string/wakeup_when_plugged_unplugged_summary"
             android:defaultValue="true" />
 
+        <CheckBoxPreference
+            android:key="fullscreen_keyboard"
+            android:title="@string/fullscreen_keyboard"
+            android:summary="@string/fullscreen_keyboard_summary"
+            android:defaultValue="false" />
+
         <PreferenceScreen
             android:key="recents_ram_bar"
             android:fragment="com.xylon.settings.activities.RamBar"
