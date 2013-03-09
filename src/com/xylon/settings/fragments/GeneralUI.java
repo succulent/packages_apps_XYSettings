@@ -83,6 +83,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
     private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
+    private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_USER_MODE_UI = "user_mode_ui";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
@@ -111,6 +112,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
+    CheckBoxPreference mFullscreenKeyboard;
     CheckBoxPreference mCrtOff;
     ListPreference mCrtMode;
 
@@ -204,6 +206,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                 miscPrefs.removePreference(mWakeUpWhenPluggedOrUnplugged);
             }
         }
+        
+        mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
+        mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
+                Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
         mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
         if (mDualpane != null) {
@@ -407,6 +413,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
                     ((CheckBoxPreference) preference).isChecked());
+            return true;
+        } else if (preference == mFullscreenKeyboard) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
+                    mFullscreenKeyboard.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mCrtOff) {
             Settings.System.putInt(getActivity().getContentResolver(),
