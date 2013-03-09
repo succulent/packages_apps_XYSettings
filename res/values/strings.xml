@@ -686,5 +686,9 @@
     <string name="ram_bar_color_disabled">Disabled</string>
     <string name="ram_bar_button_help">Help</string>
     <string name="ram_bar_button_reset">Reset colors</string>
+    
+   <!-- Fullscreen Keyboard -->
+   <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
+   <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
 
 </resources>
