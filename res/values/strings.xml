@@ -116,6 +116,7 @@
     <string name="expanded_desktop_status_bar">Status bar visible</string>
     <string name="expanded_desktop_no_status_bar">Status bar hidden</string>
     <string name="title_show_navbar_hide">Navigation bar menu</string>
+    <string name="title_show_reboot_keyguard">Show reboot on lockscreen</string>
 
     <!-- Status Bar Headers -->
     <string name="status_bar_clock_header">Clock</string>

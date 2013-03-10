@@ -208,7 +208,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         }
         
         mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
-        mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
+        mFullscreenKeyboard.setChecked(Settings.System.getInt(cr,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
         mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
