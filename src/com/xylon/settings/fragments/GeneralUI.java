@@ -283,7 +283,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
 
     public void updateRotationTimeout(int timeout) {
         if (timeout == 0)
-            timeout = KEYBOARD_ROTATION_TIMEOUT_DEFAULT;
+            timeout = TIMEOUT_DEFAULT;
         mKeyboardRotationTimeout.setValue(Integer.toString(timeout));
         mKeyboardRotationTimeout.setSummary(getString(R.string.keyboard_rotation_timeout_summary, mKeyboardRotationTimeout.getEntry()));
     }
@@ -452,8 +452,8 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                 mKeyboardRotationDialog();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.KEYBOARD_ROTATION_TIMEOUT,
-                    mKeyboardRotationToggle.isChecked() ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
-            updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
+                    mKeyboardRotationToggle.isChecked() ? TIMEOUT_DEFAULT : 0);
+            updateRotationTimeout(TIMEOUT_DEFAULT);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -484,7 +484,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             Helpers.restartSystemUI();
             return true;
         } else if (preference == mKeyboardRotationTimeout) {
-            int timeout = Integer.parseInt((String) objValue);
+            int timeout = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.KEYBOARD_ROTATION_TIMEOUT, timeout);
             updateRotationTimeout(timeout);
