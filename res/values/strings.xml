@@ -116,6 +116,7 @@
     <string name="expanded_desktop_status_bar">Status bar visible</string>
     <string name="expanded_desktop_no_status_bar">Status bar hidden</string>
     <string name="title_show_navbar_hide">Navigation bar menu</string>
+    <string name="title_show_reboot_keyguard">Show reboot on lockscreen</string>
 
     <!-- Status Bar Headers -->
     <string name="status_bar_clock_header">Clock</string>
@@ -177,7 +178,7 @@
     <string name="pie_mode_summary">Manage how animations and status additions will be handled</string>
     <string name="pie_mode_bare">Bare</string>
     <string name="pie_mode_quick">Quick</string>
-    <string name="pie_mode_default">Normal (default)</string>
+    <string name="pie_mode_default">Normal (Default)</string>
     <string name="pie_mode_slow">Slow</string>
 
     <!-- The Size -->
@@ -194,15 +195,15 @@
     <string name="pie_gap_none">None</string>
     <string name="pie_gap_small">Small</string>
     <string name="pie_gap_big">Big</string>
-    <string name="pie_gap_huge">Huge (default)</string>
+    <string name="pie_gap_huge">Huge (Default)</string>
 
     <!-- The trigger -->
     <string name="pie_trigger_title">Trigger area</string>
     <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
     <string name="pie_trigger_small">Small</string>
     <string name="pie_trigger_normal">Normal (Default)</string>
-    <string name="pie_trigger_big">@string/pie_gap_big</string>
-    <string name="pie_trigger_huge">@string/pie_gap_huge</string>
+    <string name="pie_trigger_big">Big</string>
+    <string name="pie_trigger_huge">Huge</string>
 
     <string name="pie_restart_launcher_title">Restart Launcher</string>
     <string name="pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
@@ -686,5 +687,9 @@
     <string name="ram_bar_color_disabled">Disabled</string>
     <string name="ram_bar_button_help">Help</string>
     <string name="ram_bar_button_reset">Reset colors</string>
+    
+   <!-- Fullscreen Keyboard -->
+   <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
+   <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
 
 </resources>
