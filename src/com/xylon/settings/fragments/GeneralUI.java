@@ -91,11 +91,15 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
+    private static final String PREF_KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
+    private static final String PREF_KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
     private static final int SELECT_ACTIVITY = 4;
     private static final int SELECT_WALLPAPER = 5;
+
+    private static final int TIMEOUT_DEFAULT = 5000; // 5s
 
     private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
 
@@ -115,6 +119,8 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     CheckBoxPreference mFullscreenKeyboard;
     CheckBoxPreference mCrtOff;
     ListPreference mCrtMode;
+    CheckBoxPreference mKeyboardRotationToggle;
+    ListPreference mKeyboardRotationTimeout;
 
     String mCustomLabelText = null;
 
@@ -211,6 +217,15 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mFullscreenKeyboard.setChecked(Settings.System.getInt(cr,
                 Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
 
+        mKeyboardRotationToggle = (CheckBoxPreference) findPreference(PREF_KEYBOARD_ROTATION_TOGGLE);
+        mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+
+        mKeyboardRotationTimeout = (ListPreference) findPreference(PREF_KEYBOARD_ROTATION_TIMEOUT);
+        mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
+        updateRotationTimeout(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT, TIMEOUT_DEFAULT));
+
         mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
         if (mDualpane != null) {
             mDualpane.setChecked(Settings.System.getBoolean(cr,
@@ -264,6 +279,13 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         } else {
             mCustomLabel.setSummary(mCustomLabelText);
         }
+    }
+
+    public void updateRotationTimeout(int timeout) {
+        if (timeout == 0)
+            timeout = KEYBOARD_ROTATION_TIMEOUT_DEFAULT;
+        mKeyboardRotationTimeout.setValue(Integer.toString(timeout));
+        mKeyboardRotationTimeout.setSummary(getString(R.string.keyboard_rotation_timeout_summary, mKeyboardRotationTimeout.getEntry()));
     }
 
     @Override
@@ -423,6 +445,16 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
                     mCrtOff.isChecked() ? 1 : 0);
             return true;
+        } else if (preference == mKeyboardRotationToggle) {
+            boolean isAutoRotate = (Settings.System.getInt(getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
+            if (isAutoRotate && mKeyboardRotationToggle.isChecked())
+                mKeyboardRotationDialog();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                    mKeyboardRotationToggle.isChecked() ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
+            updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
@@ -451,6 +483,12 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
             Helpers.restartSystemUI();
             return true;
+        } else if (preference == mKeyboardRotationTimeout) {
+            int timeout = Integer.parseInt((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT, timeout);
+            updateRotationTimeout(timeout);
+            return true;
         }
         return false;
     }
@@ -473,6 +511,15 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+    public void mKeyboardRotationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(R.string.keyboard_rotation_dialog);
+        builder.setCancelable(false);
+        builder.setPositiveButton(getResources().getString(com.android.internal.R.string.ok), null);
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     private Uri getNotificationExternalUri() {

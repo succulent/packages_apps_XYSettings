@@ -78,6 +78,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
             intColor = getResources().getColor(
                     com.android.internal.R.color.black);
         }
+        String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNavBarColor.setNewPreviewColor(intColor);
 
         float statBarTransparency = 0.0f;
