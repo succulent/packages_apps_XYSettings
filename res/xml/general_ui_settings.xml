@@ -81,6 +81,34 @@
         </PreferenceCategory>
 
         <PreferenceCategory
+                android:key="keyboard"
+                android:title="@string/keyboard_custom" >
+
+        <CheckBoxPreference
+            android:key="fullscreen_keyboard"
+            android:title="@string/fullscreen_keyboard"
+            android:summary="@string/fullscreen_keyboard_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="keyboard_rotation_toggle"
+            android:title="@string/keyboard_rotation_toggle_title"
+            android:summary="@string/keyboard_rotation_toggle_summary"
+            android:defaultValue="false"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="keyboard_rotation_timeout"
+            android:persistent="false"
+            android:dialogTitle="@string/keyboard_rotation_timeout_title"
+            android:title="@string/keyboard_rotation_timeout_title"
+            android:entries="@array/keyboard_rotation_timeout_entries"
+            android:entryValues="@array/keyboard_rotation_timeout_values"
+            android:dependency="keyboard_rotation_toggle" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
                 android:key="misc"
                 android:title="@string/misc_short">
 
@@ -89,12 +117,6 @@
             android:title="@string/wakeup_when_plugged_unplugged_title"
             android:summary="@string/wakeup_when_plugged_unplugged_summary"
             android:defaultValue="true" />
-
-        <CheckBoxPreference
-            android:key="fullscreen_keyboard"
-            android:title="@string/fullscreen_keyboard"
-            android:summary="@string/fullscreen_keyboard_summary"
-            android:defaultValue="false" />
 
         <PreferenceScreen
             android:key="recents_ram_bar"
@@ -108,6 +130,5 @@
             android:defaultValue="false" />
 
         </PreferenceCategory>
-        
 
 </PreferenceScreen>
