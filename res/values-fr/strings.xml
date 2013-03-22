@@ -11,7 +11,7 @@
     <string name="reset">Réinitialiser</string>
     <string name="empty">Vide</string>
     <string name="general_ui">Général</string>
-    <string name="clock">Heure</string>
+    <string name="clock">Horloge</string>
     <string name="signal">Signal</string>
     <string name="quick_toggles">Quick Settings</string>
     <string name="status_bar">Barre d\'État</string>
@@ -128,7 +128,7 @@
     <string name="clock_date_format">Format de la date</string>
     <string name="clock_date_string_edittext_title">Cela doit être du style: dd/MM/yy</string>
     <string name="clock_date_string_edittext_summary">Entrer une valeur</string>
-    <string name="dont_show_default">Ne pas afficher (Défaut)</string>
+    <string name="dont_show_default">Ne pas afficher (Par défaut)</string>
     <string name="normal">Normal</string>
     <string name="small_date">Petite</string>
     <string name="regular_date">Normale</string>
@@ -335,7 +335,6 @@
     <string name="toggle_sleep">Verrouiller</string>
     <string name="toggle_powermenu">Menu Power</string>
     <string name="toggle_sound_state">Sonnerie/Vibreur/Silencieux</string>
-    <string name="toggle_navbar_hide">Navbar Auto Hide</string>
     <string name="toggle_quickrecord">Enregistreur de voix</string>
 
     <!-- Navigation Bar (Targets) -->
@@ -435,7 +434,7 @@
     <string name="drag_handle_width_title">Taille de la poignée</string>
     <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
     <string name="summary_navbar_timeout">Délai d\'attente avant la disparition de la Navbar</string>
-    <string name="glow_times_title">Animation lueur des boutons</string>
+    <string name="glow_times_title">Animation de lueur des boutons</string>
 
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Widgets - Barre de Navigation</string>
@@ -486,9 +485,9 @@
     <string name="nav_bar_background_style">Fond de la Barre de Navigation</string>
     <string name="nav_bar_alpha_mode_dialog_text_title">Afficher sa transparence</string>
     <string name="nav_bar_alpha_mode_text_title">Mode de transparence</string>
-    <string name="nav_bar_alpha_mode_home">sur le lanceur.</string>
-    <string name="nav_bar_alpha_mode_default">sur le lanceur et l\'écran de verrouillage.</string>
-    <string name="nav_bar_alpha_mode_always">toujours.</string>
+    <string name="nav_bar_alpha_mode_home">sur le lanceur</string>
+    <string name="nav_bar_alpha_mode_default">sur le lanceur et l\'écran de verrouillage</string>
+    <string name="nav_bar_alpha_mode_always">toujours</string>
     <string name="nav_bar_style_reset">Réinitialiser</string>
 
     <!-- General UI | Other Modifications unknown -->
@@ -514,12 +513,12 @@
     <!-- General UI | Tablet Mode -->
     <string name="tablet_cat">Options du mode tablette</string>
     <string name="hide_extras">Masquer les options</string>
-    <string name="hide_extras_summary">Masque des éléments de la Barre de Nav. *Mode Tablet seulement* Ex: Bouton de compatibilité. </string>
+    <string name="hide_extras_summary">Masque des éléments de la barre de nav. combinée. *Mode Tablet seulement* \nEx: Bouton de compatibilité. </string>
     <string name="user_mode_ui">Mode d\'affichage</string>
     <string name="user_mode_ui_summary">Style utilisé pour les Barres de Nav. et d\'état</string>
-    <string name="phone_mode_ui">Phone - Barre de Nav. sur le côté en mode paysage</string>
-    <string name="tablet_mode_ui">Tablet - Barre de Nav. et Barre d\'état combinée</string>
-    <string name="phablet_mode_ui">Phablet - Barre de Nav. toujours en bas</string>
+    <string name="phone_mode_ui">Phone - Barre de navigation sur le côté en mode paysage</string>
+    <string name="tablet_mode_ui">Tablet - Barre de navigation et Barre d\'état combinée</string>
+    <string name="phablet_mode_ui">Phablet - Barre de navigation toujours en bas</string>
     <string name="multipane_ui">Activer le Dual panel</string>
     <string name="multipane_ui_summary">Permet d\'avoir une interface du style tablette dans les paramètres.</string>
 
@@ -565,7 +564,7 @@
     <!-- General UI | LCD Density -->
     <string name="lcd_density_title">Densité de l\'écran</string>
     <string name="lcd_density_summary">inconnu</string>
-    <string name="current_lcd_density">Densité actuelle: </string>
+    <string name="current_lcd_density">"Densité actuelle: "</string>
     <string name="lcd_density_wizard">LCD Density Wizard</string>
     <string name="follow_through_title">Étapes à suivre.</string>
     <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
@@ -599,10 +598,10 @@
     <string name="led_time_on">Temps de LED allumée</string>
     <string name="led_off">LED éteinte:</string>
     <string name="led_time_off">Temps de LED éteinte</string>
-    <string name="led_time_seconds"> secondes</string>
+    <string name="led_time_seconds">" secondes"</string>
     <string name="led_color_click">Appuyer sur la LED ci-dessus pour changer sa couleur.</string>
     <string name="title_led_screen_on">Flash LED quand écran allumé</string>
-    <string name="led_custom_app">Application : </string>
+    <string name="led_custom_app">"Application : "</string>
     <string name="led_custom_default">Par défaut</string>
     <string name="led_change_app">Changer</string>
     <string name="led_delete_app">Supprimer </string>
