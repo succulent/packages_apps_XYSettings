@@ -195,10 +195,10 @@
 
     <!-- Battery Bar -->
     <string-array name="battery_bar_entries">
-        <item>Hide</item>
-        <item>Statusbar</item>
-        <item>Top of navbar</item>
-        <item>Bottom of navbar</item>
+        <item>@string/hide</item>
+        <item>@string/statusbar</item>
+        <item>@string/top_of_navbar</item>
+        <item>@string/bottom_of_navbar</item>
     </string-array>
     <string-array name="battery_bar_values" translatable="false">
         <item>0</item>
@@ -208,8 +208,8 @@
     </string-array>
 
     <string-array name="battery_bar_style_entries">
-        <item>Regular</item>
-        <item>Center-mirrored</item>
+        <item>@string/regular</item>
+        <item>@string/center_mirrored</item>
     </string-array>
     <string-array name="battery_bar_style_values" translatable="false">
         <item>0</item>
@@ -774,10 +774,10 @@
 
     <!-- Notification behavior preferences -->
     <string-array name="notifs_beh_entries">
-        <item>Normal</item>
-        <item>Never expand</item>
-        <item>Always expand</item>
-        <item>Old style</item>
+        <item>@string/notification_behaviour_normal</item>
+        <item>@string/notification_behaviour_neverexpand</item>
+        <item>@string/notification_behaviour_alwaysexpand</item>
+        <item>@string/notification_behaviour_oldstyle</item>
     </string-array>
     <string-array name="notifs_beh_values" translatable="false">
         <item>0</item>
@@ -788,10 +788,10 @@
 
     <!-- Screenshot Timeout (Toggle) -->
     <string-array name="toggle_screenshot_timeout_entries">
-        <item>Fast</item>
-        <item>Normal</item>
-        <item>Slow</item>
-        <item>Extremely Slow</item>
+        <item>@string/toggle_screenshot_timeout_fast</item>
+        <item>@string/toggle_screenshot_timeout_normal</item>
+        <item>@string/toggle_screenshot_timeout_slow</item>
+        <item>@string/toggle_screenshot_timeout_extremelyslow</item>
     </string-array>
     <string-array name="toggle_screenshot_timeout_values" translatable="false">
         <item>10000</item>
