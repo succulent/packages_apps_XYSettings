@@ -294,6 +294,10 @@
     <string name="toggle_choose_fasttoggle_side_summary">Choisir de quel côté de la barre d\'état serons affichés les Toggles</string>
     <string name="toggle_screenshot_timeout_title">Délai de la Capture d\'écran</string>
     <string name="toggle_screenshot_timeout_summary">Choisir le délai du Toggle \'Capture d\'écran\', après que la barre de notification soit fermée pour faire la capture. (Recommandé: Lent)</string>
+    <string name="toggle_screenshot_timeout_fast">Rapide</string>
+    <string name="toggle_screenshot_timeout_normal">Normal</string>
+    <string name="toggle_screenshot_timeout_slow">Lent</string>
+    <string name="toggle_screenshot_timeout_extremelyslow">Très lent</string>
     <string name="toggle_dialog_arrange_title">Configuration</string>
     <string name="toggle_dialog_add_toggles">Sélectionner les Toggles à afficher</string>
     <string name="toggle_style_tile">Quick Settings (Tuiles, JB 4.2)</string>
@@ -501,6 +505,10 @@
     <string name="show_overflow_toast_enable">Le raccourcis Menu ne sera pas affiché avant un redémarrage de l\'appli.</string>
     <string name="show_overflow_toast_disable">Le raccourcis Menu ne sera pas masqué avant un redémarrage de l\'appli.</string>
     <string name="notification_behaviour_title">Comportement des notifications</string>
+    <string name="notification_behaviour_normal">Normal</string>
+    <string name="notification_behaviour_neverexpand">Jamais étendues</string>
+    <string name="notification_behaviour_alwaysexpand">Toujours étendues</string>
+    <string name="notification_behaviour_oldstyle">Ancien style</string>
     <string name="notification_wallpaper_title">Choisir le fond des notifications</string>
     <string name="notification_wallpaper_summary">Vous pouvez enlever l\'arrière-plan en allant dans le Menu de cette fenêtre.</string>
     <string name="notif_wallpaper_alpha_title">Opacité du fond des notifications</string>
