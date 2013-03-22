@@ -326,7 +326,7 @@
     <string name="toggle_screenshot_timeout_fast">Fast</string>
     <string name="toggle_screenshot_timeout_normal">Normal</string>
     <string name="toggle_screenshot_timeout_slow">Slow</string>
-    <string name="toggle_screenshot_timeout_extremelyslow">Extremly Slow</string>
+    <string name="toggle_screenshot_timeout_extremelyslow">Extremely Slow</string>
     <string name="toggle_dialog_arrange_title">Toggle setup</string>
     <string name="toggle_dialog_add_toggles">Select toggles to add</string>
     <string name="toggle_style_tile">Tiles</string>
