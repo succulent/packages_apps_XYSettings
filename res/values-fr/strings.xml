@@ -153,14 +153,14 @@
     <string name="pie_mode_summary">Gérer comment les animations et informations seront affichées</string>
     <string name="pie_mode_bare">Boutons uniquement</string>
     <string name="pie_mode_quick">Rapide</string>
-    <string name="pie_mode_default">Normal (Défaut)</string>
+    <string name="pie_mode_default">Normal</string>
     <string name="pie_mode_slow">Lent</string>
 
     <!-- The Size -->
     <string name="pie_size_title">Taille du Pie</string>
     <string name="pie_size_summary">Définir la taille des boutons du Pie</string>
     <string name="pie_size_small">Petit</string>
-    <string name="pie_size_default">Normal (Défaut)</string>
+    <string name="pie_size_default">Normal</string>
     <string name="pie_size_large">Grand</string>
     <string name="pie_size_gigantic">Gigantesque</string>
 
@@ -168,7 +168,7 @@
     <string name="pie_gap_title">Écart des boutons</string>
     <string name="pie_gap_summary">Ajuster l\'écart qui sépare les boutons du Pie</string>
     <string name="pie_gap_none">Aucun</string>
-    <string name="pie_gap_small">Petit (Défaut)</string>
+    <string name="pie_gap_small">Petit</string>
     <string name="pie_gap_big">Grand</string>
     <string name="pie_gap_huge">Énorme</string>
 
@@ -176,7 +176,7 @@
     <string name="pie_trigger_title">Zone de déclenchement</string>
     <string name="pie_trigger_summary">Déterminer la taille de la zone qui permettra de faire apparaître le Pie</string>
     <string name="pie_trigger_small">Petite</string>
-    <string name="pie_trigger_normal">Normale (Défaut)</string>
+    <string name="pie_trigger_normal">Normale</string>
     <string name="pie_trigger_big">Grosse</string>
     <string name="pie_trigger_huge">Énorme</string>
 
@@ -523,7 +523,7 @@
     <string name="hide_extras">Masquer les options</string>
     <string name="hide_extras_summary">Masque des éléments de la barre de nav. combinée. *Mode Tablet seulement* \nEx: Bouton de compatibilité. </string>
     <string name="user_mode_ui">Mode d\'affichage</string>
-    <string name="user_mode_ui_summary">Style utilisé pour les Barres de Nav. et d\'état</string>
+    <string name="user_mode_ui_summary">Style utilisé pour les barres de nav. et d\'état</string>
     <string name="phone_mode_ui">Phone - Barre de navigation sur le côté en mode paysage</string>
     <string name="tablet_mode_ui">Tablet - Barre de navigation et Barre d\'état combinée</string>
     <string name="phablet_mode_ui">Phablet - Barre de navigation toujours en bas</string>
