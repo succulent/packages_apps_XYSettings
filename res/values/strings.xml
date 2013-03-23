@@ -323,6 +323,10 @@
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
     <string name="toggle_screenshot_timeout_title">Screenshot Timeout</string>
     <string name="toggle_screenshot_timeout_summary">Choose how fast the toggle will snap your screen after collapsing the notification. (Recommended - Slow)</string>
+    <string name="toggle_screenshot_timeout_fast">Fast</string>
+    <string name="toggle_screenshot_timeout_normal">Normal</string>
+    <string name="toggle_screenshot_timeout_slow">Slow</string>
+    <string name="toggle_screenshot_timeout_extremelyslow">Extremely Slow</string>
     <string name="toggle_dialog_arrange_title">Toggle setup</string>
     <string name="toggle_dialog_add_toggles">Select toggles to add</string>
     <string name="toggle_style_tile">Tiles</string>
@@ -556,6 +560,10 @@
     <string name="show_overflow_toast_enable">The menu overflow button may not be visible until apps are restarted</string>
     <string name="show_overflow_toast_disable">The menu overflow button may not be hidden until apps are restarted</string>
     <string name="notification_behaviour_title">Notification behavior</string>
+    <string name="notification_behaviour_normal">Normal</string>
+    <string name="notification_behaviour_neverexpand">Never expand</string>
+    <string name="notification_behaviour_alwaysexpand">Alaways expand</string>
+    <string name="notification_behaviour_oldstyle">Old style</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
