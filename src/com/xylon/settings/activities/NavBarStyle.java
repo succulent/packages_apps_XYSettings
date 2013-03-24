@@ -34,6 +34,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.xylon.settings.SettingsPreferenceFragment;
+import com.xylon.settings.fragments.NavigationBar;
 import com.xylon.settings.R;
 import com.xylon.settings.Utils;
 import com.xylon.settings.util.Helpers;
@@ -73,7 +74,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
         mNavBarColor = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
         mNavBarColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_TINT, -2);
+                    Settings.System.NAVIGATION_BAR_COLOR, -2);
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.black);
@@ -151,6 +152,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_COLOR, intHex);
+            NavigationBar.refreshSettings();
             return true;
         } else if (preference == mAlphaMode) {
             int alphaMode = Integer.valueOf((String) newValue);
