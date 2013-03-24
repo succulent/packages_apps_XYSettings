@@ -413,6 +413,8 @@
     <string name="always_show_invincible_icons">Always show invisible icons</string>
     <string name="always_show">Always show</string>
     <string name="default_jb_with_invincible_icons_when_hidden">Default JB with invisible icons when hidden</string>
+    <string name="navbar_action_ime">Open IME Switcher</string>
+    <string name="navbar_action_lastapp">Last app</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Super quick</string>
     <string name="glow_times_quick">Quick</string>
