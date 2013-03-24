@@ -300,8 +300,9 @@
     <string name="toggle_screenshot_timeout_extremelyslow">Très lent</string>
     <string name="toggle_dialog_arrange_title">Configuration</string>
     <string name="toggle_dialog_add_toggles">Sélectionner les Toggles à afficher</string>
-    <string name="toggle_style_tile">Quick Settings (Tuiles, JB 4.2)</string>
-    <string name="toggle_style_traditional">Traditionnel (CM10)</string>
+    <string name="toggle_style_tile">Quick Settings (Tuiles)</string>
+    <string name="toggle_style_traditional">Traditionnel</string>
+    <string name="toggle_style_scrollable">Traditionnel (Défilant)</string>
     <string name="toggle_swap_handle_side">Poignée à droite</string>
     <string name="add_toggles">Ajouter des Toggles</string>
 
@@ -372,21 +373,9 @@
     <string name="three_targets">3 éléments</string>
     <string name="four_targets">4 éléments</string>
     <string name="five_targets">5 éléments</string>
-    <string name="always_show_invincible_icons">Afficher des icônes invisibles</string>
+    <string name="always_show_invincible_icons">Afficher un icône invisible</string>
     <string name="always_show">Toujours afficher</string>
-    <string name="default_jb_with_invincible_icons_when_hidden">Comportement par défaut (JB) et icône invisible</string>
-    <string name="navbar_action_home">Accueil</string>
-    <string name="navbar_action_back">Retour</string>
-    <string name="navbar_action_recents">Applications récentes</string>
-    <string name="navbar_action_lastapp">Last App</string>
-    <string name="navbar_action_search">Rechercher</string>
-    <string name="navbar_action_screenshot">Capture d\'écran</string>
-    <string name="navbar_action_menu">Menu</string>
-    <string name="navbar_action_ime">IME Switcher</string>
-    <string name="navbar_action_kill">Fermer l\'application</string>
-    <string name="navbar_action_power">Verrouiller</string>
-    <string name="navbar_action_notifications">Notifications</string>
-    <string name="navbar_action_none">Vide</string>
+    <string name="default_jb_with_invincible_icons_when_hidden">Comportement par défaut + icône invisible</string>
     <string name="glow_times_off">Off</string>
     <string name="glow_times_superquick">Très rapide</string>
     <string name="glow_times_quick">Rapide</string>
@@ -412,7 +401,6 @@
     <string name="navbar_action_title">Bouton %1$s, action et icône</string>
     <string name="button_transparency_title">Transparence des boutons</string>
     <string name="navbar_width_help_title">Aide pour taille de NavBar combinée</string>
-    <string name="navbar_longpress_title">Bouton %1$s, action d\'un appui long</string>
     <string name="navbar_enable_bar">Activer la barre</string>
     <string name="navigation_bar_height_title">Hauteur de la barre - Portrait</string>
     <string name="navigation_bar_height_summary">Hauteur de la barre de navigation en mode portrait.</string>
@@ -432,6 +420,8 @@
     <string name="navigation_bar_glow_tint_summary">Quand vous appuyez sur un bouton, il y a une lueur. Utiliser ceci pour changer sa couleur.</string>
     <string name="navigation_bar_menu_arrow_keys_title">Touches fléchées</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Afficher deux touches fléchées dans la barre de navigation lorsque vous écrivez.</string>
+    <string name="statusbar_hide_title">Barre d'état masquée</string>
+    <string name="statusbar_hide_summary">Masquer complètement la barre d'état</string>
     <string name="navigation_bar_alpha_title">Opacité barre d\'état et barre de navigation.</string>
     <string name="navbar_hide_enable_title">Activer Hidden Navbar</string>
     <string name="drag_handle_opacity_title">Opacité de la poignée</string>
@@ -439,7 +429,12 @@
     <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
     <string name="summary_navbar_timeout">Délai d\'attente avant la disparition de la Navbar</string>
     <string name="glow_times_title">Animation de lueur des boutons</string>
-
+    <string name="navbar_buttons_instructions">Appuyer sur l'icône pour changer l\'action ou l'icône</string>
+    <string name="navbar_title_menu">Options du bouton</string>
+    <string name="navbar_longpress_menu">Appui long: %1$s</string>
+    <string name="navbar_icon_menu">Icône personnalisé</string>
+    <string name="navbar_delete_menu">Supprimer le bouton</string>
+    
     <!-- Nav Bar Widgets -->
     <string name="navbar_widgets">Widgets - Barre de Navigation</string>
     <string name="navbar_widgets_instructions">Swipe pour voir - Appuyer pour choisir</string>
