@@ -60,7 +60,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         hasHardwareButtons = getResources().getBoolean(R.bool.has_hardware_buttons);
         hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
         hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
-        mContext = getActivity().getApplicationContext();
+        mContext = getActivity();
         mContentRes = getActivity().getContentResolver();
         mActionBar = getActivity().getActionBar();
         if(getArguments() != null) {
