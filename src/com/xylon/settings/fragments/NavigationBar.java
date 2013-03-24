@@ -169,11 +169,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         }
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
         PreferenceScreen prefs = getPreferenceScreen();
-
-        customnavImage = new File(getActivity().getFilesDir()+"navbar_icon_" + mPendingIconIndex + ".png");
-        customnavTemp = new File(getActivity().getCacheDir()+"/"+"tmp_icon_" + mPendingIconIndex + ".png");
 
         mNavigationBarColor = (ColorPickerPreference) prefSet.findPreference(PREF_NAV_COLOR);
         mNavigationBarColor.setOnPreferenceChangeListener(this);

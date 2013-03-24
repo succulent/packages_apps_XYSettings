@@ -14,13 +14,18 @@
                 android:key="pref_menu_display"
                 android:title="@string/title_pref_menu_display"
                 android:summary="@string/summary_pref_menu_display" />
-
         <ListPreference
                 android:entries="@array/pref_navigation_menu_display_entries"
                 android:entryValues="@array/pref_navigation_menu_display_values"
                 android:key="navbar_menu_display"
                 android:title="@string/title_pref_navigation_menu_display"
                 android:summary="@string/summary_pref_navigation_menu_display" />
+        <CheckBoxPreference
+                android:key="navigation_bar_menu_arrow_keys"
+                android:title="@string/navigation_bar_menu_arrow_keys_title"
+                android:summary="@string/navigation_bar_menu_arrow_keys_summary" />
+
+        </PreferenceCategory>
 
         <PreferenceCategory
                 android:key="advanced_cat"
@@ -93,11 +98,6 @@
                 android:key="navigation_bar_allcolor"
                 android:title="@string/navigation_bar_colorall_title"
                 android:summary="@string/navigation_bar_colorall_summary" />
-
-        <CheckBoxPreference
-                android:key="navigation_bar_menu_arrow_keys"
-                android:title="@string/navigation_bar_menu_arrow_keys_title"
-                android:summary="@string/navigation_bar_menu_arrow_keys_summary" />
 
         </PreferenceCategory>
 

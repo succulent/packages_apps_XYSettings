@@ -34,7 +34,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.xylon.settings.SettingsPreferenceFragment;
-import com.xylon.settings.fragments.NavigationBar;
 import com.xylon.settings.R;
 import com.xylon.settings.Utils;
 import com.xylon.settings.util.Helpers;
@@ -57,10 +56,10 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        refreshSettings();
+        refreshSetup();
     }
 
-    public void refreshSettings() {
+    public void refreshSetup() {
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
             prefs.removeAll();
@@ -124,7 +123,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
                 Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
 
-                refreshSettings();
+                refreshSetup();
                 return true;
              default:
                 return super.onContextItemSelected(item);
@@ -152,7 +151,6 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_COLOR, intHex);
-            NavigationBar.refreshSettings();
             return true;
         } else if (preference == mAlphaMode) {
             int alphaMode = Integer.valueOf((String) newValue);

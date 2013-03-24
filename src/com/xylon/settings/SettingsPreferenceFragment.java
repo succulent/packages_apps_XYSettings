@@ -51,6 +51,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     protected boolean hasHardwareButtons;
     protected boolean hasFastCharge;
     protected boolean hasColorTuning;
+    protected ContentResolver mContentRes;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         hasFastCharge = getResources().getBoolean(R.bool.has_fast_charge);
         hasColorTuning = getResources().getBoolean(R.bool.has_color_tuning);
         mContext = getActivity().getApplicationContext();
+        mContentRes = getActivity().getContentResolver();
         mActionBar = getActivity().getActionBar();
         if(getArguments() != null) {
             mShortcutFragment = getArguments().getBoolean("started_from_shortcut", false);

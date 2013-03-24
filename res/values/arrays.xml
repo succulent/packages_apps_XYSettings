@@ -791,7 +791,6 @@
         <item>@string/home</item>
         <item>@string/back</item>
         <item>@string/recents</item>
-        <item>@string/recents_gb</item>
         <item>@string/lastapp</item>
         <item>@string/search</item>
         <item>@string/menu</item>
@@ -806,7 +805,6 @@
         <item>**home**</item>
         <item>**back**</item>
         <item>**recents**</item>
-        <item>**recentsgb**</item>
         <item>**lastapp**</item>
         <item>**search**</item>
         <item>**menu**</item>

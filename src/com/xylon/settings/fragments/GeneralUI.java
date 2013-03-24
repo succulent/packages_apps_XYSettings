@@ -153,7 +153,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
 
         mStatusBarHide = (CheckBoxPreference) findPreference(STATUSBAR_HIDDEN);
-        mStatusBarHide.setChecked(Settings.System.getBoolean(mContentResolver,
+        mStatusBarHide.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
                 Settings.System.STATUSBAR_HIDDEN, false));
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
