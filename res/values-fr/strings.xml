@@ -420,8 +420,8 @@
     <string name="navigation_bar_glow_tint_summary">Quand vous appuyez sur un bouton, il y a une lueur. Utiliser ceci pour changer sa couleur.</string>
     <string name="navigation_bar_menu_arrow_keys_title">Touches fléchées</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Afficher deux touches fléchées dans la barre de navigation lorsque vous écrivez.</string>
-    <string name="statusbar_hide_title">Barre d'état masquée</string>
-    <string name="statusbar_hide_summary">Masquer complètement la barre d'état</string>
+    <string name="statusbar_hide_title">Barre d\'état masquée</string>
+    <string name="statusbar_hide_summary">Masquer complètement la barre d\'état</string>
     <string name="navigation_bar_alpha_title">Opacité barre d\'état et barre de navigation.</string>
     <string name="navbar_hide_enable_title">Activer Hidden Navbar</string>
     <string name="drag_handle_opacity_title">Opacité de la poignée</string>
@@ -429,7 +429,7 @@
     <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
     <string name="summary_navbar_timeout">Délai d\'attente avant la disparition de la Navbar</string>
     <string name="glow_times_title">Animation de lueur des boutons</string>
-    <string name="navbar_buttons_instructions">Appuyer sur l'icône pour changer l\'action ou l'icône</string>
+    <string name="navbar_buttons_instructions">Appuyer sur l\'icône pour changer l\'action ou l\'icône</string>
     <string name="navbar_title_menu">Options du bouton</string>
     <string name="navbar_longpress_menu">Appui long: %1$s</string>
     <string name="navbar_icon_menu">Icône personnalisé</string>
