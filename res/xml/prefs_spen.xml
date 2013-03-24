@@ -42,15 +42,16 @@
             android:key="spen_double"
             android:dependency="enable_spen"
             android:title="@string/spen_double_title"
-            android:entries="@array/navbar_button_entries"
-            android:entryValues="@array/navbar_button_values" />
+            android:entries="@array/spen_actions_entries"
+            android:entryValues="@array/spen_actions_values" />
 
         <ListPreference
             android:key="spen_long"
             android:dependency="enable_spen"
             android:title="@string/spen_long_title"
-            android:entries="@array/navbar_button_entries"
-            android:entryValues="@array/navbar_button_values" />
+            android:entries="@array/spen_actions_entries"
+            android:entryValues="@array/spen_actions_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
