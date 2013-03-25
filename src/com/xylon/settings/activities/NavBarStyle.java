@@ -56,10 +56,10 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        refreshSettings();
+        refreshSetup();
     }
 
-    public void refreshSettings() {
+    public void refreshSetup() {
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
             prefs.removeAll();
@@ -73,7 +73,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
         mNavBarColor = (ColorPickerPreference) findPreference(PREF_NAV_BAR_COLOR);
         mNavBarColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_TINT, -2);
+                    Settings.System.NAVIGATION_BAR_COLOR, -2);
         if (intColor == -2) {
             intColor = getResources().getColor(
                     com.android.internal.R.color.black);
@@ -123,7 +123,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
                 Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
 
-                refreshSettings();
+                refreshSetup();
                 return true;
              default:
                 return super.onContextItemSelected(item);

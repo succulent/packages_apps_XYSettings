@@ -93,6 +93,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String PREF_KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String PREF_KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
+    private static final String STATUSBAR_HIDDEN = "statusbar_hidden";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     private static final int REQUEST_PICK_CUSTOM_ICON = 202;
@@ -118,6 +119,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mFullscreenKeyboard;
     CheckBoxPreference mCrtOff;
+    CheckBoxPreference mStatusBarHide;
     ListPreference mCrtMode;
     CheckBoxPreference mKeyboardRotationToggle;
     ListPreference mKeyboardRotationTimeout;
@@ -149,6 +151,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mShowActionOverflow.setChecked(Settings.System.getBoolean(getActivity().
                         getApplicationContext().getContentResolver(),
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
+
+        mStatusBarHide = (CheckBoxPreference) findPreference(STATUSBAR_HIDDEN);
+        mStatusBarHide.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.STATUSBAR_HIDDEN, false));
 
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
         mStatusBarNotifCount.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(), 
@@ -455,6 +461,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     mKeyboardRotationToggle.isChecked() ? TIMEOUT_DEFAULT : 0);
             updateRotationTimeout(TIMEOUT_DEFAULT);
             return true;
+        } else if (preference == mStatusBarHide) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putBoolean(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_HIDDEN, checked ? true : false);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
