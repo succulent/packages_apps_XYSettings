@@ -272,9 +272,9 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         }
         PreferenceGroup pg = (PreferenceGroup) prefs.findPreference("advanced_cat");
         if (isTablet(mContext)) { // Tablets don't set NavBar Height
-            pg.removePreference(mNavigationBarHeight);
-            pg.removePreference(mNavigationBarHeightLandscape);
-            pg.removePreference(mNavigationBarWidth);
+//            pg.removePreference(mNavigationBarHeight);
+//            pg.removePreference(mNavigationBarHeightLandscape);
+//            pg.removePreference(mNavigationBarWidth);
         } else { // Phones&Phablets don't have SystemBar
             pg.removePreference(mWidthPort);
             pg.removePreference(mWidthLand);
