@@ -1,4 +1,3 @@
-
 package com.xylon.settings.fragments;
 
 import java.io.File;
@@ -280,9 +279,9 @@ public class NavigationBar extends SettingsPreferenceFragment implements
             pg.removePreference(mWidthLand);
             pg.removePreference(mWidthHelp);
             if (isPhablet(mContext)) { // Phablets don't have NavBar onside
-                pg.removePreference(mNavigationBarWidth);
+//                pg.removePreference(mNavigationBarWidth);
             } else {
-                pg.removePreference(mNavigationBarHeightLandscape);
+//                pg.removePreference(mNavigationBarHeightLandscape);
             }
         }
         refreshSettings();
