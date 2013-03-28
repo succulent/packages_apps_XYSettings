@@ -1,4 +1,3 @@
-
 package com.xylon.settings.fragments;
 
 import java.io.File;
