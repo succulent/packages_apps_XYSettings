@@ -1,4 +1,3 @@
-
 package com.xylon.settings.fragments;
 
 import java.io.File;
@@ -86,9 +85,9 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
     private static final String PREF_NAVBAR_QTY = "navbar_qty";
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
-    private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
-    private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
-    private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
+//    private static final String NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
+//    private static final String NAVIGATION_BAR_HEIGHT_LANDSCAPE = "navigation_bar_height_landscape";
+//    private static final String NAVIGATION_BAR_WIDTH = "navigation_bar_width";
     private static final String NAVIGATION_BAR_WIDGETS = "navigation_bar_widgets";
     private static final String PREF_MENU_ARROWS = "navigation_bar_menu_arrow_keys";
     private static final String NAVBAR_HIDE_ENABLE = "navbar_hide_enable";
@@ -111,9 +110,9 @@ public class NavigationBar extends SettingsPreferenceFragment implements
     ListPreference mNavBarMenuDisplay;
     ListPreference mNavBarButtonQty;
     CheckBoxPreference mEnableNavigationBar;
-    ListPreference mNavigationBarHeight;
-    ListPreference mNavigationBarHeightLandscape;
-    ListPreference mNavigationBarWidth;
+//    ListPreference mNavigationBarHeight;
+//    ListPreference mNavigationBarHeightLandscape;
+//    ListPreference mNavigationBarWidth;
     SeekBarPreference mButtonAlpha;
     Preference mWidthHelp;
     SeekBarPreference mWidthPort;
@@ -252,14 +251,14 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
         mGlowTimes.setOnPreferenceChangeListener(this);
 
-        mNavigationBarHeight = (ListPreference) prefSet.findPreference("navigation_bar_height");
-        mNavigationBarHeight.setOnPreferenceChangeListener(this);
+//        mNavigationBarHeight = (ListPreference) prefSet.findPreference("navigation_bar_height");
+//        mNavigationBarHeight.setOnPreferenceChangeListener(this);
 
-        mNavigationBarHeightLandscape = (ListPreference) prefSet.findPreference("navigation_bar_height_landscape");
-        mNavigationBarHeightLandscape.setOnPreferenceChangeListener(this);
+//        mNavigationBarHeightLandscape = (ListPreference) prefSet.findPreference("navigation_bar_height_landscape");
+//        mNavigationBarHeightLandscape.setOnPreferenceChangeListener(this);
 
-        mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
-        mNavigationBarWidth.setOnPreferenceChangeListener(this);
+//        mNavigationBarWidth = (ListPreference) findPreference("navigation_bar_width");
+//        mNavigationBarWidth.setOnPreferenceChangeListener(this);
         mConfigureWidgets = findPreference(NAVIGATION_BAR_WIDGETS);
 
         mMenuArrowKeysCheckBox = (CheckBoxPreference) findPreference(PREF_MENU_ARROWS);
@@ -272,17 +271,17 @@ public class NavigationBar extends SettingsPreferenceFragment implements
         }
         PreferenceGroup pg = (PreferenceGroup) prefs.findPreference("advanced_cat");
         if (isTablet(mContext)) { // Tablets don't set NavBar Height
-            pg.removePreference(mNavigationBarHeight);
-            pg.removePreference(mNavigationBarHeightLandscape);
-            pg.removePreference(mNavigationBarWidth);
+//            pg.removePreference(mNavigationBarHeight);
+//            pg.removePreference(mNavigationBarHeightLandscape);
+//            pg.removePreference(mNavigationBarWidth);
         } else { // Phones&Phablets don't have SystemBar
             pg.removePreference(mWidthPort);
             pg.removePreference(mWidthLand);
             pg.removePreference(mWidthHelp);
             if (isPhablet(mContext)) { // Phablets don't have NavBar onside
-                pg.removePreference(mNavigationBarWidth);
+//                pg.removePreference(mNavigationBarWidth);
             } else {
-                pg.removePreference(mNavigationBarHeightLandscape);
+//                pg.removePreference(mNavigationBarHeightLandscape);
             }
         }
         refreshSettings();
@@ -479,33 +478,33 @@ public class NavigationBar extends SettingsPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_WIDTH_LAND,
                     val * 0.4f);
             return true;
-        } else if (preference == mNavigationBarWidth) {
-            String newVal = (String) newValue;
-            int dp = Integer.parseInt(newVal);
-            int width = mapChosenDpToPixels(dp);
-            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH,
-                    width);
-            return true;
-        } else if (preference == mNavigationBarHeight) {
-            String newVal = (String) newValue;
-            int dp = Integer.parseInt(newVal);
-            int height = mapChosenDpToPixels(dp);
-            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT,
-                    height);
-            return true;
+//        } else if (preference == mNavigationBarWidth) {
+//            String newVal = (String) newValue;
+//            int dp = Integer.parseInt(newVal);
+//            int width = mapChosenDpToPixels(dp);
+//            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_WIDTH,
+//                    width);
+//            return true;
+//        } else if (preference == mNavigationBarHeight) {
+//            String newVal = (String) newValue;
+//            int dp = Integer.parseInt(newVal);
+//            int height = mapChosenDpToPixels(dp);
+//            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_HEIGHT,
+//                    height);
+//            return true;
         } else if (preference == mNavBarHideTimeout) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAV_HIDE_TIMEOUT, val);
             refreshSettings();
             return true;
-        } else if (preference == mNavigationBarHeightLandscape) {
-            String newVal = (String) newValue;
-            int dp = Integer.parseInt(newVal);
-            int height = mapChosenDpToPixels(dp);
-            Settings.System.putInt(mContentRes, Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE,
-                    height);
-            return true;
+//        } else if (preference == mNavigationBarHeightLandscape) {
+//            String newVal = (String) newValue;
+//            int dp = Integer.parseInt(newVal);
+//            int height = mapChosenDpToPixels(dp);
+//            Settings.System.putInt(mContentRes, Settings.System.NAVIGATION_BAR_HEIGHT_LANDSCAPE,
+//                    height);
+//            return true;
         }
         return false;
     }

@@ -37,7 +37,7 @@
     <string name="title_navring">Anneaux de Navigation</string>
     <string name="title_power_menu">Menu Power</string>
     <string name="title_led_control">Gestion de la LED</string>
-    <string name="title_clipboard_share">Copier</string>
+    <string name="title_clipboard_share">Presse-Papiers (Copier)</string>
 
     <!-- T-Mobile Theme chooser settings  -->
     <string name="themes_title">Thèmes</string>
@@ -346,7 +346,7 @@
     <string name="right">À droite</string>
     <string name="left">À gauche</string>
     <string name="both">Les deux</string>
-    <string name="default_jb_behavior">Comportement par défaut (JB)</string>
+    <string name="default_jb_behavior">Comportement par défaut</string>
     <string name="home">Accueil</string>
     <string name="back">Retour</string>
     <string name="recents">Appli. Récentes</string>
@@ -421,7 +421,7 @@
     <string name="navigation_bar_menu_arrow_keys_title">Touches fléchées</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Afficher deux touches fléchées dans la barre de navigation lorsque vous écrivez.</string>
     <string name="statusbar_hide_title">Barre d\'état masquée</string>
-    <string name="statusbar_hide_summary">Masquer complètement la barre d\'état</string>
+    <string name="statusbar_hide_summary">Autoriser la barre d\'état à être masquée.</string>
     <string name="navigation_bar_alpha_title">Opacité barre d\'état et barre de navigation.</string>
     <string name="navbar_hide_enable_title">Activer Hidden Navbar</string>
     <string name="drag_handle_opacity_title">Opacité de la poignée</string>
