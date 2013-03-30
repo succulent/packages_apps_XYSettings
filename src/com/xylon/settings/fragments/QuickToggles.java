@@ -43,6 +43,7 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     private static final String PREF_SCREENSHOT_TIMEOUT = "toggle_screenshot_timeout";
     private static final String PREF_ENABLE_FASTTOGGLE = "enable_fast_toggle";
     private static final String PREF_CHOOSE_FASTTOGGLE_SIDE = "choose_fast_toggle_side";
+    private static final String PREF_SCREENSHOT_DELAY = "screenshot_delay";
 
     private final int PICK_CONTACT = 1;
 
@@ -51,9 +52,9 @@ public class QuickToggles extends SettingsPreferenceFragment implements
     ListPreference mTogglesPerRow;
     ListPreference mTogglesStyle;
     ListPreference mChooseFastToggleSide;
-    ListPreference mScreenTimeout;
     Preference mFavContact;
     CheckBoxPreference mFastToggle;
+    ListPreference mScreenshotDelay;
 
     BroadcastReceiver mReceiver;
     ArrayList<String> mToggles;
@@ -104,8 +105,10 @@ public class QuickToggles extends SettingsPreferenceFragment implements
         mChooseFastToggleSide.setValue(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.CHOOSE_FASTTOGGLE_SIDE, 1) + "");
 
-        mScreenTimeout = (ListPreference) findPreference(PREF_SCREENSHOT_TIMEOUT);
-        mScreenTimeout.setOnPreferenceChangeListener(this);
+        mScreenshotDelay = (ListPreference) findPreference(PREF_SCREENSHOT_DELAY);
+        mScreenshotDelay.setOnPreferenceChangeListener(this);
+        mScreenshotDelay.setValue(String.valueOf(Settings.System.getInt(mContentRes,
+                Settings.System.SCREENSHOT_TOGGLE_DELAY, 5000)));
 
         if (isSW600DPScreen(mContext) || isTablet(mContext)) {
             getPreferenceScreen().removePreference(mFastToggle);
@@ -170,17 +173,17 @@ public class QuickToggles extends SettingsPreferenceFragment implements
                     Settings.System.TOGGLES_STYLE, val);
             mTogglesStyle.setValue((String) newValue);
             Helpers.restartSystemUI();
+        } else if (preference == mScreenshotDelay) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.SCREENSHOT_TOGGLE_DELAY, val);
+            mScreenshotDelay.setValue((String) newValue);
         } else if (preference == mFastToggle) {
             boolean val = (Boolean) newValue;
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.FAST_TOGGLE, val);
             getActivity().getBaseContext().getContentResolver()
                     .notifyChange(Settings.System.getUriFor(Settings.System.FAST_TOGGLE), null);
-            return true;
-        } else if (preference == mScreenTimeout) {
-            int val = Integer.parseInt((String) newValue);
-            result = Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SCREENSHOT_TIMEOUT, val);
             return true;
         } else if (preference == mChooseFastToggleSide) {
             int val = Integer.parseInt((String) newValue);
