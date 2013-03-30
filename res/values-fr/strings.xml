@@ -622,8 +622,8 @@
 
     <!-- LED Values -->
     <string name="time_0_seconds_off">Off</string>
-    <string name="time_0_2_seconds">2 secondes</string>
-    <string name="time_0_5_seconds">5 secondes</string>
+    <string name="time_0_2_seconds">0,2 seconde</string>
+    <string name="time_0_5_seconds">0,5 seconde</string>
     <string name="time_1_second">1 seconde</string>
     <string name="time_1_5_seconds">1,5 secondes</string>
     <string name="time_2_seconds">2 secondes</string>
