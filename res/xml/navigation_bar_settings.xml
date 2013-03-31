@@ -82,7 +82,7 @@
         <net.margaritov.preference.colorpicker.ColorPickerPreference
                 android:key="nav_button_color"
                 android:title="@string/navigation_bar_tint_title"
-                android:defaultValue="0xff33b5e5" />
+                android:defaultValue="0xffffffff" />
 
         <com.xylon.settings.widgets.SeekBarPreference
                 android:key="button_transparency"
