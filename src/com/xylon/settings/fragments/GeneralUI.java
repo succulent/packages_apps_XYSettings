@@ -168,14 +168,14 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
-        mLcdDensity = findPreference("lcd_density_setup");
+        /**mLcdDensity = findPreference("lcd_density_setup");
         String currentProperty = SystemProperties.get("ro.sf.lcd_density");
         try {
             newDensityValue = Integer.parseInt(currentProperty);
         } catch (Exception e) {
             getPreferenceScreen().removePreference(mLcdDensity);
         }
-        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
+        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);**/
 
         mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
         if (mUserModeUI != null) {
@@ -423,10 +423,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             .create()
             .show();
             return true;
-        } else if (preference == mLcdDensity) {
+        /**} else if (preference == mLcdDensity) {
             ((PreferenceActivity) getActivity())
                     .startPreferenceFragment(new DensityChanger(), true);
-            return true;
+            return true;**/
         } else if (preference == mDualpane) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.FORCE_DUAL_PANEL,
