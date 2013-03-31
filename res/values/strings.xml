@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name">XYE Tools</string>
+    <string name="app_name">XY Tools</string>
 
     <!-- Header Strings -->
     <string name="user_interface">Main Interface</string>
@@ -561,7 +561,7 @@
     <string name="notification_behaviour_title">Notification behavior</string>
     <string name="notification_behaviour_normal">Normal</string>
     <string name="notification_behaviour_neverexpand">Never expand</string>
-    <string name="notification_behaviour_alwaysexpand">Alaways expand</string>
+    <string name="notification_behaviour_alwaysexpand">Always expand</string>
     <string name="notification_behaviour_oldstyle">Old style</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
@@ -588,7 +588,7 @@
     <!-- General UI | CRT Animation Modifications -->
 
     <string name="display_category_animation_options_title">Animation options</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="system_power_crt_screen_off_title">CRT Screen-Off</string>
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>
     <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>
@@ -618,7 +618,7 @@
     <string name="ram_bar_cache">Applications and cache</string>
     <string name="ram_bar_other">Applications, cache and other</string>
     <string name="ram_bar_style_cat">Recents RAM bar style</string>
-    <string name="ram_bar_color_app_mem_color">Applications RAM color</string>
+    <string name="ram_bar_color_app_mem_color">Application RAM color</string>
     <string name="ram_bar_color_cache_mem_color">Cache RAM color</string>
     <string name="ram_bar_color_total_mem_color">Other RAM color</string>
     <string name="ram_bar_color_enabled">Enabled</string>
@@ -639,7 +639,7 @@
     <string name="reboot_title">2. Reboot!</string>
     <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
     <string name="clear_market_data_title">3. Clear all relevant market data.</string>
-    <string name="clear_market_data_summary">This step clears data from market, google play services and google services framework.</string>
+    <string name="clear_market_data_summary">This step clears data from Google play services and Google services framework.</string>
     <string name="clear_market_data_cleared">Data successfully cleared</string>
     <string name="clear_market_data_donot_cleared">"Data couldn't be cleared, please clear it yourself!"</string>
     <string name="reboot_cleardata_title">4. Reboot!</string>
@@ -647,14 +647,14 @@
     <string name="open_market_title">5. Open Market and hit accept</string>
     <string name="open_market_summary">Press back when done to return here.</string>
     <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
-    <string name="custom_density_title">6. Change density to whatever you like!</string>
+    <string name="custom_density_title">6. Change density to whatever youd like!</string>
     <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
     <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
     <string name="custom_density">custom</string>
     <string name="set_custom_density_title">Set custom density</string>
     <string name="set_custom_density_set">Set</string>
     <string name="custom_density_dialog_title">"WARNING!"</string>
-    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility, please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
@@ -676,9 +676,9 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Test LED</string>
     <string name="led_test_notification_message_now">"Now testing LED for: "</string>
-    <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup till you're done viewing the LED color."</string>
+    <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup until you're done viewing the LED color."</string>
     <string name="led_test_ok">OK</string>
-    <string name="title_charging_led_on">Enable LED while charging (needs reboot)</string>
+    <string name="title_charging_led_on">Enable LED while charging (needs a reboot)</string>
     <string name="led_change_brightness">Change brightness</string>
     <string name="led_brightness_default">Default brightness: 31</string>
 
