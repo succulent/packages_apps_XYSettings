@@ -322,12 +322,6 @@
     <string name="toggle_enable_fasttoggle_summary">Overrides default behavior</string>
     <string name="toggle_choose_fasttoggle_side_title">Choose fast toggle side</string>
     <string name="toggle_choose_fasttoggle_side_summary">Choose which side the fast toggle area shall be</string>
-    <string name="toggle_screenshot_timeout_title">Screenshot Timeout</string>
-    <string name="toggle_screenshot_timeout_summary">Choose how fast the toggle will snap your screen after collapsing the notification. (Recommended - Slow)</string>
-    <string name="toggle_screenshot_timeout_fast">Fast</string>
-    <string name="toggle_screenshot_timeout_normal">Normal</string>
-    <string name="toggle_screenshot_timeout_slow">Slow</string>
-    <string name="toggle_screenshot_timeout_extremelyslow">Extremely Slow</string>
     <string name="toggle_dialog_arrange_title">Toggle setup</string>
     <string name="toggle_dialog_add_toggles">Select toggles to add</string>
     <string name="toggle_style_tile">Tiles</string>
@@ -335,6 +329,38 @@
     <string name="toggle_style_scrollable">Traditional (Scrollable)</string>
     <string name="toggle_swap_handle_side">Drag handle on right</string>
     <string name="add_toggles">Change toggles</string>
+    <string name="screenshot_delay_title">Screenshot delay</string>
+    <string name="screenshot_delay_summary">Delay to use after long pressing the screenshot toggle</string>
+    <string name="toggle_action_title">Action %1$s &amp; icon</string>
+    <string name="toggle_action_title_alt">Longpress action %1$s &amp; icon</string>
+    <string name="toggle_longpress_title">Longpress action %1$s</string>
+    <string name="custom_toggle_action">How it works</string>
+    <string name="custom_toggle_desc">In Basic mode, the toggle will cycle through actions on each click. Longpress will launch the displayed action. This is most useful for users who want the toggle to launch applications.\nIn Advanced mode, the toggle allows you to launch an action with each click. Longpress actions will also be available to you in this mode. This is most useful for users who desire a toggle that performs tasks that does not launch a new application.</string>
+    <string name="custom_toggle_okay">Dismiss</string>
+    <string name="custom_toggle_cat">Custom toggle</string>
+    <string name="custom_button_cat">Custom toggle actions</string>
+    <string name="dclick_action_title">Double-click Actions</string>
+    <string name="dclick_action_summary">Change state by double-clicking</string>
+    <string name="boot_action_title">State one at boot</string>
+    <string name="boot_action_summary">Will launch state one on boot</string>
+    <string name="match_icon_action_title">Launch displayed action</string>
+    <string name="match_icon_action_summary">Useful for aligning task to displayed icon per your specific usage</string>
+    <string name="advanced_toggle_title">Advanced or Basic actions</string>
+    <string name="advanced_toggle_summaryon">Advanced (Short and Longpress actions)</string>
+    <string name="advanced_toggle_summaryoff">Basic (Longpress actions only)</string>
+    <string name="action_toggle_title">Toggle Actions</string>
+    <string name="action_toggle_summary">Toggle sequence from left to right</string>
+    <string name="no_dclick">No action</string>
+    <string name="back_one_dclick">Reverse state</string>
+    <string name="state_one_dclick">Set to state one</string>
+    <string name="skip_back_dclick">Skip back (no action)</string>
+    <string name="skip_up_dclick">Skip forward (no action)</string>
+    <string name="collapse_bar_title">Close statusbar</string>
+    <string name="collapse_bar_summary">Statusbar closes on action completion</string>
+    <string name="no_collapse">Never collapse</string>
+    <string name="click_collapse">On click</string>
+    <string name="long_collapse">On long click</string>
+    <string name="both_collapse">Both click and long click</string>
 
      <!-- Brightness slider -->
     <string name="on_top">On top</string>
@@ -519,6 +545,7 @@
     <string name="interface_navring_settings_title">Navigation Ring</string>
     <string name="interface_navring_settings_summary">@null</string>
     <string name="navring_target_info">Drag your finger to targets to assign actions</string>
+    <string name="navring_clear">Clear action</string>
     <string name="navring_short">Short action</string>
     <string name="navring_long">Long action</string>
     <string name="navring_icon">Custom icon</string>
@@ -561,7 +588,7 @@
     <string name="notification_behaviour_title">Notification behavior</string>
     <string name="notification_behaviour_normal">Normal</string>
     <string name="notification_behaviour_neverexpand">Never expand</string>
-    <string name="notification_behaviour_alwaysexpand">Alaways expand</string>
+    <string name="notification_behaviour_alwaysexpand">Always expand</string>
     <string name="notification_behaviour_oldstyle">Old style</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
@@ -588,7 +615,7 @@
     <!-- General UI | CRT Animation Modifications -->
 
     <string name="display_category_animation_options_title">Animation options</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen Off</string>
+    <string name="system_power_crt_screen_off_title">CRT Screen-Off</string>
     <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>
     <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>
@@ -618,7 +645,7 @@
     <string name="ram_bar_cache">Applications and cache</string>
     <string name="ram_bar_other">Applications, cache and other</string>
     <string name="ram_bar_style_cat">Recents RAM bar style</string>
-    <string name="ram_bar_color_app_mem_color">Applications RAM color</string>
+    <string name="ram_bar_color_app_mem_color">Application RAM color</string>
     <string name="ram_bar_color_cache_mem_color">Cache RAM color</string>
     <string name="ram_bar_color_total_mem_color">Other RAM color</string>
     <string name="ram_bar_color_enabled">Enabled</string>
@@ -639,7 +666,7 @@
     <string name="reboot_title">2. Reboot!</string>
     <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
     <string name="clear_market_data_title">3. Clear all relevant market data.</string>
-    <string name="clear_market_data_summary">This step clears data from market, google play services and google services framework.</string>
+    <string name="clear_market_data_summary">This step clears data from Google play services and Google services framework.</string>
     <string name="clear_market_data_cleared">Data successfully cleared</string>
     <string name="clear_market_data_donot_cleared">"Data couldn't be cleared, please clear it yourself!"</string>
     <string name="reboot_cleardata_title">4. Reboot!</string>
@@ -647,14 +674,14 @@
     <string name="open_market_title">5. Open Market and hit accept</string>
     <string name="open_market_summary">Press back when done to return here.</string>
     <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
-    <string name="custom_density_title">6. Change density to whatever you like!</string>
+    <string name="custom_density_title">6. Change density to whatever youd like!</string>
     <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
     <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
     <string name="custom_density">custom</string>
     <string name="set_custom_density_title">Set custom density</string>
     <string name="set_custom_density_set">Set</string>
     <string name="custom_density_dialog_title">"WARNING!"</string>
-    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
+    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility, please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
@@ -676,9 +703,9 @@
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Test LED</string>
     <string name="led_test_notification_message_now">"Now testing LED for: "</string>
-    <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup till you're done viewing the LED color."</string>
+    <string name="led_test_notification_message_note">".  Please turn off your screen to see the LED. Don't hit OK on this popup until you're done viewing the LED color."</string>
     <string name="led_test_ok">OK</string>
-    <string name="title_charging_led_on">Enable LED while charging (needs reboot)</string>
+    <string name="title_charging_led_on">Enable LED while charging (needs a reboot)</string>
     <string name="led_change_brightness">Change brightness</string>
     <string name="led_brightness_default">Default brightness: 31</string>
 
