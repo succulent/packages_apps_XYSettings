@@ -7,12 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.aokp.romcontrol.fragments.StatusBarToggles;
-import com.aokp.romcontrol.R;
+import com.xylon.settings.fragments.QuickToggles;
+import com.xylon.settings.R;
 
 public class CustomTogglePref extends Preference {
 
-    private StatusBarToggles mParent;
+    private QuickToggles mParent;
 
     public CustomTogglePref(Context context) {
         super(context);
@@ -23,7 +23,7 @@ public class CustomTogglePref extends Preference {
         setLayoutResource(R.layout.custom_toggle_pref);
     }
 
-    public void setParent(StatusBarToggles parent){
+    public void setParent(QuickToggles parent){
         mParent = parent;
     }
 
