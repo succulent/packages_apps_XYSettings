@@ -196,7 +196,7 @@
     </string-array>
 
     <!-- Screenshot delay -->
-    <string-array name="screenshot_delay_entries">
+    <string-array name="screenshot_delay_entries" translatable="false">
         <item>@string/time_2_seconds</item>
         <item>@string/time_3_seconds</item>
         <item>@string/time_4_seconds</item>
