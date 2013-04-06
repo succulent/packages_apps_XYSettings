@@ -74,8 +74,7 @@ public class Applications {
                         String.valueOf(dpi)));
             }
             if (app.pack.equals("com.android.systemui")) {
-                Utils.setContext(mContext);
-                Utils.restartUI();
+                Utils.restartUI(mContext);
             } else {
                 try {
                     IActivityManager am = ActivityManagerNative.getDefault();
@@ -111,8 +110,7 @@ public class Applications {
                         + ".layout", String.valueOf(layout)));
             }
             if (app.pack.equals("com.android.systemui")) {
-                Utils.setContext(mContext);
-                Utils.restartUI();
+                Utils.restartUI(mContext);
             } else {
                 try {
                     IActivityManager am = ActivityManagerNative.getDefault();
@@ -148,8 +146,7 @@ public class Applications {
                         "com.android.systemui.dpi", String.valueOf(dpi)));
             }
             ExtendedPropertiesUtils.refreshProperties();
-            Utils.setContext(mContext);
-            Utils.restartUI();
+            Utils.restartUI(mContext);
         } finally {
             mount("ro");
         }
@@ -177,8 +174,7 @@ public class Applications {
                         "com.android.systemui.layout", layout));
             }
             ExtendedPropertiesUtils.refreshProperties();
-            Utils.setContext(mContext);
-            Utils.restartUI();
+            Utils.restartUI(mContext);
         } finally {
             mount("ro");
         }
@@ -219,8 +215,7 @@ public class Applications {
             }
             ExtendedPropertiesUtils.refreshProperties();
             if (restartui) {
-                Utils.setContext(mContext);
-                Utils.restartUI();
+                Utils.restartUI(mContext);
             }
         } finally {
             mount("ro");
@@ -238,8 +233,7 @@ public class Applications {
                         + ".dpi", "0"));
             }
             if (packageName.equals("com.android.systemui")) {
-                Utils.setContext(mContext);
-                Utils.restartUI();
+                Utils.restartUI(mContext);
             } else {
                 try {
                     IActivityManager am = ActivityManagerNative.getDefault();
