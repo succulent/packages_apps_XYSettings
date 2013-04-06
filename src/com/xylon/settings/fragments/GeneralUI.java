@@ -85,7 +85,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_RECENTS_RAM_BAR = "recents_ram_bar";
-    private static final String PREF_USER_MODE_UI = "user_mode_ui";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
     private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_POWER_CRT_MODE = "system_power_crt_mode";
@@ -111,8 +110,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     CheckBoxPreference mShowActionOverflow;
     Preference mNotificationWallpaper;
     Preference mWallpaperAlpha;
-    Preference mLcdDensity;
-    ListPreference mUserModeUI;
     ListPreference mNotificationsBehavior;
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mDualpane;
@@ -125,9 +122,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     ListPreference mKeyboardRotationTimeout;
 
     String mCustomLabelText = null;
-
-    int newDensityValue;
-    DensityChanger densityFragment;
 
     private int seekbarProgress;
     private int mAllowedLocations;
@@ -167,24 +161,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
 
         mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
-
-        /**mLcdDensity = findPreference("lcd_density_setup");
-        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
-        try {
-            newDensityValue = Integer.parseInt(currentProperty);
-        } catch (Exception e) {
-            getPreferenceScreen().removePreference(mLcdDensity);
-        }
-        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);**/
-
-        mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
-        if (mUserModeUI != null) {
-            int uiMode = Settings.System.getInt(cr,
-                    Settings.System.CURRENT_UI_MODE, 0);
-            mUserModeUI.setValue(Integer.toString(Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.USER_UI_MODE, uiMode)));
-            mUserModeUI.setOnPreferenceChangeListener(this);
-        }
 
         // respect device default configuration
         // true fades while false animates
@@ -423,10 +399,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             .create()
             .show();
             return true;
-        /**} else if (preference == mLcdDensity) {
-            ((PreferenceActivity) getActivity())
-                    .startPreferenceFragment(new DensityChanger(), true);
-            return true;**/
         } else if (preference == mDualpane) {
             Settings.System.putBoolean(mContext.getContentResolver(),
                     Settings.System.FORCE_DUAL_PANEL,
@@ -472,12 +444,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mUserModeUI) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.USER_UI_MODE, Integer.parseInt((String) newValue));
-            Helpers.restartSystemUI();
-            return true;
-        } else if (preference == mCrtMode) {
+        if (preference == mCrtMode) {
             int crtMode = Integer.valueOf((String) newValue);
             int index = mCrtMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
