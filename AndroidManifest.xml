@@ -71,14 +71,6 @@
 	    </intent-filter>
 	</activity>
         <activity
-            android:name=".fragments.DensityChanger">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="com.xylon.settings.SHORTCUT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".fragments.StatusBar"
             android:label="@string/title_statusbar" >
             <intent-filter>
