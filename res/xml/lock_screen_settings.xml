@@ -23,6 +23,19 @@
             <extra android:name="cm_security" android:value="true" />
         </PreferenceScreen-->
 
+        <ListPreference
+            android:key="lockscreen_background"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_custom_background_title"
+            android:title="@string/lockscreen_custom_background_title"
+            android:entries="@array/lockscreen_background_entries"
+            android:entryValues="@array/lockscreen_background_values" />
+
+        <CheckBoxPreference
+            android:key="see_through"
+            android:title="@string/see_through_title"
+            android:summary="@string/see_through_summary" />
+
     <PreferenceCategory
          android:key="shortcuts"
          android:title="@string/ls_shortcuts_title" >
@@ -44,25 +57,7 @@
         <CheckBoxPreference
                 android:key="lockscreen_auto_rotate"
                 android:title="@string/lockscreen_auto_rotate_title"
-                android:summary="@string/lockscreen_auto_rotate_summary" /> 
-
-    <PreferenceCategory
-            android:key="lockscreen_style_options"
-            android:title="@string/lockscreen_style_options_title">
-
-        <ListPreference
-            android:key="lockscreen_background"
-            android:persistent="false"
-            android:dialogTitle="@string/lockscreen_custom_background_title"
-            android:title="@string/lockscreen_custom_background_title"
-            android:entries="@array/lockscreen_background_entries"
-            android:entryValues="@array/lockscreen_background_values"/>
-
-        <com.xylon.settings.widgets.SeekBarPreference
-            android:key="lockscreen_alpha"
-            android:title="@string/lockscreen_alpha_title" />
-
-    </PreferenceCategory>
+                android:summary="@string/lockscreen_auto_rotate_summary" />
 
     <PreferenceCategory
             android:key="misc"
