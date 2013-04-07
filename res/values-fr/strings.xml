@@ -681,20 +681,17 @@
     <string name="icon_picker_system_icons_title">Icônes système</string>
     <string name="icon_picker_gallery_title">Galerie</string>
     <string name="icon_picker_pack_title">Pack d\'icônes</string>
-
     <string name="profile_applist_title">Applications</string>
     
     <!-- Lock screen misc. settings -->
     <string name="lockscreen_battery_status_title">État de la batterie</string>
     <string name="lockscreen_battery_status_charging">Lors du chargement</string>
     <string name="lockscreen_battery_status_alwayson">Toujours afficher</string>
-
     <string name="ls_shortcuts_title">Raccourcis écran de verrouillage</string>
 
     <!-- ParanoidAndroid: Lockscreen Shortcuts -->
     <string name="icon_picker_type">Sélectionnez le type de l\'icône:</string>
     <string name="icon_default">Par défaut</string>
-    <string name="icon_presets">Presets</string>
     <string name="icon_custom">Personalisé</string>
     <string name="lock_screen_shortcuts_title">Icônes de raccourcis</string>
     <string name="lock_screen_shortcuts_reset_message">Réinitialiser les raccourcis ?</string>
