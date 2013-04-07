@@ -24,6 +24,7 @@
     <string name="header_system">Sistema</string>
     <string name="sound">Sonido</string>
     <string name="lockscreen_options">Pantalla de Bloqueo</string>
+    <string name="lockscreen">Pantalla de Bloqueo</string>
     <string name="weather">Clima</string>
     <string name="tools">Herramientas</string>
 
@@ -37,6 +38,7 @@
     <string name="title_spen">Gestos de Lápiz</string>
     <string name="title_navring">Anillo de Navegación</string>
     <string name="title_power_menu">Menú de Encendido</string>
+    <string name="title_lockscreen">Pantalla de Bloqueo</string>
     <string name="title_led_control">Controles LED</string>
     <string name="title_clipboard_share">Compartir al Portapapeles</string>
 
@@ -76,7 +78,9 @@
 
     <string name="use_custom_app_title">Usar Aplicaciones Personalizadas</string>
     <string name="use_custom_app_summary">Usar Aplicaciones Personalizadas en Lugar del Diálogo de Aplicaciones Recientes</string>
+    <string name="select_custom_activity_title">Seleccionar Actividad Personalizada</string>
     <string name="group_applications">Aplicaciones</string>
+    <string name="choose_application">Elegir Aplicación</string>
     <string name="select_application">Seleccione la Aplicación</string>
 
     <!-- Color Picker -->
@@ -678,4 +682,86 @@
     <string name="very_high">Muy Alto</string>
     <string name="laserbeam">Rayo Láser</string>
 
+    <!-- Lock screen shortcuts -->
+    <string name="picker_activities">Actividades</string>
+    <string name="icon_picker_choose_icon_title">Escoger Icono</string>
+    <string name="icon_picker_alarm">Alarma</string>
+    <string name="icon_picker_browser">Navegador</string>
+    <string name="icon_picker_calendar">Calendario</string>
+    <string name="icon_picker_camera">Cámara</string>
+    <string name="icon_picker_email">Correo Electrónico</string>
+    <string name="icon_picker_email2">Email Holo</string>
+    <string name="icon_picker_gallery">Galería</string>
+    <string name="icon_picker_google_small">Google (pequeño)</string>
+    <string name="icon_picker_movie">Película</string>
+    <string name="icon_picker_music">Música</string>
+    <string name="icon_picker_nav_normal">Navegación</string>
+    <string name="icon_picker_phone">Teléfono</string>
+    <string name="icon_picker_podcast">Podcast</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">Búsqueda</string>
+    <string name="icon_picker_sms">Mensajería</string>
+
+    <!-- String for IconPicker -->
+    <string name="icon_picker_title">Elegir Icono Fuente</string>
+    <string name="icon_picker_system_icons_title">Iconos del Sistema</string>
+    <string name="icon_picker_gallery_title">Galería</string>
+    <string name="icon_picker_pack_title">Paquete de Iconos</string>
+
+    <string name="profile_applist_title">Aplicaciones</string>
+
+    <!-- Lock screen misc. settings -->
+    <string name="lockscreen_battery_status_title">Estado de la Batería</string>
+    <string name="lockscreen_battery_status_charging">Sólo Cuando se Carga</string>
+    <string name="lockscreen_battery_status_alwayson">Siempre</string>
+
+    <!-- Lock screen background -->
+    <string name="lockscreen_style_options_title">Estilo de la Pantalla de Bloqueo</string>
+    <string name="lockscreen_custom_background_title">Fondo</string>
+    <string name="lockscreen_custom_background_dialog_title">Eligir el Color</string>
+    <string name="lockscreen_background_result_successful">Fondo Cambiado</string>
+    <string name="lockscreen_background_result_not_successful">Fondo No Cambiado</string>
+    <string name="lockscreen_background_color_fill">Color de Relleno</string>
+    <string name="lockscreen_background_custom_image">Imagen Personalizada</string>
+    <string name="lockscreen_background_full_transparent">Completamente Transparente</string>
+    <string name="lockscreen_background_default_wallpaper">Fondo de Pantalla por Defecto</string>
+    <string name="lockscreen_alpha_title">Transparencia del Fondo</string>
+
+    <string name="ls_shortcuts_title">Atajos de la Pantalla de Bloqueo</string>
+
+    <!-- ParanoidAndroid: Lockscreen Shortcuts -->
+    <string name="icon_picker_type">Seleccionar Tipo de Icono:</string>
+    <string name="icon_default">Por Defecto</string>
+    <string name="icon_presets">Predeterminado</string>
+    <string name="icon_custom">Personalizado</string>
+    <string name="lock_screen_shortcuts_title">Rápido</string>
+    <string name="lock_screen_shortcuts_reset_message">¿Restablecer los accesos directos de la pantalla de bloqueo?</string>
+    <string name="lock_screen_shortcuts_summary">Ver o cambiar los accesos directos personalizados</string>
+    <string name="lock_screen_shortcuts_add">Añadir</string>
+    <string name="lock_screen_shortcuts_reset">Reajustar</string>
+    <string name="lock_screen_shortcuts_limit">¡Sólo 6 accesos están permitidos!</string>
+
+    <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
+    <string name="lockscreen_target_info">Arrastre el control de deslizamiento hacia los objetivos para asignar los accesos directos</string>
+    <string name="lockscreen_target_title">Carrusel</string>
+    <string name="lockscreen_target_summary">Ver o cambiar los accesos directos personalizados deslizantes</string>
+    <string name="lockscreen_target_reset">Restablecer los accesos directos de la pantalla de bloqueo a los valores predeterminados</string>
+    <string name="lockscreen_target_save">Accesos directos de la pantalla de bloqueo guardados</string>
+    <string name="lockscreen_target_reset_title">Reajustar</string>
+    <string name="lockscreen_target_reset_message">¿Eliminar todos los accesos directos creados por el usuario en la pantalla de bloqueo y restaurar por defecto?</string>
+    <string name="lockscreen_target_empty">Vacío</string>
+    <string name="lockscreen_target_edit_title">Editar Acceso e Icono</string>
+    <string name="lockscreen_target_edit_msg">Seleccionar o cambiar la aplicación o actividad deseada y el icono asociado</string>
+
+    <!-- AOKP Lockscreen Customizations -->
+    <string name="lockscreen_maximize_widgets_title">Maximizar los Widgets</string>
+    <string name="lockscreen_maximize_widgets_summary">Mostrar los widgets maximizados y el desbloqueo minimizado cuando la pantalla está encendida</string>
+    <string name="lockscreen_hide_initial_page_hints_title">Ocultar Sugerencias Iniciales en la Página</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Establecer si los consejos para los widgets de izquierda y derecha se muestra cuando la pantalla está encendida</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Utilice Carrusel de Widgets</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Utilizar animación de carrusel al cambiar entre los widgets de la pantalla de bloqueo</string>
+
+    <!--- Lock clock -->
+    <string name="lock_clock_title">Widget de Reloj</string>
+    <string name="lock_clock_summary">Ver o cambiar la forma en que los widgets de \'cLock\' se muestran en la pantalla de inicio y en la pantalla de bloqueo</string>
 </resources>
