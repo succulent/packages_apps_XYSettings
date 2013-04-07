@@ -59,6 +59,10 @@ public class Applications {
         addApplication(mContext, findAppInfo(mContext, packageName), mLastDpi);
     }
 
+    public static void addWidget(Context mContext, String packageName) {
+        addWidget(mContext, findAppInfo(mContext, packageName));
+    }
+
     public static void addApplication(Context mContext, BeerbongAppInfo app,
             int dpi) {
 
@@ -82,6 +86,29 @@ public class Applications {
                 } catch (android.os.RemoteException ex) {
                     // ignore
                 }
+            }
+        } finally {
+            mount("ro");
+        }
+        checkAutoBackup(mContext);
+    }
+
+    public static void addWidget(Context mContext, BeerbongAppInfo app) {
+
+        if (!mount("rw")) {
+            throw new RuntimeException("Could not remount /system rw");
+        }
+        try {
+            if (propExists(app.pack + ".force")) {
+                cmd.su.runWaitFor(String.format(REPLACE_CMD, app.pack + ".force", "1"));
+            } else {
+                cmd.su.runWaitFor(String.format(APPEND_CMD, app.pack + ".force", "1"));
+            }
+            try {
+                IActivityManager am = ActivityManagerNative.getDefault();
+                am.forceStopPackage(app.pack, UserHandle.myUserId());
+            } catch (android.os.RemoteException ex) {
+                // ignore
             }
         } finally {
             mount("ro");
@@ -248,6 +275,27 @@ public class Applications {
         checkAutoBackup(mContext);
     }
 
+    public static void removeWidget(Context mContext, String packageName) {
+        if (!mount("rw")) {
+            throw new RuntimeException("Could not remount /system rw");
+        }
+        try {
+            if (propExists(packageName)) {
+                cmd.su.runWaitFor(String.format(REPLACE_CMD, packageName
+                        + ".force", "0"));
+            }
+            try {
+                IActivityManager am = ActivityManagerNative.getDefault();
+                am.forceStopPackage(packageName, UserHandle.myUserId());
+            } catch (android.os.RemoteException ex) {
+                // ignore
+            }
+        } finally {
+            mount("ro");
+        }
+        checkAutoBackup(mContext);
+    }
+
     public static boolean isPartOfSystem(String packageName) {
         return packageName.startsWith(ExtendedPropertiesUtils.BEERBONG_PREFIX)
                 || packageName.startsWith("com.android.systemui.statusbar.")
@@ -285,6 +333,43 @@ public class Applications {
                             mContext,
                             packageName.substring(0,
                                     packageName.lastIndexOf(".dpi")));
+                } else {
+                    items.add(bAppInfo);
+                }
+            }
+        }
+
+        Collections.sort(items, new AppComparator());
+
+        return items.toArray(new BeerbongAppInfo[items.size()]);
+    }
+
+    public static BeerbongAppInfo[] getWidgetList(Context mContext) {
+
+        Properties properties = null;
+
+        try {
+            properties = new Properties();
+            properties.load(new FileInputStream(
+                    "/system/etc/beerbong/properties.conf"));
+        } catch (Throwable t) {
+            throw new RuntimeException(t);
+        }
+
+        List<BeerbongAppInfo> items = new ArrayList<BeerbongAppInfo>();
+
+        Iterator it = properties.keySet().iterator();
+        while (it.hasNext()) {
+            String packageName = (String) it.next();
+            String force = properties.getProperty(packageName);
+            if (packageName.endsWith(".force") && "1".equals(force)) {
+                BeerbongAppInfo bAppInfo = findAppInfo(mContext, packageName);
+
+                if (bAppInfo == null) {
+                    removeWidget(
+                            mContext,
+                            packageName.substring(0,
+                                    packageName.lastIndexOf(".force")));
                 } else {
                     items.add(bAppInfo);
                 }
@@ -376,6 +461,9 @@ public class Applications {
         if (packageName.endsWith(".dpi")) {
             packageName = packageName.substring(0,
                     packageName.lastIndexOf(".dpi"));
+        } else if (packageName.endsWith(".force")) {
+            packageName = packageName.substring(0,
+                    packageName.lastIndexOf(".force"));
         }
         if (appList.size() == 0) {
             getApplicationList(mContext);

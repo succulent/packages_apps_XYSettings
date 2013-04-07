@@ -44,6 +44,12 @@
             android:key="navbar_height"
             android:title="@string/navbar_height_title" />
 
+        <PreferenceScreen
+            android:key="widgets"
+            android:fragment="com.xylon.settings.beerbong.Widgets"
+            android:title="@string/widgets_title"
+            android:summary="@string/widgets_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
