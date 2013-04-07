@@ -74,6 +74,10 @@ public class CreateShortcut extends LauncherActivity {
             return R.drawable.ic_xy_settings_pie;
         else if (c.equals("LED"))
             return R.drawable.ic_xy_settings_led;
+        else if (c.equals("Lockscreen"))
+            return R.drawable.ic_xy_settings_lockscreen;
+        else if (c.equals("Hybrid"))
+            return R.drawable.ic_xy_settings_jellybeer;
         else
             return R.mipmap.ic_launcher;
     }

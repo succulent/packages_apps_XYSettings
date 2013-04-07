@@ -25,7 +25,9 @@
     <string name="spen_options">S Pen Gestures</string>
     <string name="header_system">System</string>
     <string name="sound">Sound</string>
+    <string name="hybridsettings">Hybrid Properties</string>
     <string name="lockscreen_options">Lockscreen</string>
+    <string name="lockscreen">Lock Screen</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
 
@@ -40,7 +42,9 @@
     <string name="title_navring">Navigation Ring</string>
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led_control">LED Control</string>
+    <string name="title_lockscreen">Lock Screen</string>
     <string name="title_pie">PIE™</string>
+    <string name="title_hybridsettings">Hybrid Properties</string>
     <string name="title_clipboard_share">Share to Clipboard</string>
 
     <!-- T-Mobile Theme chooser settings  -->
@@ -59,6 +63,8 @@
     <string name="header_summary_led">@null</string>
     <string name="header_summary_pie">@null</string>
     <string name="header_summary_statusbar">@null</string>
+    <string name="header_summary_lockscreen">@null</string>
+    <string name="header_summary_hybridsettings">@null</string>
     <string name="header_summary_spen">@null</string>
 
     <!-- Menu Strings -->
@@ -90,8 +96,10 @@
     <string name="enable_stylus_pointer_summary">Enable the mouse icon when using the S Pen</string>
 
     <string name="use_custom_app_title">Use custom application</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
     <string name="group_applications">Applications</string>
+    <string name="choose_application">Choose application</string>
     <string name="select_application">Select application</string>
     <string name="dpi">DPI</string>
 
@@ -590,6 +598,8 @@
     <string name="notification_behaviour_neverexpand">Never expand</string>
     <string name="notification_behaviour_alwaysexpand">Always expand</string>
     <string name="notification_behaviour_oldstyle">Old style</string>
+    <string name="notification_show_wifi_ssid_title">Show Wifi network on notification drawer</string>
+    <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network on notification drawer</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
     <string name="notif_wallpaper_alpha_title">Notification background alpha</string>
@@ -730,5 +740,170 @@
     <string name="high">High</string>
     <string name="very_high">Very High</string>
     <string name="laserbeam">Laserbeam</string>
+
+    <!-- NEW METHOD PEWDIEPIE CODE -->
+
+    <!-- Lock screen shortcuts -->
+    <string name="picker_activities">Activities</string>
+    <string name="icon_picker_choose_icon_title">Choose icon</string>
+    <string name="icon_picker_alarm">Alarm</string>
+    <string name="icon_picker_browser">Browser</string>
+    <string name="icon_picker_calendar">Calendar</string>
+    <string name="icon_picker_camera">Camera</string>
+    <string name="icon_picker_chrome">Chrome</string>
+    <string name="icon_picker_email">Email</string>
+    <string name="icon_picker_email2">Email Holo</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">Gallery</string>
+    <string name="icon_picker_google_small">Google (small)</string>
+    <string name="icon_picker_googleplus">Google Plus</string>
+    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_maps">Maps</string>
+    <string name="icon_picker_movie">Movie</string>
+    <string name="icon_picker_music">Music</string>
+    <string name="icon_picker_nav_normal">Navigation</string>
+    <string name="icon_picker_phone">Phone</string>
+    <string name="icon_picker_podcast">Podcast</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">Search</string>
+    <string name="icon_picker_sms">Messaging</string>
+    <string name="icon_picker_twitter">Twitter</string>
+
+    <!-- String for IconPicker -->
+    <string name="icon_picker_title">Choose icon source</string>
+    <string name="icon_picker_system_icons_title">System icons</string>
+    <string name="icon_picker_gallery_title">Gallery</string>
+    <string name="icon_picker_pack_title">Icon pack</string>
+
+    <string name="profile_applist_title">Applications</string>
+
+    <!-- Lock screen misc. settings -->
+    <string name="lockscreen_battery_status_title">Battery status</string>
+    <string name="lockscreen_battery_status_charging">Only when charging</string>
+    <string name="lockscreen_battery_status_alwayson">Always on</string>
+
+    <!-- Lock screen background -->
+    <string name="lockscreen_style_options_title">Lock screen style</string>
+    <string name="lockscreen_custom_background_title">Background</string>
+    <string name="lockscreen_custom_background_dialog_title">Choose color</string>
+    <string name="lockscreen_background_result_successful">Background changed</string>
+    <string name="lockscreen_background_result_not_successful">Background not changed</string>
+    <string name="lockscreen_background_color_fill">Color fill</string>
+    <string name="lockscreen_background_custom_image">Custom image</string>
+    <string name="lockscreen_background_full_transparent">Full transparent</string>
+    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
+    <string name="lockscreen_alpha_title">Background transparency</string>
+
+    <string name="ls_shortcuts_title">Lockscreen Shortcuts</string>
+
+    <!-- ParanoidAndroid: Lockscreen Shortcuts -->
+    <string name="icon_picker_type">Select icon type:</string>
+    <string name="icon_default">Default</string>
+    <string name="icon_presets">Presets</string>
+    <string name="icon_custom">Custom</string>
+    <string name="lock_screen_shortcuts_title">Quick</string>
+    <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
+    <string name="lock_screen_shortcuts_summary">View or change custom quick shortcuts</string>
+    <string name="lock_screen_shortcuts_add">Add</string>
+    <string name="lock_screen_shortcuts_reset">Reset</string>
+    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
+
+    <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
+    <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
+    <string name="lockscreen_target_title">Slider</string>
+    <string name="lockscreen_target_summary">View or change custom slider shortcuts</string>
+    <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
+    <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
+    <string name="lockscreen_target_reset_title">Reset</string>
+    <string name="lockscreen_target_reset_message">Delete all user created lock screen shortcuts and restore to default?</string>
+    <string name="lockscreen_target_empty">Empty</string>
+    <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
+    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+
+    <!-- AOKP Lockscreen Customizations -->
+    <string name="lockscreen_maximize_widgets_title">Maximize widgets</string>
+    <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the unlock minimized when the screen is turned on</string>
+    <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Set wether the hints for the left and right widgets are shown when the screen is turned on.</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Use widget carousel</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
+
+    <!-- Lock Screen -->
+    <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
+    <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
+    <string name="lockscreen_all_widgets_title">Allow all widgets</string>
+    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget developer, Team XY are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
+    <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
+    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause major lag issues with lockscreen.</string>
+    <string name="lockscreen_longpress_challenge_title">Enable longpress to unlock</string>
+    <string name="lockscreen_longpress_challenge_summary">This enables your device to be unlocked with the widgets maximised by long pressing the lock icon.</string>
+
+    <!--- Lock clock -->
+    <string name="lock_clock_title">Clock widget</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
+
+    <!-- Hybrid -->
+    <string name="hybrid_settings_title">Hybrid settings</string>
+
+    <string name="uimode_title">UI Mode</string>
+    <string name="uimode_phone">Phone (360dp)</string>
+    <string name="uimode_phablet">Phablet (600dp)</string>
+    <string name="uimode_tablet">Tablet (720/1000dp)</string>
+
+    <string name="dpi_settings_title">System density</string>
+    <string name="system_dpi_title">System density</string>
+    <string name="system_dpi_summary">Current system density:</string>
+    <string name="system_dpi_standar_title">Standard density</string>
+    <string name="system_dpi_standar_summary">Select the density from a list</string>
+    <string name="system_dpi_custom_title">Specify custom density</string>
+    <string name="system_dpi_custom_hint">120 to 480</string>
+    <string name="system_dpi_custom_summary">Select a custom density from 120 to 480</string>
+
+    <string name="appsuimode_title">Apps UI Mode</string>
+
+    <string name="apps_dpi_title">Apps density</string>
+    <string name="apps_dpi_summary">Current apps density:</string>
+    <string name="apps_dpi_custom_title">Specify density</string>
+    <string name="apps_dpi_custom_hint">120 to 480</string>
+    <string name="apps_dpi_custom_summary">Select a density from 120 to 480</string>
+
+    <string name="dpi_groups_title">DPI Groups</string>
+    <string name="dpi_groups_summary">Define wich apps should be in each DPI group</string>
+    <string name="dpi_group_title">DPI Group</string>
+    <string name="dpi_groups_apps">applications</string>
+    <string name="dpi_group_add_app">Add application</string>
+    <string name="dpi_group_app_list">Applications list</string>
+    <string name="dpi_group_alert_add_app_title">Choose an application</string>
+    <string name="dpi_groups_alert_remove_app">Remove application</string>
+    <string name="dpi_groups_remove_app">Remove %s application from group?</string>
+    <string name="dpi_groups_backuprestore_title">Backup and restore</string>
+    <string name="dpi_groups_auto_backup">Auto backup</string>
+    <string name="dpi_groups_auto_backup_summary">Save your configuration with every change</string>
+    <string name="dpi_groups_backup_title">Backup</string>
+    <string name="dpi_groups_backup_summary">Backup your configuration</string>
+    <string name="dpi_groups_restore_title">Restore</string>
+    <string name="dpi_groups_restore_summary">Restore your configuration</string>
+    <string name="dpi_groups_backup_done">Backup of configuration file done</string>
+    <string name="dpi_groups_restore_done">Configuration file restored</string>
+    <string name="dpi_groups_restore_default_title">Restore default groups</string>
+    <string name="dpi_groups_restore_default_summary">Remove custom DPI groups and leave the default groups</string>
+    <string name="dpi_groups_delete_title">Delete DPI group</string>
+    <string name="dpi_groups_delete_summary">Do you want to delete this DPI group?</string>
+    <string name="customdpigroup">Add group</string>
+    <string name="customdpigroup_summary">Add a custom dpi group</string>
+    <string name="custom_dpi">Current dpi:</string>
+    <string name="customdpigroup_group_exists">The selected custom dpi group already exists.</string>
+    <string name="per_app_layout_title">Per app layout</string>
+    <string name="per_app_layout_summary">Define layout for each app</string>
+    <string name="per_app_layout_list_title">Application list</string>
+    <string name="per_app_layout_alert_title">Select a layout</string>
+
+    <string name="navbar_height_title">Navigation bar Height</string>
+
+    <string name="alert_reboot">Reboot needed</string>
+    <string name="alert_reboot_message">This change needs a reboot to be applied. Do you want to reboot now?</string>
+
 
 </resources>

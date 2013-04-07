@@ -11,6 +11,13 @@
         android:summary="@string/header_summary_general_ui" />
 
      <header
+        android:id="@+id/lock_screen"
+        android:fragment="com.xylon.settings.fragments.Lockscreen"
+        android:title="@string/lockscreen"
+        android:icon="@drawable/ic_xy_settings_lockscreen"
+        android:summary="@string/header_summary_general_ui" />
+
+     <header
          android:id="@+id/themes"
          android:icon="@drawable/ic_xy_settings_themes"
          android:title="@string/themes_title">
@@ -76,7 +83,14 @@
         android:id="@+id/system"
         android:title="@string/system" />
 
-    <header
+     <header
+        android:id="@+id/hybrid"
+        android:fragment="com.xylon.settings.beerbong.HybridSettings"
+        android:title="@string/title_hybridsettings"
+        android:icon="@drawable/ic_xy_settings_jellybeer"
+        android:summary="@string/header_summary_hybridsettings" />
+
+     <header
         android:id="@+id/led"
         android:fragment="com.xylon.settings.fragments.LEDControl"
         android:title="@string/led_options"
