@@ -21,8 +21,10 @@
     <string name="led_options">LED</string>
     <string name="spen_options">Gestes S Pen</string>
     <string name="header_system">Système</string>
+    <string name="hybridsettings">Mode Hybride</string>
     <string name="sound">Son</string>
     <string name="lockscreen_options">Écran de verrouillage</string>
+    <string name="lockscreen">Écran de verrouillage</string>
     <string name="weather">Météo</string>
     <string name="tools">Outils</string>
 
@@ -37,6 +39,8 @@
     <string name="title_navring">Anneaux de Navigation</string>
     <string name="title_power_menu">Menu Power</string>
     <string name="title_led_control">Gestion de la LED</string>
+    <string name="title_lockscreen">Écran de verrouillage</string>
+    <string name="title_hybridsettings">Mode Hybride</string>
     <string name="title_clipboard_share">Presse-Papiers (Copier)</string>
 
     <!-- T-Mobile Theme chooser settings  -->
@@ -72,8 +76,10 @@
     <string name="enable_stylus_pointer_summary">Activer l\'icône de souris lors de l\'utilisation du S Pen</string>
 
     <string name="use_custom_app_title">Utiliser une application personnalisée</string>
+    <string name="select_custom_activity_title">Choisir une activité personnalisée</string>
     <string name="use_custom_app_summary">Utiliser une application personnalisée au lieu de la boîte de dialogue des applications récentes</string>
     <string name="group_applications">Applications</string>
+    <string name="choose_application">Choisir une application</string>
     <string name="select_application">Sélectionner une application</string>
 
     <!-- Color Picker -->
@@ -504,6 +510,8 @@
     <string name="notification_behaviour_neverexpand">Jamais étendues</string>
     <string name="notification_behaviour_alwaysexpand">Toujours étendues</string>
     <string name="notification_behaviour_oldstyle">Ancien style</string>
+    <string name="notification_show_wifi_ssid_title">Afficher WiFi dans barre de notifications</string>
+    <string name="notification_show_wifi_ssid_summary">Afficher le nom du réseau Wi-Fi actuellement utilisé dans la barre de notification étendue</string>
     <string name="notification_wallpaper_title">Choisir le fond des notifications</string>
     <string name="notification_wallpaper_summary">Vous pouvez enlever l\'arrière-plan en allant dans le Menu de cette fenêtre.</string>
     <string name="notif_wallpaper_alpha_title">Opacité du fond des notifications</string>
@@ -646,5 +654,151 @@
     <string name="high">Élevée</string>
     <string name="very_high">Très Élevée</string>
     <string name="laserbeam">Extrême</string>
+    
+    <!-- Lock screen shortcuts -->
+    <string name="picker_activities">Activités</string>
+    <string name="icon_picker_choose_icon_title">Choisir l\'icône</string>
+    <string name="icon_picker_alarm">Alarme</string>
+    <string name="icon_picker_browser">Navigateur</string>
+    <string name="icon_picker_calendar">Calendrier</string>
+    <string name="icon_picker_camera">Appareil photo</string>
+    <string name="icon_picker_chrome">Chrome</string>
+    <string name="icon_picker_email">Email</string>
+    <string name="icon_picker_email2">Email (Holo)</string>
+    <string name="icon_picker_gallery">Galerie</string>
+    <string name="icon_picker_google_small">Google (petit)</string>
+    <string name="icon_picker_movie">Film</string>
+    <string name="icon_picker_music">Musique</string>
+    <string name="icon_picker_nav_normal">Navigation</string>
+    <string name="icon_picker_phone">Téléphone</string>
+    <string name="icon_picker_podcast">Podcasts</string>
+    <string name="icon_picker_rss">RSS</string>
+    <string name="icon_picker_search">Rechercher</string>
+    <string name="icon_picker_sms">Messages</string>
+
+    <!-- String for IconPicker -->
+    <string name="icon_picker_title">Choisissez la source de l\'icône</string>
+    <string name="icon_picker_system_icons_title">Icônes système</string>
+    <string name="icon_picker_gallery_title">Galerie</string>
+    <string name="icon_picker_pack_title">Pack d\'icônes</string>
+
+    <string name="profile_applist_title">Applications</string>
+    
+    <!-- Lock screen misc. settings -->
+    <string name="lockscreen_battery_status_title">État de la batterie</string>
+    <string name="lockscreen_battery_status_charging">Lors du chargement</string>
+    <string name="lockscreen_battery_status_alwayson">Toujours afficher</string>
+
+    <string name="ls_shortcuts_title">Raccourcis écran de verrouillage</string>
+
+    <!-- ParanoidAndroid: Lockscreen Shortcuts -->
+    <string name="icon_picker_type">Sélectionnez le type de l\'icône:</string>
+    <string name="icon_default">Par défaut</string>
+    <string name="icon_presets">Presets</string>
+    <string name="icon_custom">Personalisé</string>
+    <string name="lock_screen_shortcuts_title">Icônes de raccourcis</string>
+    <string name="lock_screen_shortcuts_reset_message">Réinitialiser les raccourcis ?</string>
+    <string name="lock_screen_shortcuts_summary">Afficher ou modifier les icônes de raccourcis personnalisés</string>
+    <string name="lock_screen_shortcuts_add">Ajouter</string>
+    <string name="lock_screen_shortcuts_reset">Réinitialiser</string>
+    <string name="lock_screen_shortcuts_limit">Seulement 6 raccourcis sont permis !</string>
+    <string name="dialog_delete_title">Suppression</string>
+    <string name="dialog_delete_message">Supprimer l\'élément sélectionné ?</string>
+
+    <!-- Lock Screen Shortcuts -->
+    <string name="lockscreen_target_info">Glisser pour assigner les raccourcis</string>
+    <string name="lockscreen_target_title">Raccourcis du slider</string>
+    <string name="lockscreen_target_summary">Configurer les raccourcis de l\'anneau sur l\'écran de verrouillage</string>
+    <string name="lockscreen_target_reset">Les raccourcis ont été réinitialisés</string>
+    <string name="lockscreen_target_save">Raccourcis enregistrés</string>
+    <string name="lockscreen_target_reset_title">Réinitialiser</string>
+    <string name="lockscreen_target_reset_message">Réinitialiser tous les raccourcis et revenir à la configuration d\'origine\u00A0?</string>
+    <string name="lockscreen_target_empty">Vide</string>
+    <string name="lockscreen_target_edit_title">Modifier le raccourci</string>
+    <string name="lockscreen_target_edit_msg">Sélectionner l\'application, l\'activité et l\'icône du raccourci</string>
+
+    <!-- AOKP Lockscreen Customizations -->
+    <string name="lockscreen_maximize_widgets_title">Maximiser les widgets</string>
+    <string name="lockscreen_maximize_widgets_summary">Afficher les widgets maximisés et le système de déverrouillage minimisé lorque l\'écran est déverrouillé</string>
+    <string name="lockscreen_hide_initial_page_hints_title">Masquer les indications de widgets</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">Régler si les indicateurs de widgets à gauche et à droite seront affichés lorsque l\'écran s\'allumera.</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Utiliser une animation carrousel</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Utiliser une animation carrousel lors du basculement entre les widgets de l\'écran de verrouillage.</string>
+
+    <!-- Lock Screen Interface -->
+    <string name="lockscreen_custom_background_title">Fond d\'écran</string>
+    <string name="lockscreen_custom_background_dialog_title">Choisir une couleur</string>
+    <string name="lockscreen_background_result_successful">Fond d\'écran changé avec succès</string>
+    <string name="lockscreen_background_result_not_successful">Impossible de changer le fond d\écran</string>
+    <string name="lockscreen_background_color_fill">Couleur de remplissage</string>
+    <string name="lockscreen_background_custom_image">Image personnalisée</string>
+    <string name="lockscreen_background_default_wallpaper">Fond d\'écran par défaut</string>
+    <string name="see_through_title">Voir à travers</string>
+    <string name="see_through_summary">Permettre de voir l\'application en cours à travers l\'écran de verrouillage</string>
+
+    <!--- Lock clock -->
+    <string name="lock_clock_title">Widget cLock</string>
+    <string name="lock_clock_summary">Afficher ou modifier la façon dont le widget \'cLock\' est affiché sur l\'écran d\'accueil ou de verrouillage</string>
+
+    <!-- Hybrid -->
+    <string name="hybrid_settings_title">Paramètres Hybride</string>
+
+    <string name="uimode_title">Mode d\'interface du système</string>
+    <string name="uimode_phone">Phone (360dp)</string>
+    <string name="uimode_phablet">Phablet (600dp)</string>
+    <string name="uimode_tablet">Tablette (720/1000dp)</string>
+
+    <string name="dpi_settings_title">Densités</string>
+    <string name="system_dpi_title">Densité du système</string>
+    <string name="system_dpi_summary">Densité actuelle du système:</string>
+    <string name="system_dpi_standar_title">Densité prédéfinie</string>
+    <string name="system_dpi_standar_summary">Sélectionner une densité prédéfinie dans une liste</string>
+    <string name="system_dpi_custom_title">Densité personnalisée</string>
+    <string name="system_dpi_custom_hint">120 à 480</string>
+    <string name="system_dpi_custom_summary">Sélectionner une densité personnalisée entre 120 et 480</string>
+
+    <string name="appsuimode_title">Mode d\'interface des applications</string>
+
+    <string name="apps_dpi_title">Densité des applications</string>
+    <string name="apps_dpi_summary">Densité actuelle des applications:</string>
+    <string name="apps_dpi_custom_title">Densité prédéfinie</string>
+    <string name="apps_dpi_custom_hint">120 à 480</string>
+    <string name="apps_dpi_custom_summary">Sélectionner une densité personnalisée entre 120 et 480</string>
+
+    <string name="dpi_groups_title">Groupes de densité</string>
+    <string name="dpi_groups_summary">Définir des densités personalisées pour chaque applications</string>
+    <string name="dpi_group_title">DPI.</string>
+    <string name="dpi_groups_apps">application(s)</string>
+    <string name="dpi_group_add_app">Ajouter une application à ce groupe</string>
+    <string name="dpi_group_app_list">Liste des applications</string>
+    <string name="dpi_group_alert_add_app_title">Choisir une application</string>
+    <string name="dpi_groups_alert_remove_app">Supprimer une application</string>
+    <string name="dpi_groups_remove_app">Retirer l\'applications %s du groupe ?</string>
+    <string name="dpi_groups_backuprestore_title">Sauvegarde et restauration</string>
+    <string name="dpi_groups_auto_backup">Sauvegarde automatique</string>
+    <string name="dpi_groups_auto_backup_summary">Sauvegarde auto. des modifications effectuées</string>
+    <string name="dpi_groups_backup_title">Sauvegarder</string>
+    <string name="dpi_groups_backup_summary">Faire une sauvegarde de vos paramètres</string>
+    <string name="dpi_groups_restore_title">Restaurer</string>
+    <string name="dpi_groups_restore_summary">Restaurer vos derniers paramètres sauvegardés</string>
+    <string name="dpi_groups_backup_done">Fichier de sauvegarde mis à jour</string>
+    <string name="dpi_groups_restore_done">Fichier de sauvegarde restauré</string>
+    <string name="dpi_groups_restore_default_title">Restaurer les groupes par défaut</string>
+    <string name="dpi_groups_restore_default_summary">Supprimer tous les groupes de densité et revenir par défaut</string>
+    <string name="dpi_groups_delete_title">Supprimer un groupe de densité</string>
+    <string name="dpi_groups_delete_summary">Voulez-vous supprimer ce groupe ?</string>
+    <string name="customdpigroup">Ajouter un groupe</string>
+    <string name="customdpigroup_summary">Ajouter un groupe de densité personnalisée</string>
+    <string name="custom_dpi">DPI :</string>
+    <string name="customdpigroup_group_exists">Le groupe de densité désiré existe déjà</string>
+    <string name="per_app_layout_title">Per-app-Layout</string>
+    <string name="per_app_layout_summary">Définir une disposition pour chaque application</string>
+    <string name="per_app_layout_list_title">Liste des applications</string>
+    <string name="per_app_layout_alert_title">Sélectionner une disposition</string>
+
+    <string name="navbar_height_title">Hauteur de la barre de navigation</string>
+
+    <string name="alert_reboot">Redémarrage requis</string>
+    <string name="alert_reboot_message">Un redémarrage est requis afin d\'appliquer les changements. Voulez-vous redémarrer maintenant ?</string>
 
 </resources>
