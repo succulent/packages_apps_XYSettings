@@ -301,10 +301,68 @@
     <string name="notification_wallpaper_summary">Sie können das Hintergrundbild des Menüs hier auswählen</string>
     <string name="notif_wallpaper_alpha_title">Benachrichtigungs Hintergrund alpha</string>
     <string name="alpha_dialog_title">Set alpha value</string>
-    <string name="user_mode_ui_summary">What style to display NavBar and Statusbar</string>
-    <string name="phone_mode_ui">Phone - NavBar befindet sich im Landschaftsmodus an der Seite</string>
-    <string name="tablet_mode_ui">Tablet - Kombiniert NavBar und SystemBar</string>
-    <string name="phablet_mode_ui">Phablet - NavBar bleibt im Landschaftsmodus unten</string>
     <string name="brightness_slider_title">Statusbar Helligkeit Regler</string>
     <string name="brightness_slider_summary">Gibt Ihnen die Möglichkeit über die Statusleiste zu wischen und damit die Helligkeit zu verändern. Funktioniert nicht bei automatischer Helligkeitseinstellung.</string>
+
+    <!-- Hybrid -->
+    <string name="hybrid_settings_title">Hybrid Einstellungen</string>
+
+    <string name="uimode_title">UI Mode</string>
+    <string name="uimode_phone">Phone (360dp)</string>
+    <string name="uimode_phablet">Phablet (600dp)</string>
+    <string name="uimode_tablet">Tablet (720/1000dp)</string>
+
+    <string name="dpi_settings_title">System Bildschirmdichte</string>
+    <string name="system_dpi_title">System Bildschirmdichte</string>
+    <string name="system_dpi_summary">Aktuelle Bildschirmdichte des Systems:</string>
+    <string name="system_dpi_standar_title">Standard Bildschirmdichte</string>
+    <string name="system_dpi_standar_summary">Wähle eine Bildschirmdichte von der Liste</string>
+    <string name="system_dpi_custom_title">Spezielle Bildschirmdichte</string>
+    <string name="system_dpi_custom_hint">120 bis zu 480</string>
+    <string name="system_dpi_custom_summary">Wähle eine Bildschirmdichte zwischen 120 und 480</string>
+
+    <string name="appsuimode_title">Apps UIMode</string>
+
+    <string name="apps_dpi_title">Anwendungs Bildschirmdichte</string>
+    <string name="apps_dpi_summary">Aktuelle Bildschirmdichte der App:</string>
+    <string name="apps_dpi_custom_title">Spezielle Bildschirmdichte</string>
+    <string name="apps_dpi_custom_hint">120 bis zu 480</string>
+    <string name="apps_dpi_custom_summary">Wähle eine Bildschirmdichte zwischen 120 und 480</string>
+
+    <string name="dpi_groups_title">DPI Gruppen</string>
+    <string name="dpi_groups_summary">Definiere welche Apps in welcher DPI Gruppe sein sollen</string>
+    <string name="dpi_group_title">DPI Gruppe</string>
+    <string name="dpi_groups_apps">Anwendungen</string>
+    <string name="dpi_group_add_app">Anwendung hinzufügen</string>
+    <string name="dpi_group_app_list">Liste der Anwendungen</string>
+    <string name="dpi_group_alert_add_app_title">Wähle eine App</string>
+    <string name="dpi_groups_alert_remove_app">Lösche App</string>
+    <string name="dpi_groups_remove_app">Lösche %s App aus der Gruppe?</string>
+    <string name="dpi_groups_backuprestore_title">Backup and restore</string>
+    <string name="dpi_groups_auto_backup">Automatisches Backup</string>
+    <string name="dpi_groups_auto_backup_summary">Speichere deine Einstellungen mit jeder Veränderung</string>
+    <string name="dpi_groups_backup_title">Backup</string>
+    <string name="dpi_groups_backup_summary">Backup your configuration</string>
+    <string name="dpi_groups_restore_title">Restore</string>
+    <string name="dpi_groups_restore_summary">Restore your configuration</string>
+    <string name="dpi_groups_backup_done">Backup of configuration file done</string>
+    <string name="dpi_groups_restore_done">Configuration file restored</string>
+    <string name="dpi_groups_restore_default_title">Restore default groups</string>
+    <string name="dpi_groups_restore_default_summary">Remove custom DPI groups and leave the default groups</string>
+    <string name="dpi_groups_delete_title">DPI Gruppe löschen</string>
+    <string name="dpi_groups_delete_summary">Willst du diese  DPI Gruppe löschen?</string>
+    <string name="customdpigroup">Gruppe hinzufügen</string>
+    <string name="customdpigroup_summary">Füge eine dpi Gruppe hinzu</string>
+    <string name="custom_dpi">Derzeitige dpi:</string>
+    <string name="customdpigroup_group_exists">The selected custom dpi group already exists.</string>
+    <string name="per_app_layout_title">Per app layout</string>
+    <string name="per_app_layout_summary">Definiere Layout für jede App</string>
+    <string name="per_app_layout_list_title">Application Liste</string>
+    <string name="per_app_layout_alert_title">Wähle ein Layout</string>
+
+    <string name="navbar_height_title">Navigation Bar Höhe</string>
+
+    <string name="alert_reboot">Neustart benötigt</string>
+    <string name="alert_reboot_message">Diese Änderung benötigt einen Neustart des Systems. Jetzt neu starten?</string
+    
 </resources>
