@@ -726,7 +726,7 @@
     <string name="lockscreen_use_widget_container_carousel_summary">Utiliser une animation carrousel lors du basculement entre les widgets de l\'écran de verrouillage.</string>
 
     <!-- Lock Screen Interface -->
-    <string name="lockscreen_custom_background_title">Fond d\'écran</string>
+    <string name="lockscreen_custom_background_title">Fond de l\'écran de verrouillage</string>
     <string name="lockscreen_custom_background_dialog_title">Choisir une couleur</string>
     <string name="lockscreen_background_result_successful">Fond d\'écran changé avec succès</string>
     <string name="lockscreen_background_result_not_successful">Impossible de changer le fond d\écran</string>
@@ -735,6 +735,16 @@
     <string name="lockscreen_background_default_wallpaper">Fond d\'écran par défaut</string>
     <string name="see_through_title">Voir à travers</string>
     <string name="see_through_summary">Permettre de voir l\'application en cours à travers l\'écran de verrouillage</string>
+
+    <!-- Lock Screen -->
+    <string name="lockscreen_auto_rotate_title">Rotation auto. de l\'écran de verr.</string>
+    <string name="lockscreen_auto_rotate_summary">L\'écran de verrouillage aura la capacité de rotation par l\'intermédiaire du capteur d\'orientation de l\'appareil. Ceci est indépendant de la rotation automatique du reste du système.</string>
+    <string name="lockscreen_all_widgets_title">Permettre tous les widgets</string>
+    <string name="lockscreen_all_widgets_summary">Attention ** Certains widgets ne sont pas destinés à être utilisés sur le lockscreen. Le développeur du widget, l\'équipe XY, ne sont pas responsables de votre choix de widgets sur le lockscreen. Choisissez vos responsabilités.</string>
+    <string name="lockscreen_unlimited_widgets_title">Autoriser un nombre illimité de widgets</string>
+    <string name="lockscreen_unlimited_widgets_summary">Attention ** Ajouter trop de widgets peut causer des problèmes de lag avec les principaux lockscreen.</string>
+    <string name="lockscreen_longpress_challenge_title">Déverrouiller par Appui Long</string>
+    <string name="lockscreen_longpress_challenge_summary">Cela permet à votre appareil d\'être déverrouillé avec les widgets maximisés par un appui long sur l\'icône de verrouillage.</string>
 
     <!--- Lock clock -->
     <string name="lock_clock_title">Widget cLock</string>
