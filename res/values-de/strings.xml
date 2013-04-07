@@ -363,6 +363,6 @@
     <string name="navbar_height_title">Navigation Bar Höhe</string>
 
     <string name="alert_reboot">Neustart benötigt</string>
-    <string name="alert_reboot_message">Diese Änderung benötigt einen Neustart des Systems. Jetzt neu starten?</string
+    <string name="alert_reboot_message">Diese Änderung benötigt einen Neustart des Systems. Jetzt neu starten?</string>
     
 </resources>
