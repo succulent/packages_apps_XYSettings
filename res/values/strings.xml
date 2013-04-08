@@ -45,7 +45,7 @@
     <string name="title_lockscreen">Lock Screen</string>
     <string name="title_pie">PIE™</string>
     <string name="title_hybridsettings">Hybrid Properties</string>
-    <string name="title_clipboard_share">Share to Clipboard</string>
+    <string name="title_clipboard_share">Copy to Clipboard</string>
 
     <!-- T-Mobile Theme chooser settings  -->
     <string name="themes_title">Themes</string>
