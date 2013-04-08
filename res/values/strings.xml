@@ -18,7 +18,7 @@
     <string name="quick_toggles">Quick Toggles</string>
     <string name="status_bar">Status Bar</string>
     <string name="others">Others</string>
-    <string name="navigation_bar">Navigation Bar</string>
+    <string name="navigation_bar">NavBar</string>
     <string name="power_menu">Power Menu</string>
     <string name="led_options">LED</string>
     <string name="pie">PIE™</string>
@@ -27,7 +27,7 @@
     <string name="sound">Sound</string>
     <string name="hybridsettings">Hybrid Properties</string>
     <string name="lockscreen_options">Lockscreen</string>
-    <string name="lockscreen">Lock Screen</string>
+    <string name="lockscreen">Lockscreen</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
 
@@ -37,12 +37,12 @@
     <string name="title_quick_toggles">Quick Toggles</string>
     <string name="title_statusbar_signal">Statusbar Signal</string>
     <string name="title_statusbar">Status Bar</string>
-    <string name="title_navbar">Navigation Bar</string>
+    <string name="title_navbar">NavBar</string>
     <string name="title_spen">S Pen Gestures</string>
     <string name="title_navring">Navigation Ring</string>
     <string name="title_power_menu">Power Menu</string>
     <string name="title_led_control">LED Control</string>
-    <string name="title_lockscreen">Lock Screen</string>
+    <string name="title_lockscreen">Lockscreen</string>
     <string name="title_pie">PIE™</string>
     <string name="title_hybridsettings">Hybrid Properties</string>
     <string name="title_clipboard_share">Copy to Clipboard</string>
@@ -51,7 +51,7 @@
     <string name="themes_title">Themes</string>
 
     <!-- Share to clipboard -->
-    <string name="clipboard_notification">Copied to clipboard.</string>
+    <string name="clipboard_notification">Copied to clipboard</string>
 
     <!-- Header Summaries -->
     <string name="header_summary_general_ui">@null</string>
@@ -68,7 +68,7 @@
     <string name="header_summary_spen">@null</string>
 
     <!-- Menu Strings -->
-    <string name="menu_nav_bar_reset">Reset nav bar</string>
+    <string name="menu_nav_bar_reset">Reset NavBar</string>
     <string name="menu_main_activity_change_locale">Locale</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
@@ -111,7 +111,7 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
-    <string name="ics_color">ICS</string>
+    <string name="ics_color">Holo</string>
 
     <!-- Power Menu -->
     <string name="title_show_screenshot">Screenshot</string>
@@ -142,7 +142,7 @@
     <string name="clock_color_title">Clock color</string>
     <string name="clock_color_style_title">Clock color style</string>
     <string name="all_color">Colors Everywhere!</string>
-    <string name="stock_color">Default Colors (Stock/Theme)</string>
+    <string name="stock_color">Stock Colors</string>
     <string name="alarm">Alarms</string>
     <string name="clock_options">Clock Options</string>
     <string name="nothing">Nothing</string>
@@ -158,7 +158,7 @@
     <string name="clock_date_display_summary">Display custom date before the clock</string>
     <string name="clock_date_style">Date style</string>
     <string name="clock_date_format">Date format</string>
-    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_title">Must be in Proper Format ie. MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
     <string name="dont_show_default">Don\'t show (default)</string>
     <string name="normal">Normal</string>
@@ -175,7 +175,7 @@
 
     <!-- The Gravity -->
     <string name="pie_gravity_title">Pie gravity</string>
-    <string name="pie_gravity_summary">Select the location where Pie will be placed at</string>
+    <string name="pie_gravity_summary">Select the location where you can bring up PIE</string>
     <string name="pie_gravity_top">Top</string>
     <string name="pie_gravity_bottom">Bottom</string>
     <string name="pie_gravity_right">Right</string>
@@ -191,7 +191,7 @@
 
     <!-- The Size -->
     <string name="pie_size_title">Pie size</string>
-    <string name="pie_size_summary">Define pie controls size</string>
+    <string name="pie_size_summary">Define PIE controls size</string>
     <string name="pie_size_small">Small</string>
     <string name="pie_size_default">@string/pie_mode_default</string>
     <string name="pie_size_large">Large</string>
@@ -199,7 +199,7 @@
 
     <!-- The Gap -->
     <string name="pie_gap_title">Item gap</string>
-    <string name="pie_gap_summary">Adjust the gap that separates pie elements</string>
+    <string name="pie_gap_summary">Adjust the gap that separates PIE elements</string>
     <string name="pie_gap_none">None</string>
     <string name="pie_gap_small">Small</string>
     <string name="pie_gap_big">Big</string>
@@ -213,12 +213,12 @@
     <string name="pie_trigger_big">Big</string>
     <string name="pie_trigger_huge">Huge</string>
 
-    <string name="pie_restart_launcher_title">Restart Launcher</string>
-    <string name="pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
+    <string name="pie_restart_launcher_title">Restart the Launcher</string>
+    <string name="pie_restart_launcher_summary">This will restart your launcher, but may have adverse effects on the screen. Some widgets may not look right either. Be careful.</string>
 
     <!-- The Loner -->
     <string name="pie_menu_title">Persistent menu button</string>
-    <string name="pie_menu_summary">Always show menu button even when it\'s not necessary</string>
+    <string name="pie_menu_summary">Always show menu button even when it isnt necessary</string>
 
     <string name="pie_search_title">Search button</string>
     <string name="pie_search_summary">Enable search button on pie controls</string>
@@ -230,7 +230,7 @@
     <string name="pie_center_summary">Center Pie on the trigger edge</string>
 
     <string name="pie_stick_title">Prevent rotation</string>
-    <string name="pie_stick_summary">If checked Pie will stay in place no matter which orientation</string>
+    <string name="pie_stick_summary">If checked PIE will stay in place no matter which orientation</string>
 
     <!-- The Colors -->
     <string name="pie_color_title">Color Settings</string>
