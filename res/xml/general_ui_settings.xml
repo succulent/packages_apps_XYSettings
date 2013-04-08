@@ -31,7 +31,8 @@
         <CheckBoxPreference
             android:key="statusbar_hidden"
             android:title="@string/statusbar_hide_title"
-            android:summary="@string/statusbar_hide_summary" />
+            android:summary="@string/statusbar_hide_summary"
+            android:defaultValue="false" />
 
         <Preference
             android:key="notification_wallpaper"

@@ -6,7 +6,7 @@
     <string name="bars">Interface des barres</string>
     <string name="system">Système</string>
     <string name="cancel">Annuler</string>
-    <string name="ok">OK</string>
+    <string name="ok">Ok</string>
     <string name="save">Sauvegarder</string>
     <string name="reset">Réinitialiser</string>
     <string name="empty">Vide</string>
@@ -98,7 +98,7 @@
     <string name="expanded_desktop_status_bar">Barre d\'état visible</string>
     <string name="expanded_desktop_no_status_bar">Barre d\'état masquée</string>
     <string name="title_show_navbar_hide">Raccourcis de navigation</string>
-    <string name="title_show_reboot_keyguard">Redémarrer (écran de verrouillage)</string>
+    <string name="title_show_reboot_keyguard">Redémarrage (écran de verrouillage)</string>
 
     <!-- Status Bar Headers -->
     <string name="status_bar_clock_header">Horloge</string>
@@ -287,10 +287,6 @@
     <string name="brightness_location_title">Emplacement de la luminosité</string>
     <string name="reset_toggles_title">Réinitialiser les Toggles</string>
     <string name="reset_toggles_summary">Réinitialiser tous les Toggles et leur ordre.</string>
-    <string name="toggle_button_alpha_title">Toggle indicator alpha</string>
-    <string name="toggle_btn_enabled_color_title">Enabled indicator color</string>
-    <string name="toggle_btn_disabled_color_title">Disabled indicator color</string>
-    <string name="toggle_btn_background_title">Toggle background alpha</string>
     <string name="toggle_text_color_title">Couleur du texte des Toggles</string>
     <string name="toggle_favcontact_title">Contact favoris</string>
     <string name="toggle_favcontact_summary">Choisir votre contact favoris</string>
@@ -474,25 +470,25 @@
     <string name="navring_target_longpress_text">Mode Appui Long</string>
 
     <!-- SBNB Colors | Status bar background style -->
-    <string name="status_bar_transparency_title">Transparence de la Barre d\'état</string>
-    <string name="status_bar_color_title">Couleur de la Barre d\'état</string>
-    <string name="status_bar_background_style">Fond de la Barre d\'état</string>
+    <string name="status_bar_transparency_title">Transparence de la barre d\'état</string>
+    <string name="status_bar_color_title">Couleur de la barre d\'état</string>
+    <string name="status_bar_background_style">Fond de la barre d\'état</string>
     <string name="status_bar_alpha_mode_dialog_text_title">Activer sa transparence</string>
     <string name="status_bar_alpha_mode_text_title">Mode de transparence</string>
-    <string name="status_bar_alpha_mode_home">sur le lanceur.</string>
-    <string name="status_bar_alpha_mode_default">sur le lanceur et l\'écran de verrouillage.</string>
-    <string name="status_bar_alpha_mode_always">toujours.</string>
+    <string name="status_bar_alpha_mode_home">Sur le lanceur</string>
+    <string name="status_bar_alpha_mode_default">Sur le lanceur et l\'écran de verrouillage</string>
+    <string name="status_bar_alpha_mode_always">Toujours</string>
     <string name="status_bar_style_reset">Réinitialiser</string>
 
     <!-- SBNB Colors | Navigation bar background style -->
     <string name="nav_bar_transparency_title">Transparence de la barre</string>
     <string name="nav_bar_color_title">Couleur de la barre</string>
-    <string name="nav_bar_background_style">Fond de la Barre de Navigation</string>
+    <string name="nav_bar_background_style">Fond de la barre de navigation</string>
     <string name="nav_bar_alpha_mode_dialog_text_title">Afficher sa transparence</string>
     <string name="nav_bar_alpha_mode_text_title">Mode de transparence</string>
-    <string name="nav_bar_alpha_mode_home">sur le lanceur</string>
-    <string name="nav_bar_alpha_mode_default">sur le lanceur et l\'écran de verrouillage</string>
-    <string name="nav_bar_alpha_mode_always">toujours</string>
+    <string name="nav_bar_alpha_mode_home">Sur le lanceur</string>
+    <string name="nav_bar_alpha_mode_default">Sur le lanceur et l\'écran de verrouillage</string>
+    <string name="nav_bar_alpha_mode_always">Toujours</string>
     <string name="nav_bar_style_reset">Réinitialiser</string>
 
     <!-- General UI | Other Modifications unknown -->
@@ -510,7 +506,7 @@
     <string name="notification_behaviour_neverexpand">Jamais étendues</string>
     <string name="notification_behaviour_alwaysexpand">Toujours étendues</string>
     <string name="notification_behaviour_oldstyle">Ancien style</string>
-    <string name="notification_show_wifi_ssid_title">Afficher WiFi dans barre de notifications</string>
+    <string name="notification_show_wifi_ssid_title">Afficher nom du réseau WiFi</string>
     <string name="notification_show_wifi_ssid_summary">Afficher le nom du réseau Wi-Fi actuellement utilisé dans la barre de notification étendue</string>
     <string name="notification_wallpaper_title">Choisir le fond des notifications</string>
     <string name="notification_wallpaper_summary">Vous pouvez enlever l\'arrière-plan en allant dans le Menu de cette fenêtre.</string>
@@ -524,12 +520,8 @@
     <!-- General UI | Tablet Mode -->
     <string name="tablet_cat">Options du mode tablette</string>
     <string name="hide_extras">Masquer les options</string>
-    <string name="hide_extras_summary">Masque des éléments de la barre de nav. combinée. *Mode Tablet seulement* \nEx: Bouton de compatibilité. </string>
+    <string name="hide_extras_summary">Masque des éléments de la barre de nav. combinée. *Mode Tablette seulement* \nEx: Bouton de compatibilité. </string>
     <string name="user_mode_ui">Mode d\'affichage</string>
-    <string name="user_mode_ui_summary">Style utilisé pour les barres de nav. et d\'état</string>
-    <string name="phone_mode_ui">Phone - Barre de navigation sur le côté en mode paysage</string>
-    <string name="tablet_mode_ui">Tablet - Barre de navigation et Barre d\'état combinée</string>
-    <string name="phablet_mode_ui">Phablet - Barre de navigation toujours en bas</string>
     <string name="multipane_ui">Activer le Dual panel</string>
     <string name="multipane_ui_summary">Permet d\'avoir une interface du style tablette dans les paramètres.</string>
 
@@ -572,38 +564,6 @@
     <string name="ram_bar_button_help">Aide</string>
     <string name="ram_bar_button_reset">Réinitialiser les couleurs</string>
 
-    <!-- General UI | LCD Density -->
-    <string name="lcd_density_title">Densité de l\'écran</string>
-    <string name="lcd_density_summary">inconnu</string>
-    <string name="current_lcd_density">"Densité actuelle: "</string>
-    <string name="lcd_density_wizard">LCD Density Wizard</string>
-    <string name="follow_through_title">Étapes à suivre.</string>
-    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
-    <string name="stock_density_title">1. Change LCD Density to stock value</string>
-    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy Nexus uses 320 by default.</string>
-    <string name="stock_density_changed_summary">Density set to: </string>
-    <string name="reboot_title">2. Reboot!</string>
-    <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
-    <string name="clear_market_data_title">3. Clear all relevant market data.</string>
-    <string name="clear_market_data_summary">This step clears data from market, google play services and google services framework.</string>
-    <string name="clear_market_data_cleared">Data successfully cleared</string>
-    <string name="clear_market_data_donot_cleared">Data couldn\'t be cleared, please clear it yourself!</string>
-    <string name="reboot_cleardata_title">4. Reboot!</string>
-    <string name="reboot_cleardata_summary">Come back here after the reboot and complete the rest of the steps!</string>
-    <string name="open_market_title">5. Open Market and hit accept</string>
-    <string name="open_market_summary">Press back when done to return here.</string>
-    <string name="open_market_summary_could_not_open">Couldn\'t open the market! If you\'re sure it\'s installed, open it yourself from the launcher.</string>
-    <string name="custom_density_title">6. Change density to whatever you like!</string>
-    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
-    <string name="custom_density_summary_invalid">DENSITÉ INVALIDE!</string>
-    <string name="custom_density">Personaliser</string>
-    <string name="set_custom_density_title">Set custom density</string>
-    <string name="set_custom_density_set">Appliquer</string>
-    <string name="custom_density_dialog_title">AVERTISSEMENT!</string>
-    <string name="custom_density_dialog_summary">Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1.</string>
-    <string name="custom_density_dialog_button_got">Je l\'ai !</string>
-    <string name="custom_density_dialog_button_reboot">Redémarrer maintenant</string>
-
     <!-- LED -->
     <string name="led_on">LED allumée:</string>
     <string name="led_time_on">Temps de LED allumée</string>
@@ -623,7 +583,7 @@
     <string name="led_test_notification">Tester la LED</string>
     <string name="led_test_notification_message_now">Test de la LED pour : </string>
     <string name="led_test_notification_message_note">. Merci d\'éteindre l\'écran afin de voir la LED en action. Appuyez sur OK lorsque vous aurez terminé votre test.</string>
-    <string name="led_test_ok">OK</string>
+    <string name="led_test_ok">Ok</string>
     <string name="title_charging_led_on">Activer la LED lors de la charge (Nécessite un redémarrage)</string>
     <string name="led_change_brightness">Changer la luminosité</string>
     <string name="led_brightness_default">Luminosité par défaut: 31</string>
@@ -672,7 +632,6 @@
     <string name="icon_picker_nav_normal">Navigation</string>
     <string name="icon_picker_phone">Téléphone</string>
     <string name="icon_picker_podcast">Podcasts</string>
-    <string name="icon_picker_rss">RSS</string>
     <string name="icon_picker_search">Rechercher</string>
     <string name="icon_picker_sms">Messages</string>
 
@@ -681,21 +640,18 @@
     <string name="icon_picker_system_icons_title">Icônes système</string>
     <string name="icon_picker_gallery_title">Galerie</string>
     <string name="icon_picker_pack_title">Pack d\'icônes</string>
-
     <string name="profile_applist_title">Applications</string>
     
     <!-- Lock screen misc. settings -->
     <string name="lockscreen_battery_status_title">État de la batterie</string>
     <string name="lockscreen_battery_status_charging">Lors du chargement</string>
     <string name="lockscreen_battery_status_alwayson">Toujours afficher</string>
-
     <string name="ls_shortcuts_title">Raccourcis écran de verrouillage</string>
 
     <!-- ParanoidAndroid: Lockscreen Shortcuts -->
-    <string name="icon_picker_type">Sélectionnez le type de l\'icône:</string>
+    <string name="icon_picker_type">Sélectionner le type de l\'icône:</string>
     <string name="icon_default">Par défaut</string>
-    <string name="icon_presets">Presets</string>
-    <string name="icon_custom">Personalisé</string>
+    <string name="icon_custom">Personnalisé</string>
     <string name="lock_screen_shortcuts_title">Icônes de raccourcis</string>
     <string name="lock_screen_shortcuts_reset_message">Réinitialiser les raccourcis ?</string>
     <string name="lock_screen_shortcuts_summary">Afficher ou modifier les icônes de raccourcis personnalisés</string>
@@ -726,7 +682,7 @@
     <string name="lockscreen_use_widget_container_carousel_summary">Utiliser une animation carrousel lors du basculement entre les widgets de l\'écran de verrouillage.</string>
 
     <!-- Lock Screen Interface -->
-    <string name="lockscreen_custom_background_title">Fond d\'écran</string>
+    <string name="lockscreen_custom_background_title">Fond de l\'écran de verrouillage</string>
     <string name="lockscreen_custom_background_dialog_title">Choisir une couleur</string>
     <string name="lockscreen_background_result_successful">Fond d\'écran changé avec succès</string>
     <string name="lockscreen_background_result_not_successful">Impossible de changer le fond d\écran</string>
@@ -735,6 +691,16 @@
     <string name="lockscreen_background_default_wallpaper">Fond d\'écran par défaut</string>
     <string name="see_through_title">Voir à travers</string>
     <string name="see_through_summary">Permettre de voir l\'application en cours à travers l\'écran de verrouillage</string>
+
+    <!-- Lock Screen -->
+    <string name="lockscreen_auto_rotate_title">Rotation auto. de l\'écran de verr.</string>
+    <string name="lockscreen_auto_rotate_summary">L\'écran de verrouillage aura la capacité de rotation par l\'intermédiaire du capteur d\'orientation de l\'appareil. Ceci est indépendant de la rotation automatique du reste du système.</string>
+    <string name="lockscreen_all_widgets_title">Permettre tous les widgets</string>
+    <string name="lockscreen_all_widgets_summary">Attention ** Certains widgets ne sont pas destinés à être utilisés sur le lockscreen. Le développeur du widget, l\'équipe XY, ne sont pas responsables de votre choix de widgets sur le lockscreen. Choisissez vos responsabilités.</string>
+    <string name="lockscreen_unlimited_widgets_title">Autoriser un nombre illimité de widgets</string>
+    <string name="lockscreen_unlimited_widgets_summary">Attention ** Ajouter trop de widgets peut causer des problèmes de lag avec les principaux lockscreen.</string>
+    <string name="lockscreen_longpress_challenge_title">Déverrouiller par Appui Long</string>
+    <string name="lockscreen_longpress_challenge_summary">Cela permet à votre appareil d\'être déverrouillé avec les widgets maximisés par un appui long sur l\'icône de verrouillage.</string>
 
     <!--- Lock clock -->
     <string name="lock_clock_title">Widget cLock</string>
@@ -766,7 +732,7 @@
     <string name="apps_dpi_custom_summary">Sélectionner une densité personnalisée entre 120 et 480</string>
 
     <string name="dpi_groups_title">Groupes de densité</string>
-    <string name="dpi_groups_summary">Définir des densités personalisées pour chaque applications</string>
+    <string name="dpi_groups_summary">Définir des densités personnalisées pour chaque applications</string>
     <string name="dpi_group_title">DPI.</string>
     <string name="dpi_groups_apps">application(s)</string>
     <string name="dpi_group_add_app">Ajouter une application à ce groupe</string>
