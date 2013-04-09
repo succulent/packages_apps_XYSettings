@@ -68,7 +68,7 @@
     <string name="header_summary_spen">@null</string>
 
     <!-- Menu Strings -->
-    <string name="menu_nav_bar_reset">Reset NavBar</string>
+    <string name="menu_nav_bar_reset">Reset Navbar</string>
     <string name="menu_main_activity_change_locale">Locale</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
@@ -158,7 +158,7 @@
     <string name="clock_date_display_summary">Display custom date before the clock</string>
     <string name="clock_date_style">Date style</string>
     <string name="clock_date_format">Date format</string>
-    <string name="clock_date_string_edittext_title">Must be in Proper Format ie. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_title">Must be in proper format ie. mm/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
     <string name="dont_show_default">Don\'t show (default)</string>
     <string name="normal">Normal</string>
