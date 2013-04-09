@@ -18,7 +18,7 @@
     <string name="quick_toggles">Quick Toggles</string>
     <string name="status_bar">Status Bar</string>
     <string name="others">Others</string>
-    <string name="navigation_bar">NavBar</string>
+    <string name="navigation_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
     <string name="led_options">LED</string>
     <string name="pie">PIE™</string>
@@ -37,7 +37,7 @@
     <string name="title_quick_toggles">Quick Toggles</string>
     <string name="title_statusbar_signal">Statusbar Signal</string>
     <string name="title_statusbar">Status Bar</string>
-    <string name="title_navbar">NavBar</string>
+    <string name="title_navbar">Navigation Bar</string>
     <string name="title_spen">S Pen Gestures</string>
     <string name="title_navring">Navigation Ring</string>
     <string name="title_power_menu">Power Menu</string>
@@ -218,7 +218,7 @@
 
     <!-- The Loner -->
     <string name="pie_menu_title">Persistent menu button</string>
-    <string name="pie_menu_summary">Always show menu button even when it isnt necessary</string>
+    <string name="pie_menu_summary">Always show menu button even when it isn/'t necessary</string>
 
     <string name="pie_search_title">Search button</string>
     <string name="pie_search_summary">Enable search button on pie controls</string>
