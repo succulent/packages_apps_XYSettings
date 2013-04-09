@@ -598,7 +598,7 @@
     <string name="notification_behaviour_neverexpand">Never expand</string>
     <string name="notification_behaviour_alwaysexpand">Always expand</string>
     <string name="notification_behaviour_oldstyle">Old style</string>
-    <string name="notification_show_wifi_ssid_title">Show Wifi network on notification drawer</string>
+    <string name="notification_show_wifi_ssid_title">Show Wifi network</string>
     <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network on notification drawer</string>
     <string name="notification_wallpaper_title">Choose notification background</string>
     <string name="notification_wallpaper_summary">You can remove the wallpaper from the menu in this window</string>
