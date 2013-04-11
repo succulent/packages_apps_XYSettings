@@ -508,7 +508,7 @@
     <string name="statusbar_hide_summary">Allow to completely hide the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
     <string name="navbar_hide_enable_title">Hidden navbar enable</string>
-    <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
+    <string name="drag_handle_opacity_title">Drag handle opacity</string>
     <string name="drag_handle_width_title">Drag handle width</string>
     <string name="title_navbar_timeout">Hidden navbar timeout</string>
     <string name="summary_navbar_timeout">Timeout time for hidden navbar window</string>
