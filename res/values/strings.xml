@@ -13,10 +13,12 @@
     <string name="reset">Reset</string>
     <string name="empty">Empty</string>
     <string name="general_ui">General UI</string>
+    <string name="battery">Battery</string>
     <string name="clock">Clock</string>
     <string name="signal">Signal</string>
+    <string name="statusbar">Statusbar</string>
     <string name="quick_toggles">Quick Toggles</string>
-    <string name="status_bar">Statusbar</string>
+    <string name="status_extras">Status Extras</string>
     <string name="others">Other</string>
     <string name="navigation_bar">Navigation Bar</string>
     <string name="power_menu">Power Menu</string>
@@ -30,13 +32,17 @@
     <string name="lockscreen">Lockscreen</string>
     <string name="weather">Weather</string>
     <string name="tools">Tools</string>
+    <string name="bar_cat">Bar</string>
+    <string name="notif_cat">Notification</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_general_ui">General UI</string>
-    <string name="title_statusbar_clock">Statusbar Clock</string>
+    <string name="title_statusbar_clock">Clock</string>
     <string name="title_quick_toggles">Quick Toggles</string>
-    <string name="title_statusbar_signal">Statusbar Signal</string>
+    <string name="title_statusbar_signal">Signal</string>
+    <string name="title_statusbar_battery">Battery</string>
     <string name="title_statusbar">Status Bar</string>
+    <string name="title_status_extras">Status Extras</string>
     <string name="title_navbar">Navigation Bar</string>
     <string name="title_spen">S Pen Gestures</string>
     <string name="title_navring">Navigation Ring</string>
@@ -54,28 +60,17 @@
     <string name="clipboard_notification">Copied to clipboard</string>
 
     <!-- Header Summaries -->
-    <string name="header_summary_general_ui">@null</string>
-    <string name="header_summary_power_menu">@null</string>
-    <string name="header_summary_navigation_bar">@null</string>
-    <string name="header_summary_clock">@null</string>
-    <string name="header_summary_signal">@null</string>
-    <string name="header_summary_toggles">@null</string>
-    <string name="header_summary_led">@null</string>
-    <string name="header_summary_pie">@null</string>
-    <string name="header_summary_statusbar">@null</string>
-    <string name="header_summary_lockscreen">@null</string>
-    <string name="header_summary_hybridsettings">@null</string>
-    <string name="header_summary_spen">@null</string>
+    <string name="header_summary">@null</string>
 
     <!-- Menu Strings -->
-    <string name="menu_nav_bar_reset">Reset NavBar</string>
+    <string name="menu_nav_bar_reset">Reset Navbar</string>
     <string name="menu_main_activity_change_locale">Locale</string>
     <string name="menu_user_interface_reset">Reset notification wallpaper</string>
     <string name="menu_lockscreens_reset">Reset lockscreen wallpaper</string>
 
     <!-- General Strings -->
-    <string name="advanced_settings">Advanced</string>
-    <string name="misc_short">Misc.</string>
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="misc_short">Misc</string>
     <string name="custom_app_icon_successfully">"'s icon set successfully!"</string>
     <string name="select_custom_app_title">Select custom application</string>
     <string name="text_on">On</string>
@@ -195,7 +190,7 @@
     <string name="pie_size_small">Small</string>
     <string name="pie_size_default">@string/pie_mode_default</string>
     <string name="pie_size_large">Large</string>
-    <string name="pie_size_gigantic">Huge</string>
+    <string name="pie_size_gigantic">Gigantic</string>
 
     <!-- The Gap -->
     <string name="pie_gap_title">Item gap</string>
@@ -207,7 +202,7 @@
 
     <!-- The trigger -->
     <string name="pie_trigger_title">Trigger area</string>
-    <string name="pie_trigger_summary">Determine the size of the triggering area that will start PIE</string>
+    <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
     <string name="pie_trigger_small">Small</string>
     <string name="pie_trigger_normal">Normal (Default)</string>
     <string name="pie_trigger_big">Big</string>
@@ -462,7 +457,6 @@
     <string name="size_44_dp">44 dp</string>
     <string name="size_40_dp">40 dp</string>
     <string name="size_42_dp">42 dp</string>
-    <string name="statusbar">Statusbar</string>
     <string name="top_of_navbar">Top of navbar</string>
     <string name="bottom_of_navbar">Bottom of navbar</string>
     <string name="regular">Regular</string>

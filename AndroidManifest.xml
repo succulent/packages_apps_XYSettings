@@ -72,8 +72,8 @@
 	    </intent-filter>
 	</activity>
         <activity
-            android:name=".fragments.StatusBar"
-            android:label="@string/title_statusbar" >
+            android:name=".fragments.StatusBarBattery"
+            android:label="@string/title_statusbar_battery" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -92,6 +92,15 @@
 	<activity
             android:name=".fragments.StatusBarSignal"
             android:label="@string/title_statusbar_signal" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+	<activity
+            android:name=".fragments.StatusExtras"
+            android:label="@string/title_status_extras" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

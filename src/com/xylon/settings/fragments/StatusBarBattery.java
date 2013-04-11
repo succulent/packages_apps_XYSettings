@@ -18,7 +18,7 @@ import com.xylon.settings.SettingsPreferenceFragment;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class StatusBarBattery extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String PREF_BATT_ICON = "battery_icon_list";
     private static final String STATUS_BAR_CIRCLE_BATTERY_COLOR = "status_bar_circle_battery_color";
@@ -45,13 +45,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     CheckBoxPreference mBatteryBarChargingAnimation;
     Preference mCircleColorReset;
 
-    private int seekbarProgress;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.title_statusbar);
-        addPreferencesFromResource(R.xml.status_bar_settings);
+        addPreferencesFromResource(R.xml.status_bar_battery_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
