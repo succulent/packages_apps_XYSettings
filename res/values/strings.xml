@@ -4,7 +4,7 @@
     <string name="app_name">XYE Tools</string>
 
     <!-- Header Strings -->
-    <string name="user_interface">Main Interface</string>
+    <string name="user_interface">Interface</string>
     <string name="bars">Bar Interface</string>
     <string name="system">System</string>
     <string name="cancel">Cancel</string>
