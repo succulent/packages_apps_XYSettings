@@ -844,7 +844,7 @@
     <string name="uimode_tablet">Tablet (720/1000dp)</string>
 
     <string name="dpi_settings_title">System Density</string>
-    <string name="system_dpi_title">System density</string>
+    <string name="system_dpi_title">System Density</string>
     <string name="system_dpi_summary">Current system density:</string>
     <string name="system_dpi_standar_title">Standard density</string>
     <string name="system_dpi_standar_summary">Select the density from a list</string>
