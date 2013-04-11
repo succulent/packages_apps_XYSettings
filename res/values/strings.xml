@@ -240,7 +240,7 @@
     <string name="pie_juice_title">Battery juice color</string>
 
     <!-- Battery style -->
-    <string name="battery_icon_title">Battery Style</string>
+    <string name="battery_icon_title">Battery style</string>
     <string name="icon_only">Icon (No Text)</string>
     <string name="text_only">Text (No Icon)</string>
     <string name="icon_w_text">Icon (Offset Text)</string>
