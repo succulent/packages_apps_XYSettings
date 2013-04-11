@@ -504,14 +504,14 @@
     <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
-    <string name="statusbar_hide_title">Hide Statusbar</string>
+    <string name="statusbar_hide_title">Hide statusbar</string>
     <string name="statusbar_hide_summary">Allow to completely hide the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
-    <string name="navbar_hide_enable_title">Hidden Navbar Enable</string>
+    <string name="navbar_hide_enable_title">Hidden navbar enable</string>
     <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
-    <string name="drag_handle_width_title">Drag Handle Width</string>
-    <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
-    <string name="summary_navbar_timeout">Timeout time for Hidden Navbar Window</string>
+    <string name="drag_handle_width_title">Drag handle width</string>
+    <string name="title_navbar_timeout">Hidden navbar timeout</string>
+    <string name="summary_navbar_timeout">Timeout time for hidden navbar window</string>
     <string name="glow_times_title">Button glow animation</string>
     <string name="navbar_buttons_instructions">Press icon to select actions or custom icon</string>
     <string name="navbar_title_menu">Button options</string>
@@ -606,16 +606,16 @@
     <!-- General UI | Tablet Mode -->
 
     <string name="tablet_cat">Tablet options</string>
-    <string name="hide_extras">Hide Extras</string>
+    <string name="hide_extras">Hide extras</string>
     <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat mode button</string>
-    <string name="multipane_ui">Enable Dual panel</string>
-    <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
+    <string name="multipane_ui">Enable dual panel</string>
+    <string name="multipane_ui_summary">This will enable/disable dual panel view (requires reboot)</string>
 
     <!-- General UI | CRT Animation Modifications -->
 
     <string name="display_category_animation_options_title">Animation options</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen-Off</string>
-    <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
+    <string name="system_power_crt_screen_off_title">CRT screen-off</string>
+    <string name="system_power_crt_screen_off_summary">Screen will animate an electron beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>
     <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>
     <string name="system_power_crt_mode_horizontal">Portrait horizontal</string>
@@ -845,7 +845,7 @@
     <string name="uimode_phablet">Phablet (600dp)</string>
     <string name="uimode_tablet">Tablet (720/1000dp)</string>
 
-    <string name="dpi_settings_title">System density</string>
+    <string name="dpi_settings_title">System Density</string>
     <string name="system_dpi_title">System density</string>
     <string name="system_dpi_summary">Current system density:</string>
     <string name="system_dpi_standar_title">Standard density</string>
@@ -856,7 +856,7 @@
 
     <string name="appsuimode_title">Apps UI Mode</string>
 
-    <string name="apps_dpi_title">Apps density</string>
+    <string name="apps_dpi_title">Apps Density</string>
     <string name="apps_dpi_summary">Current apps density:</string>
     <string name="apps_dpi_custom_title">Specify density</string>
     <string name="apps_dpi_custom_hint">120 to 480</string>
@@ -872,7 +872,7 @@
     <string name="dpi_groups_alert_remove_app">Remove application</string>
     <string name="dpi_groups_remove_app">Remove %s application from group?</string>
     <string name="dpi_groups_backuprestore_title">Backup and restore</string>
-    <string name="dpi_groups_auto_backup">Auto backup</string>
+    <string name="dpi_groups_auto_backup">Auto Backup</string>
     <string name="dpi_groups_auto_backup_summary">Save your configuration with every change</string>
     <string name="dpi_groups_backup_title">Backup</string>
     <string name="dpi_groups_backup_summary">Backup your configuration</string>
@@ -888,7 +888,7 @@
     <string name="customdpigroup_summary">Add a custom dpi group</string>
     <string name="custom_dpi">Current dpi:</string>
     <string name="customdpigroup_group_exists">The selected custom dpi group already exists.</string>
-    <string name="per_app_layout_title">Per app layout</string>
+    <string name="per_app_layout_title">Per App Layout</string>
     <string name="per_app_layout_summary">Define layout for each app</string>
     <string name="per_app_layout_list_title">Application list</string>
     <string name="per_app_layout_alert_title">Select a layout</string>
@@ -900,7 +900,7 @@
     <string name="widget_remove_widget">Remove %s widget from list?</string>
     <string name="widget_add_title">Choose an application</string>
 
-    <string name="navbar_height_title">Navigation bar Height</string>
+    <string name="navbar_height_title">Navigation Bar Height</string>
 
     <string name="alert_reboot">Reboot needed</string>
     <string name="alert_reboot_message">This change needs a reboot to be applied. Do you want to reboot now?</string>
