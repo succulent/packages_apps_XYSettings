@@ -608,8 +608,6 @@
     <string name="tablet_cat">Tablet options</string>
     <string name="hide_extras">Hide extras</string>
     <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat mode button</string>
-    <string name="multipane_ui">Enable dual panel</string>
-    <string name="multipane_ui_summary">This will enable/disable dual panel view (requires reboot)</string>
 
     <!-- General UI | CRT Animation Modifications -->
 

@@ -81,7 +81,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
-    private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
@@ -92,7 +91,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
     Preference mRamBar;
     CheckBoxPreference mShowActionOverflow;
     CheckBoxPreference mHideExtras;
-    CheckBoxPreference mDualpane;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mFullscreenKeyboard;
     CheckBoxPreference mCrtOff;
@@ -163,16 +161,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         updateRotationTimeout(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT, TIMEOUT_DEFAULT));
 
-        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
-        if (mDualpane != null) {
-            mDualpane.setChecked(Settings.System.getBoolean(cr,
-                            Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
-                            com.android.internal.R.bool.preferences_prefer_dual_pane)));
 
-            mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
-            mHideExtras.setChecked(Settings.System.getBoolean(cr,
-                            Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
-        }
+        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras.setChecked(Settings.System.getBoolean(cr,
+                       Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
 
         mRamBar = findPreference(PREF_RECENTS_RAM_BAR);
         updateRamBar();
@@ -222,11 +214,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
                         Toast.LENGTH_LONG).show();
             }
-            return true;
-        } else if (preference == mDualpane) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.FORCE_DUAL_PANEL,
-                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mHideExtras) {
             Settings.System.putBoolean(mContext.getContentResolver(),
