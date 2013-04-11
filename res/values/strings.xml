@@ -510,14 +510,14 @@
     <string name="navigation_bar_glow_tint_summary">When you press on a button, there is a glow. Use this to change the color of the glow.</string>
     <string name="navigation_bar_menu_arrow_keys_title">Menu arrow keys</string>
     <string name="navigation_bar_menu_arrow_keys_summary">Show arrow keys in the navigation bar while typing</string>
-    <string name="statusbar_hide_title">Hide Statusbar</string>
+    <string name="statusbar_hide_title">Hide statusbar</string>
     <string name="statusbar_hide_summary">Allow to completely hide the Statusbar</string>
     <string name="navigation_bar_alpha_title">Statusbar and navigation bar opacity</string>
-    <string name="navbar_hide_enable_title">Hidden Navbar Enable</string>
+    <string name="navbar_hide_enable_title">Hidden navbar enable</string>
     <string name="drag_handle_opacity_title">Drag Handle Opacity</string>
-    <string name="drag_handle_width_title">Drag Handle Width</string>
-    <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
-    <string name="summary_navbar_timeout">Timeout time for Hidden Navbar Window</string>
+    <string name="drag_handle_width_title">Drag handle width</string>
+    <string name="title_navbar_timeout">Hidden navbar timeout</string>
+    <string name="summary_navbar_timeout">Timeout time for hidden navbar window</string>
     <string name="glow_times_title">Button glow animation</string>
     <string name="navbar_buttons_instructions">Press icon to select actions or custom icon</string>
     <string name="navbar_title_menu">Button options</string>
@@ -612,16 +612,16 @@
     <!-- General UI | Tablet Mode -->
 
     <string name="tablet_cat">Tablet options</string>
-    <string name="hide_extras">Hide Extras</string>
+    <string name="hide_extras">Hide extras</string>
     <string name="hide_extras_summary">Hide some systembar stuff i.e. the compat mode button</string>
-    <string name="multipane_ui">Enable Dual panel</string>
-    <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (requires reboot)</string>
+    <string name="multipane_ui">Enable dual panel</string>
+    <string name="multipane_ui_summary">This will enable/disable dual panel view (requires reboot)</string>
 
     <!-- General UI | CRT Animation Modifications -->
 
     <string name="display_category_animation_options_title">Animation options</string>
-    <string name="system_power_crt_screen_off_title">CRT Screen-Off</string>
-    <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
+    <string name="system_power_crt_screen_off_title">CRT screen-off</string>
+    <string name="system_power_crt_screen_off_summary">Screen will animate an electron beam when turned off</string>
     <string name="system_power_crt_mode_title">CRT animation mode</string>
     <string name="system_power_crt_mode_dialog_title">Show CRT animation</string>
     <string name="system_power_crt_mode_horizontal">Portrait horizontal</string>
