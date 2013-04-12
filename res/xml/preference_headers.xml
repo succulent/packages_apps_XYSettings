@@ -1,51 +1,6 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
 
    <header
-     android:title="@string/statusbar" />
-
-    <header
-        android:id="@+id/statusbar_battery"
-        android:fragment="com.xylon.settings.fragments.StatusBarBattery"
-        android:title="@string/battery"
-        android:icon="@drawable/ic_xy_settings_battery"
-        android:summary="@string/header_summary" />
-
-    <header
-        android:id="@+id/statusbar_clock"
-        android:fragment="com.xylon.settings.fragments.StatusBarClock"
-        android:title="@string/clock"
-        android:icon="@drawable/ic_xy_settings_clock"
-        android:summary="@string/header_summary" />
-
-     <header
-        android:id="@+id/statusbar_signal"
-        android:fragment="com.xylon.settings.fragments.StatusBarSignal"
-        android:title="@string/signal"
-        android:icon="@drawable/ic_xy_settings_signal"
-        android:summary="@string/header_summary" />
-
-     <header
-        android:id="@+id/quick_toggles"
-        android:title="@string/quick_toggles"
-        android:fragment="com.xylon.settings.fragments.QuickToggles"
-        android:icon="@drawable/ic_xy_settings_quick_toggles"
-        android:summary="@string/header_summary" />
-
-     <header
-        android:id="@+id/pie"
-        android:fragment="com.xylon.settings.fragments.Pie"
-        android:title="@string/pie"
-        android:icon="@drawable/ic_xy_settings_pie"
-        android:summary="@string/header_summary" />
-
-    <header
-        android:id="@+id/status_extras"
-        android:fragment="com.xylon.settings.fragments.StatusExtras"
-        android:title="@string/status_extras"
-        android:icon="@drawable/ic_xy_settings_status_extras"
-        android:summary="@string/header_summary" />
-
-   <header
         android:title="@string/user_interface" />
 
      <header
@@ -77,6 +32,13 @@
         android:summary="@string/header_summary" />
 
      <header
+        android:id="@+id/pie"
+        android:fragment="com.xylon.settings.fragments.Pie"
+        android:title="@string/pie"
+        android:icon="@drawable/ic_xy_settings_pie"
+        android:summary="@string/header_summary" />
+
+     <header
          android:id="@+id/themes"
          android:icon="@drawable/ic_xy_settings_themes"
          android:title="@string/themes_title">
@@ -86,6 +48,44 @@
              android:targetClass="com.tmobile.themechooser.ThemeChooser" />
      </header>
 
+   <header
+     android:title="@string/statusbar" />
+
+    <header
+        android:id="@+id/statusbar_battery"
+        android:fragment="com.xylon.settings.fragments.StatusBarBattery"
+        android:title="@string/battery"
+        android:icon="@drawable/ic_xy_settings_battery"
+        android:summary="@string/header_summary" />
+
+    <header
+        android:id="@+id/statusbar_clock"
+        android:fragment="com.xylon.settings.fragments.StatusBarClock"
+        android:title="@string/clock"
+        android:icon="@drawable/ic_xy_settings_clock"
+        android:summary="@string/header_summary" />
+
+     <header
+        android:id="@+id/statusbar_signal"
+        android:fragment="com.xylon.settings.fragments.StatusBarSignal"
+        android:title="@string/signal"
+        android:icon="@drawable/ic_xy_settings_signal"
+        android:summary="@string/header_summary" />
+
+     <header
+        android:id="@+id/quick_toggles"
+        android:title="@string/quick_toggles"
+        android:fragment="com.xylon.settings.fragments.QuickToggles"
+        android:icon="@drawable/ic_xy_settings_quick_toggles"
+        android:summary="@string/header_summary" />
+
+    <header
+        android:id="@+id/status_extras"
+        android:fragment="com.xylon.settings.fragments.StatusExtras"
+        android:title="@string/status_extras"
+        android:icon="@drawable/ic_xy_settings_status_extras"
+        android:summary="@string/header_summary" />
+        
     <header
         android:id="@+id/system"
         android:title="@string/system" />
