@@ -327,7 +327,7 @@
     <string name="toggle_favcontact_title">즐겨찾는 연락처</string>
     <string name="toggle_favcontact_summary">즐겨찾는 연락처를 추가합니다.</string>
     <string name="toggle_enable_fasttoggle_title">빠른 토글 사용</string>
-    <string name="toggle_enable_fasttoggle_summary">상태바의 한쪽을 내렸을 때 토글이 나타나도록 설정합니다.</string>
+    <string name="toggle_enable_fasttoggle_summary"></string>
     <string name="toggle_choose_fasttoggle_side_title">빠른 토글의 방향</string>
     <string name="toggle_choose_fasttoggle_side_summary">빠른 토글을 사용하기 위한 방향을 선택합니다.</string>
     <string name="toggle_dialog_arrange_title">토글 설정</string>
