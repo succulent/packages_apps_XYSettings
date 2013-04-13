@@ -897,6 +897,6 @@
 
     <string name="alert_reboot">다시 부팅 필요</string>
     <string name="alert_reboot_message">이 변경은 다시 부팅을 필요로 합니다. 다시 부팅하겠습니까?</string>
-
+	
 
 </resources>
