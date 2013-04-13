@@ -11,10 +11,12 @@
     <string name="reset">Réinitialiser</string>
     <string name="empty">Vide</string>
     <string name="general_ui">Général</string>
+    <string name="battery">Batterie</string>
     <string name="clock">Horloge</string>
     <string name="signal">Signal</string>
     <string name="quick_toggles">Quick Settings</string>
-    <string name="status_bar">Barre d\'État</string>
+    <string name="statusbar">Barre d\'état</string>
+    <string name="status_extras">Divers</string>
     <string name="others">Autres</string>
     <string name="navigation_bar">Barre de Navigation</string>
     <string name="power_menu">Menu Power</string>
@@ -27,13 +29,17 @@
     <string name="lockscreen">Écran de verrouillage</string>
     <string name="weather">Météo</string>
     <string name="tools">Outils</string>
+    <string name="bar_cat">Barres</string>
+    <string name="notif_cat">Notifications</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_general_ui">Général</string>
-    <string name="title_statusbar_clock">Horloge de la barre d\'état</string>
+    <string name="title_statusbar_clock">Horloge</string>
     <string name="title_quick_toggles">Quick Settings</string>
-    <string name="title_statusbar_signal">Signal de la barre d\'état</string>
+    <string name="title_statusbar_signal">Signal</string>
+    <string name="title_statusbar_battery">Batterie</string>
     <string name="title_statusbar">Barre d\'état</string>
+    <string name="title_status_extras">Divers</string>
     <string name="title_navbar">Barre de Navigation</string>
     <string name="title_spen">Gestes S Pen</string>
     <string name="title_navring">Anneaux de Navigation</string>
@@ -50,8 +56,7 @@
     <string name="clipboard_notification">Copié dans le Presse-Papiers.</string>
 
     <!-- Menu Strings -->
-    <string name="menu_nav_bar_reset">Réinitialiser la NavBar</string>
-    <string name="menu_main_activity_change_locale">Local</string>
+    <string name="menu_nav_bar_reset">Réini. la barre de nav.</string>
     <string name="menu_user_interface_reset">Réini. l\'arrière-plan de la barre de notif.</string>
     <string name="menu_lockscreens_reset">Réini. l\'arrière-plan de l\'écran de verrouillage</string>
 
@@ -294,12 +299,6 @@
     <string name="toggle_enable_fasttoggle_summary">Substitue le comportement par défaut</string>
     <string name="toggle_choose_fasttoggle_side_title">Choisir le côté du Fast Toggle</string>
     <string name="toggle_choose_fasttoggle_side_summary">Choisir de quel côté de la barre d\'état serons affichés les Toggles</string>
-    <string name="toggle_screenshot_timeout_title">Délai de la Capture d\'écran</string>
-    <string name="toggle_screenshot_timeout_summary">Choisir le délai du Toggle \'Capture d\'écran\', après que la barre de notification soit fermée pour faire la capture. (Recommandé: Lent)</string>
-    <string name="toggle_screenshot_timeout_fast">Rapide</string>
-    <string name="toggle_screenshot_timeout_normal">Normal</string>
-    <string name="toggle_screenshot_timeout_slow">Lent</string>
-    <string name="toggle_screenshot_timeout_extremelyslow">Très lent</string>
     <string name="toggle_dialog_arrange_title">Configuration</string>
     <string name="toggle_dialog_add_toggles">Sélectionner les Toggles à afficher</string>
     <string name="toggle_style_tile">Quick Settings (Tuiles)</string>
@@ -307,6 +306,38 @@
     <string name="toggle_style_scrollable">Traditionnel (Défilant)</string>
     <string name="toggle_swap_handle_side">Poignée à droite</string>
     <string name="add_toggles">Ajouter des Toggles</string>
+    <string name="screenshot_delay_title">Délai de la Capture d\'écran</string>
+    <string name="screenshot_delay_summary">Choisir le délai du Toggle \'Capture d\'écran\' pour faire la capture.</string>
+    <string name="toggle_action_title">Action %1$s &amp; icône</string>
+    <string name="toggle_action_title_alt">Appui long action %1$s &amp; icône</string>
+    <string name="toggle_longpress_title">Appui long de l\'action %1$s</string>
+    <string name="custom_toggle_action">Comment ça marche ?</string>
+    <string name="custom_toggle_desc">En Mode Basique, l\'action du Toggle Custom change à chaque appui court. Un appui long lancera l\'action affichée. Ceci est particulièrement utile pour les utilisateurs qui veulent un Toggle pour lancer des applications. \nAvec le Mode avancé, le Toggle vous permet de lancer une action à chaque clic. Avec un appui long, les autres actions seront également mis à votre disposition dans ce mode. Ceci est particulièrement utile pour les utilisateurs qui désirent un toggle qui effectue des tâches qui ne lance pas une nouvelle application.</string>
+    <string name="custom_toggle_okay">Ok</string>
+    <string name="custom_toggle_cat">Toggle personnalisé</string>
+    <string name="custom_button_cat">Actions du Toggle personnalisé</string>
+    <string name="dclick_action_title">Actions d\'un double-clic</string>
+    <string name="dclick_action_summary">Changer le statut par double-clic</string>
+    <string name="boot_action_title">État 1 au démarrage</string>
+    <string name="boot_action_summary">Lancera l\'état 1 au démarrage</string>
+    <string name="match_icon_action_title">Lancé l\'action affichée</string>
+    <string name="match_icon_action_summary">Useful for aligning task to displayed icon per your specific usage</string>
+    <string name="advanced_toggle_title">Mode Basique ou Avancé</string>
+    <string name="advanced_toggle_summaryon">Avancé (Actions sur Appui Long et Court)</string>
+    <string name="advanced_toggle_summaryoff">Basique (Actions sur Appui Long)</string>
+    <string name="action_toggle_title">Actions du Toggle</string>
+    <string name="action_toggle_summary">Ordre des actions du Toggle, de gauche à droite.</string>
+    <string name="no_dclick">Pas d\'action</string>
+    <string name="back_one_dclick">Inverser l\'état</string>
+    <string name="state_one_dclick">Set to state one</string>
+    <string name="skip_back_dclick">Skip back (no action)</string>
+    <string name="skip_up_dclick">Skip forward (no action)</string>
+    <string name="collapse_bar_title">Fermer la barre d\'état</string>
+    <string name="collapse_bar_summary">La barre d\'état se ferme après avoir fait l\'action</string>
+    <string name="no_collapse">Ne jamais la fermer</string>
+    <string name="click_collapse">A l\'appui court</string>
+    <string name="long_collapse">A l\'appui long</string>
+    <string name="both_collapse">Les deux, long et court</string>
 
      <!-- Brightness slider -->
     <string name="on_top">En haut</string>
@@ -384,7 +415,6 @@
     <string name="glow_times_normal">Normal</string>
     <string name="size_42_dp_default">42 dp (Défaut)</string>
     <string name="size_48_dp_default">48 dp (Défaut)</string>
-    <string name="statusbar">Barre d\'état</string>
     <string name="top_of_navbar">Haut de la barre de nav.</string>
     <string name="bottom_of_navbar">Bas de la barre de nav.</string>
     <string name="regular">Normal</string>
@@ -429,7 +459,7 @@
     <string name="drag_handle_opacity_title">Opacité de la poignée</string>
     <string name="drag_handle_width_title">Taille de la poignée</string>
     <string name="title_navbar_timeout">Hidden Navbar Timeout</string>
-    <string name="summary_navbar_timeout">Délai d\'attente avant la disparition de la Navbar</string>
+    <string name="summary_navbar_timeout">Délai d\'attente avant la disparition de la NavBar</string>
     <string name="glow_times_title">Animation de lueur des boutons</string>
     <string name="navbar_buttons_instructions">Appuyer sur l\'icône pour changer l\'action ou l\'icône</string>
     <string name="navbar_title_menu">Options du bouton</string>
@@ -761,6 +791,13 @@
     <string name="per_app_layout_summary">Définir une disposition pour chaque application</string>
     <string name="per_app_layout_list_title">Liste des applications</string>
     <string name="per_app_layout_alert_title">Sélectionner une disposition</string>
+    <string name="widgets_title">Widgets</string>
+    <string name="widgets_summary">Définir une liste de widgets</string>
+    <string name="add_widget">Ajouter un widget</string>
+    <string name="widget_list">Liste de widgets</string>
+    <string name="widget_alert_remove_widget">Supprimer le widget</string>
+    <string name="widget_remove_widget">Supprimer le widget %s de la liste ?</string>
+    <string name="widget_add_title">Choisir une application</string>
 
     <string name="navbar_height_title">Hauteur de la barre de navigation</string>
 
