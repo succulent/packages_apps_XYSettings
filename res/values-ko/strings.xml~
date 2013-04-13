@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">XY 설정</string>
@@ -777,66 +776,66 @@
     <string name="icon_presets">프리셋</string>
     <string name="icon_custom">사용자 지정</string>
     <string name="lock_screen_shortcuts_title">바로가기</string>
-    <string name="lock_screen_shortcuts_reset_message">바로가기를초기화하겠습니까?</string>
-    <string name="lock_screen_shortcuts_summary">View or change custom quick shortcuts</string>
-    <string name="lock_screen_shortcuts_add">Add</string>
-    <string name="lock_screen_shortcuts_reset">Reset</string>
-    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
-    <string name="dialog_delete_title">Delete</string>
-    <string name="dialog_delete_message">Remove selected item?</string>
+    <string name="lock_screen_shortcuts_reset_message">바로가기를 초기화하겠습니까?</string>
+    <string name="lock_screen_shortcuts_summary">사용자 지정 바로가기 수정</string>
+    <string name="lock_screen_shortcuts_add">추가</string>
+    <string name="lock_screen_shortcuts_reset">초기화</string>
+    <string name="lock_screen_shortcuts_limit">최대 6개 까지만 지원합니다.</string>
+    <string name="dialog_delete_title">제거</string>
+    <string name="dialog_delete_message">선택된 바로가기를 제거합니까??</string>
 
     <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
-    <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
-    <string name="lockscreen_target_title">Slider</string>
-    <string name="lockscreen_target_summary">View or change custom slider shortcuts</string>
-    <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
-    <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
-    <string name="lockscreen_target_reset_title">Reset</string>
-    <string name="lockscreen_target_reset_message">Delete all user created lock screen shortcuts and restore to default?</string>
-    <string name="lockscreen_target_empty">Empty</string>
-    <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
-    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
+    <string name="lockscreen_target_info">타켓 추가하려면 슬라이더를 빈곳으로 이동해 추가합니다.</string>
+    <string name="lockscreen_target_title">잠금화면 타켓</string>
+    <string name="lockscreen_target_summary">사용자 지정 잠금화면 타켓을 보거나 수정합니다.</string>
+    <string name="lockscreen_target_reset">잠금화면 타켓 초기화 하기</string>
+    <string name="lockscreen_target_save">잠금화면 타켓 저장됨</string>
+    <string name="lockscreen_target_reset_title">초기화 하기</string>
+    <string name="lockscreen_target_reset_message">사용자 지정 잠금화면 타켓를 초기화 하시겠습니까?</string>
+    <string name="lockscreen_target_empty">없음</string>
+    <string name="lockscreen_target_edit_title">아이콘과 바로가기 수정하기</string>
+    <string name="lockscreen_target_edit_msg">선택된 앱의 아이콘과 바로가기를 수정 할 수 있습니다.</string>
 
     <!-- AOKP Lockscreen Customizations -->
-    <string name="lockscreen_maximize_widgets_title">Maximize widgets</string>
-    <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the unlock minimized when the screen is turned on</string>
-    <string name="lockscreen_hide_initial_page_hints_title">Hide initial page hints</string>
-    <string name="lockscreen_hide_initial_page_hints_summary">Set wether the hints for the left and right widgets are shown when the screen is turned on.</string>
-    <string name="lockscreen_use_widget_container_carousel_title">Use widget carousel</string>
-    <string name="lockscreen_use_widget_container_carousel_summary">Use a carousel animation when switching between lockscreen widgets.</string>
+    <string name="lockscreen_maximize_widgets_title">위젯 최대화</string>
+    <string name="lockscreen_maximize_widgets_summary">화면이 켜졌을 때 위젯을 최대화하고 잠금 링을 최소화합니다.</string>
+    <string name="lockscreen_hide_initial_page_hints_title">페이지 힌트 숨김</string>
+    <string name="lockscreen_hide_initial_page_hints_summary">화면이 켜졌을 때 왼쪽 또는 오른쪽에 있는 위젯의 외곽선을 숨깁니다.</string>
+    <string name="lockscreen_use_widget_container_carousel_title">위젯 회전 애니메이션 사용</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">위젯을 넘길 때 회전 애니메이션을 사용합니다.</string>
 
     <!-- Lock Screen -->
-    <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
-    <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
-    <string name="lockscreen_all_widgets_title">Allow all widgets</string>
-    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget developer, Team XY are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
-    <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
-    <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause major lag issues with lockscreen.</string>
-    <string name="lockscreen_longpress_challenge_title">Enable longpress to unlock</string>
-    <string name="lockscreen_longpress_challenge_summary">This enables your device to be unlocked with the widgets maximised by long pressing the lock icon.</string>
+    <string name="lockscreen_auto_rotate_title">잠금화면 회전 허용</string>
+    <string name="lockscreen_auto_rotate_summary">기기 회전으로 잠금화면 까지 회전을 합니다. 화면 자동 회전과는 별개로 작동합니다.</string>
+    <string name="lockscreen_all_widgets_title">모든 위젯 허용</string>
+    <string name="lockscreen_all_widgets_summary">몇몇 위젯은 잠금화면에서 사용하기 위한 위젯이 아닙니다.</string>
+    <string name="lockscreen_unlimited_widgets_title">위젯 제한 없애기</string>
+    <string name="lockscreen_unlimited_widgets_summary">너무 많은 위젯 추가는 시스템 저하를 일으킵니다.</string>
+    <string name="lockscreen_longpress_challenge_title">길게 눌러 잠금해제 사용</string>
+    <string name="lockscreen_longpress_challenge_summary">잠금화면 위젯이 최대화되었을 때 나타나는 아이콘을 길게 눌러 잠금해제합니다.</string>
 
     <!-- Lock Screen Interface -->
-    <string name="lockscreen_custom_background_title">Background</string>
-    <string name="lockscreen_custom_background_dialog_title">Choose color</string>
-    <string name="lockscreen_background_result_successful">Background changed successfully</string>
-    <string name="lockscreen_background_result_not_successful">Background could not be changed</string>
-    <string name="lockscreen_background_color_fill">Color fill</string>
-    <string name="lockscreen_background_custom_image">Custom image</string>
-    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
-    <string name="see_through_title">See through</string>
-    <string name="see_through_summary">Allows to see the application behind the lock screen.</string>
+    <string name="lockscreen_custom_background_title">배경화면</string>
+    <string name="lockscreen_custom_background_dialog_title">색상 선택</string>
+    <string name="lockscreen_background_result_successful">배경화면이 성공적으로 설정되었습니다.</string>
+    <string name="lockscreen_background_result_not_successful">배경화면을 바꿀 수 없었습니다.</string>
+    <string name="lockscreen_background_color_fill">색상 채우기</string>
+    <string name="lockscreen_background_custom_image">사용자 지정 이미지</string>
+    <string name="lockscreen_background_default_wallpaper">기본 배경화면 </string>
+    <string name="see_through_title">들여다 보기</string>
+    <string name="see_through_summary">잠금화면에서 구동중인 앱 화면을 들여다 볼 수 있습니다.</string>
 
     <!--- Lock clock -->
-    <string name="lock_clock_title">Clock widget</string>
-    <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
+    <string name="lock_clock_title">시계 위젯</string>
+    <string name="lock_clock_summary"> \'cLock\' 위젯이 홈 화면과 잠금화면에 어떻게 표시될 지 설정합니다.</string>
 
 
     <!-- LED brightness entries -->
-    <string name="low">Low</string>
-    <string name="medium">Medium</string>
-    <string name="high">High</string>
-    <string name="very_high">Extreme</string>
-    <string name="laserbeam">POLICE FLASHLIGHT BRIGHT</string>
+    <string name="low">어두움</string>
+    <string name="medium">중간</string>
+    <string name="high">밝게</string>
+    <string name="very_high">매우 밝게</string>
+    <string name="laserbeam">매~우 밝게!</string>
 
     <!-- Hybrid -->
     <string name="hybrid_settings_title">하이브리드 설정</string>
@@ -897,7 +896,7 @@
     <string name="navbar_height_title">소프트 키 높이</string>
 
     <string name="alert_reboot">다시 부팅 필요</string>
-    <string name="alert_reboot_message">이 변경은 다시 부팅을 필요로 합니다. 다시 부팅하겠습니까?</string>
+    <string name="alert_reboot_message">이 변경은 다시 부팅을 필요로 합니다. 다시 부팅하겠습니까?</string></string>
 
 
 </resources>
