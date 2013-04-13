@@ -879,7 +879,7 @@
     <string name="dpi_groups_restore_title">복원</string>
     <string name="dpi_groups_restore_summary">설정을 복원합니다.</string>
     <string name="dpi_groups_backup_done">백업을 완료하였습니다.</string>
-    <string name="dpi_groups_restore_done">복언을 완료하였습니다.</string>
+    <string name="dpi_groups_restore_done">복을 완료하였습니다.</string>
     <string name="dpi_groups_restore_default_title">기본 그룹으로 복구</string>
     <string name="dpi_groups_restore_default_summary">사용자 지정 DPI 그룹을 제거하고 원래대로 되돌립니다.</string>
     <string name="dpi_groups_delete_title">DPI 그룹 제거</string>
