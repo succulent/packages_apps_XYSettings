@@ -12,9 +12,11 @@
     <string name="reset">초기화</string>
     <string name="empty">비어있음</string>
     <string name="general_ui">환경</string>
+    <string name="battery">배터리</string>
     <string name="clock">시계</string>
     <string name="signal">신호</string>
     <string name="quick_toggles">빠른 토글</string>
+    <string name="status_extras">기타</string>
     <string name="status_bar">상태바</string>
     <string name="others">기타</string>
     <string name="navigation_bar">소프트 키</string>
@@ -26,8 +28,11 @@
     <string name="sound">소리</string>
     <string name="hybridsettings">하이브리드 설정</string>
     <string name="lockscreen_options">잠금화면</string>
+    <string name="lockscreen">잠금화면</string>
     <string name="weather">날씨</string>
     <string name="tools">도구</string>
+    <string name="bar_cat">바</string>
+    <string name="notif_cat">알림</string>
 
     <!-- Activity titles defined in AndroidManifest.xml -->
     <string name="title_general_ui">환경</string>
@@ -322,7 +327,7 @@
     <string name="toggle_favcontact_title">즐겨찾는 연락처</string>
     <string name="toggle_favcontact_summary">즐겨찾는 연락처를 추가합니다.</string>
     <string name="toggle_enable_fasttoggle_title">빠른 토글 사용</string>
-    <string name="toggle_enable_fasttoggle_summary"></string>
+    <string name="toggle_enable_fasttoggle_summary">상태바의 한쪽을 내렸을 때 토글이 나타나도록 설정합니다.</string>
     <string name="toggle_choose_fasttoggle_side_title">빠른 토글의 방향</string>
     <string name="toggle_choose_fasttoggle_side_summary">빠른 토글을 사용하기 위한 방향을 선택합니다.</string>
     <string name="toggle_dialog_arrange_title">토글 설정</string>
@@ -338,7 +343,7 @@
     <string name="toggle_action_title_alt">길게 눌렀을 때의 %1$s의 활동 및 아이콘</string>
     <string name="toggle_longpress_title">길게 눌렀을 때의 %1$s의 활동</string>
     <string name="custom_toggle_action">작동 원리</string>
-    <string name="custom_toggle_desc">기본 모드에선, 각각의 클릭이 지정된 작업 사이를 전환하도록 하며, 길게 누름으로 그 작업을 실행할 수 있습니다. 토글을 통해서 앱을 실행하고자 하는 사용자들에게 권장되는 모드입니다.\nIn 고급 모드에선, 각각의 클릭으로 작업을 실행할 수 있으며, 길게 누름으로 사용할 작업을 직접 정할 수 있습니다. 이것은 토글을 통해서 새로운 앱을 실행하고자 하는 것이 아닌 사용자들에게 권장되는 모드입니다.</string>
+    <string name="custom_toggle_desc">기본 모드에선, 각각의 클릭이 지정된 작업 사이를 전환하도록 하며, 길게 누름으로 그 작업을 실행할 수 있습니다. 토글을 통해서 앱을 실행하고자 하는 사용자들에게 권장되는 모드입니다.\n 고급 모드에선, 각각의 클릭으로 작업을 실행할 수 있으며, 길게 누름으로 사용할 작업을 직접 정할 수 있습니다. 이것은 토글을 통해서 새로운 앱을 실행하고자 하는 것이 아닌 사용자들에게 권장되는 모드입니다.</string>
     <string name="custom_toggle_okay">확인</string>
     <string name="custom_toggle_cat">사용자 지정 토글</string>
     <string name="custom_button_cat">사용자 지정 토글 활동</string>
@@ -352,7 +357,7 @@
     <string name="advanced_toggle_summaryon">고급 (짧게 누름 &amp; 길게 누름)</string>
     <string name="advanced_toggle_summaryoff">기본 (길게 누름)</string>
     <string name="action_toggle_title">토글 활동</string>
-    <string name="action_toggle_summary">전환 순서는 왼쪽에서 오른쪽으로입니다.</string>
+    <string name="action_toggle_summary">전환 순서는 왼쪽에서 오른쪽입니다.</string>
     <string name="no_dclick">아무 활동 없음</string>
     <string name="back_one_dclick">상태를 역으로 만듦</string>
     <string name="state_one_dclick">1번 활동</string>
@@ -593,6 +598,8 @@
     <string name="notification_behaviour_neverexpand">확장되지 않음</string>
     <string name="notification_behaviour_alwaysexpand">항상 확장되어 있음</string>
     <string name="notification_behaviour_oldstyle">예전 방식 사용</string>
+    <string name="notification_show_wifi_ssid_title">Wi-Fi 네트워크 표시</string>
+    <string name="notification_show_wifi_ssid_summary">알림창에 현재 연결되어 있는 Wi-Fi 네트워크 이름을 표시합니다.</string>
     <string name="notification_wallpaper_title">알림창 배경화면 변경</string>
     <string name="notification_wallpaper_summary">이 창에서 알림창의 배경화면을 지울 수도 있습니다.</string>
     <string name="notif_wallpaper_alpha_title">알림창 투명도 설정</string>
@@ -892,6 +899,13 @@
     <string name="per_app_layout_summary">앱마다의 레이아웃을 설정합니다.</string>
     <string name="per_app_layout_list_title">앱 목록</string>
     <string name="per_app_layout_alert_title">레이아웃 선택</string>
+    <string name="widgets_title">위젯</string>
+    <string name="widgets_summary">위젯 목록을 정의합니다</string>
+    <string name="add_widget">위젯 추가</string>
+    <string name="widget_list">위젯 목록</string>
+    <string name="widget_alert_remove_widget">위젯 제거</string>
+    <string name="widget_remove_widget">%s을 목록에서 제거하겠습니까?</string>
+    <string name="widget_add_title">앱 선택</string>
 
     <string name="navbar_height_title">소프트 키 높이</string>
 
