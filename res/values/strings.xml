@@ -169,7 +169,7 @@
     <string name="pie_targets_title">Targets</string>
 
     <!-- The Gravity -->
-    <string name="pie_gravity_title">Pie gravity</string>
+    <string name="pie_gravity_title">PIE gravity</string>
     <string name="pie_gravity_summary">Select the location where you can bring up PIE</string>
     <string name="pie_gravity_top">Top</string>
     <string name="pie_gravity_bottom">Bottom</string>
@@ -177,7 +177,7 @@
     <string name="pie_gravity_left">Left</string>
 
     <!-- The Mode -->
-    <string name="pie_mode_title">Pie style</string>
+    <string name="pie_mode_title">PIE style</string>
     <string name="pie_mode_summary">Manage how animations and status additions will be handled</string>
     <string name="pie_mode_bare">Bare</string>
     <string name="pie_mode_quick">Quick</string>
@@ -185,7 +185,7 @@
     <string name="pie_mode_slow">Slow</string>
 
     <!-- The Size -->
-    <string name="pie_size_title">Pie size</string>
+    <string name="pie_size_title">PIE size</string>
     <string name="pie_size_summary">Define PIE controls size</string>
     <string name="pie_size_small">Small</string>
     <string name="pie_size_default">@string/pie_mode_default</string>
@@ -202,7 +202,7 @@
 
     <!-- The trigger -->
     <string name="pie_trigger_title">Trigger area</string>
-    <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
+    <string name="pie_trigger_summary">Determine the size of the triggering area that will start PIE controls</string>
     <string name="pie_trigger_small">Small</string>
     <string name="pie_trigger_normal">Normal (Default)</string>
     <string name="pie_trigger_big">Big</string>
@@ -216,13 +216,13 @@
     <string name="pie_menu_summary">Always show menu button even when it isn\'t necessary</string>
 
     <string name="pie_search_title">Search button</string>
-    <string name="pie_search_summary">Enable search button on pie controls</string>
+    <string name="pie_search_summary">Enable search button on PIE controls</string>
 
     <string name="pie_lastapp_title">Last App button</string>
-    <string name="pie_lastapp_summary">Enable last app button on pie controls</string>
+    <string name="pie_lastapp_summary">Enable last app button on PIE controls</string>
 
     <string name="pie_center_title">Middle alignment</string>
-    <string name="pie_center_summary">Center Pie on the trigger edge</string>
+    <string name="pie_center_summary">Center PIE on the trigger edge</string>
 
     <string name="pie_stick_title">Prevent rotation</string>
     <string name="pie_stick_summary">If checked PIE will stay in place no matter which orientation</string>
@@ -297,7 +297,7 @@
 
     <!-- Statusbar | Toggles -->
     <string name="toggle_style_title">Toggle style</string>
-    <string name="toggle_style_summary">Whether to show icons or text on your toggles.</string>
+    <string name="toggle_style_summary">Whether to show icons or text on your toggles</string>
     <string name="toggles_layout_title">Toggle Layout</string>
     <string name="toggles_per_row_title">Toggles per row</string>
     <string name="toggles_per_row_summary">Choose how many toggles to show per row</string>
@@ -525,7 +525,7 @@
     <string name="navbar_widgets_instructions">Swipe to view - Click to choose</string>
     <string name="navbar_widgets_reset">Reset widgets</string>
     <string name="navbar_widget_summary">Widget %1$s of %2$s</string>
-    <string name="navbar_widget_summary_add">Click to add Widget</string>
+    <string name="navbar_widget_summary_add">Click to add widget</string>
     <string name="navbar_widgets_title">Configure widgets</string>
     <string name="navbar_widgets_shiftLeft">Shift left</string>
     <string name="navbar_widgets_shiftRight">Shift right</string>
@@ -814,7 +814,7 @@
     <string name="lockscreen_auto_rotate_title">Allow lockscreen rotation</string>
     <string name="lockscreen_auto_rotate_summary">Lockscreen will have ability to rotate via device orientation. This is independent of Auto-rotation in display</string>
     <string name="lockscreen_all_widgets_title">Allow all widgets</string>
-    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget developer, Team XY are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
+    <string name="lockscreen_all_widgets_summary">Warning** Some widgets are not intended to be used on the lockscreen, The widget developer, Team XYE are not responsible for your choice of lockscreen widgets. Choose responsibly.</string>
     <string name="lockscreen_unlimited_widgets_title">Allow unlimited widgets</string>
     <string name="lockscreen_unlimited_widgets_summary">Warning** Adding too many widgets can cause major lag issues with lockscreen.</string>
     <string name="lockscreen_longpress_challenge_title">Enable longpress to unlock</string>
