@@ -96,7 +96,7 @@
     <!-- Power Menu -->
     <string name="title_show_screenshot">Capture d\'écran</string>
     <string name="title_show_airplane_toggle">Mode avion</string>
-    <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="power_menu_expanded_desktop">Bureau étendu</string>
     <string name="expanded_desktop_summary_status_bar">Barre d\'état visible</string>
     <string name="expanded_desktop_summary_no_status_bar">Barre d\'état masquée</string>
     <string name="expanded_desktop_disabled">Off</string>
@@ -152,15 +152,15 @@
     <string name="pie_targets_title">Boutons</string>
 
     <!-- The Gravity -->
-    <string name="pie_gravity_title">Emplacement du Pie</string>
-    <string name="pie_gravity_summary">Sélectionner le côté où pourra être affiché le Pie</string>
+    <string name="pie_gravity_title">Emplacement du PIE</string>
+    <string name="pie_gravity_summary">Sélectionner le côté où pourra être affiché le PIE</string>
     <string name="pie_gravity_top">En haut</string>
     <string name="pie_gravity_bottom">En bas</string>
     <string name="pie_gravity_right">À droite</string>
     <string name="pie_gravity_left">À gauche</string>
 
     <!-- The Mode -->
-    <string name="pie_mode_title">Style du Pie</string>
+    <string name="pie_mode_title">Style du PIE</string>
     <string name="pie_mode_summary">Gérer comment les animations et informations seront affichées</string>
     <string name="pie_mode_bare">Boutons uniquement</string>
     <string name="pie_mode_quick">Rapide</string>
@@ -168,8 +168,8 @@
     <string name="pie_mode_slow">Lent</string>
 
     <!-- The Size -->
-    <string name="pie_size_title">Taille du Pie</string>
-    <string name="pie_size_summary">Définir la taille des boutons du Pie</string>
+    <string name="pie_size_title">Taille du PIE</string>
+    <string name="pie_size_summary">Définir la taille des boutons du PIE</string>
     <string name="pie_size_small">Petit</string>
     <string name="pie_size_default">Normal</string>
     <string name="pie_size_large">Grand</string>
@@ -177,7 +177,7 @@
 
     <!-- The Gap -->
     <string name="pie_gap_title">Écart des boutons</string>
-    <string name="pie_gap_summary">Ajuster l\'écart qui sépare les boutons du Pie</string>
+    <string name="pie_gap_summary">Ajuster l\'écart qui sépare les boutons du PIE</string>
     <string name="pie_gap_none">Aucun</string>
     <string name="pie_gap_small">Petit</string>
     <string name="pie_gap_big">Grand</string>
@@ -185,7 +185,7 @@
 
     <!-- The trigger -->
     <string name="pie_trigger_title">Zone de déclenchement</string>
-    <string name="pie_trigger_summary">Déterminer la taille de la zone qui permettra de faire apparaître le Pie</string>
+    <string name="pie_trigger_summary">Déterminer la taille de la zone qui permettra de faire apparaître le PIE</string>
     <string name="pie_trigger_small">Petite</string>
     <string name="pie_trigger_normal">Normale</string>
     <string name="pie_trigger_big">Grosse</string>
@@ -198,13 +198,13 @@
     <string name="pie_menu_title">Bouton Menu persistant</string>
     <string name="pie_menu_summary">Toujours afficher le bouton Menu, même lorsqu\'il n\'est pas nécessaire.</string>
     <string name="pie_search_title">Bouton Recherche</string>
-    <string name="pie_search_summary">Afficher le bouton Recherche dans le Pie</string>
-    <string name="pie_lastapp_title">Bouton Last App</string>
-    <string name="pie_lastapp_summary">Afficher le bouton Last App dans le Pie, qui permet de revenir rapidement à la dernière application qui a été utilisée</string>
+    <string name="pie_search_summary">Afficher le bouton Recherche dans le PIE</string>
+    <string name="pie_lastapp_title">Bouton Dernière App</string>
+    <string name="pie_lastapp_summary">Afficher le bouton Dernière App dans le PIE, qui permet de revenir rapidement à la dernière application qui a été utilisée</string>
     <string name="pie_center_title">Centrage</string>
-    <string name="pie_center_summary">Toujours afficher le Pie au milieu de l\'aire d\'activation, plutôt qu\'à l\'endroit où est votre doigt.</string>
+    <string name="pie_center_summary">Toujours afficher le PIE au milieu de l\'aire d\'activation, plutôt qu\'à l\'endroit où est votre doigt.</string>
     <string name="pie_stick_title">Empêcher la rotation</string>
-    <string name="pie_stick_summary">Si coché, le Pie restera toujours au même endroit avec n\'importe qu\'elle orientation.</string>
+    <string name="pie_stick_summary">Si coché, le PIE restera toujours au même endroit avec n\'importe qu\'elle orientation.</string>
 
     <!-- The Colors -->
     <string name="pie_color_title">Paramètres des couleurs</string>
@@ -253,8 +253,8 @@
     <string name="signal_color_title">Couleur du texte du réseau</string>
     <string name="hide_signal_title">Masquer puissance du signal réseau</string>
     <string name="hide_signal_summary">Ne s\'affiche que quand la puissance du réseau change.</string>
-    <string name="wifi_signal_style">Style du signal Wi-Fi</string>
-    <string name="wifi_signal_color_title">Couleur du texte du Wi-Fi</string>
+    <string name="wifi_signal_style">Style du signal WiFi</string>
+    <string name="wifi_signal_color_title">Couleur du texte du WiFi</string>
     <string name="alt_signal_title">Données mobile séparées</string>
     <string name="alt_signal_summary">Utiliser un mode d\'affichage du réseau qui sépare le signal et les données mobiles (Style GB)</string>
 
@@ -353,7 +353,6 @@
     <string name="toggle_data">Données mobile</string>
     <string name="toggle_nfc">NFC</string>
     <string name="toggle_silent">Silencieux</string>
-    <string name="toggle_swagger">Swagger</string>
     <string name="toggle_sync">Synchronisation</string>
     <string name="toggle_torch">Lampe Torche</string>
     <string name="toggle_2g">2G</string>
@@ -386,9 +385,9 @@
     <string name="search">Rechercher</string>
     <string name="screenshot">Capture d\'écran</string>
     <string name="menu">Menu</string>
-    <string name="open_ime_switcher">IME Switcher</string>
+    <string name="open_ime_switcher">Sélecteur d\'IME</string>
     <string name="kill_app">Fermer l\'application</string>
-    <string name="lastapp">Last App</string>
+    <string name="lastapp">Dernière App</string>
     <string name="power">Verrouiller</string>
     <string name="notifications">Notifications</string>
     <string name="custom_app">Application personnalisée</string>
@@ -523,7 +522,7 @@
 
     <!-- General UI | Other Modifications unknown -->
     <string name="custom_carrier_label_title">Nom d\'opérateur personnalisé</string>
-    <string name="custom_carrier_label_explain">Entrer votre valeur ici. Laisser vide pour revenir par défaut.</string>
+    <string name="custom_carrier_label_explain">Entrer votre valeur. Laisser vide pour revenir par défaut.</string>
     <string name="custom_carrier_label_notset">Aucune valeur personnalisée définie.</string>
     <string name="status_bar_notif_count_title">Afficher le compteur de notif.</string>
     <string name="status_bar_notif_count_summary">Afficher le nombre de notification en attente dans la barre d\'état.</string>
