@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.BIND_APPWIDGET" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES"/>
 
     <application
         android:hardwareAccelerated="true"
@@ -71,8 +72,8 @@
 	    </intent-filter>
 	</activity>
         <activity
-            android:name=".fragments.StatusBar"
-            android:label="@string/title_statusbar" >
+            android:name=".fragments.StatusBarBattery"
+            android:label="@string/title_statusbar_battery" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -91,6 +92,15 @@
 	<activity
             android:name=".fragments.StatusBarSignal"
             android:label="@string/title_statusbar_signal" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+	<activity
+            android:name=".fragments.StatusExtras"
+            android:label="@string/title_status_extras" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -141,6 +151,33 @@
 
                 <category android:name="com.xylon.settings.SHORTCUT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.Lockscreen"
+            android:label="@string/title_lockscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+              </intent-filter>
+        </activity>
+        <activity
+            android:name=".fragments.Targets"
+            android:label="Lockscreen Targets" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+              </intent-filter>
+        </activity>
+        <activity
+            android:name=".beerbong.HybridSettings"
+            android:label="@string/title_hybridsettings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.xylon.settings.SHORTCUT" />
+              </intent-filter>
         </activity>
         <activity android:name=".activities.StatusBarStyle" />
         <activity android:name=".activities.NavBarStyle" />

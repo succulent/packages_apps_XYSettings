@@ -76,55 +76,27 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String TAG = "General User Interface";
 
-    private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-    private static final String PREF_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
-    private static final String PREF_STATUSBAR_BRIGHTNESS = "statusbar_brightness_slider";
     private static final String PREF_SHOW_OVERFLOW = "show_overflow";
-    private static final String PREF_NOTIFICATION_WALLPAPER = "notification_wallpaper";
-    private static final String PREF_NOTIFICATION_WALLPAPER_ALPHA = "notification_wallpaper_alpha";
     private static final String PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_RECENTS_RAM_BAR = "recents_ram_bar";
     private static final String PREF_HIDE_EXTRAS = "hide_extras";
-    private static final String PREF_FORCE_DUAL_PANEL = "force_dualpanel";
     private static final String PREF_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
-    private static final String PREF_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String PREF_KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
     private static final String PREF_KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
-    private static final String STATUSBAR_HIDDEN = "statusbar_hidden";
-
-    private static final int REQUEST_PICK_WALLPAPER = 201;
-    private static final int REQUEST_PICK_CUSTOM_ICON = 202;
-    private static final int SELECT_ACTIVITY = 4;
-    private static final int SELECT_WALLPAPER = 5;
 
     private static final int TIMEOUT_DEFAULT = 5000; // 5s
 
-    private static final String WALLPAPER_NAME = "notification_wallpaper.jpg";
-
-    Preference mCustomLabel;
     Preference mRamBar;
-    CheckBoxPreference mStatusBarNotifCount;
-    CheckBoxPreference mStatusbarSliderPreference;
     CheckBoxPreference mShowActionOverflow;
-    Preference mNotificationWallpaper;
-    Preference mWallpaperAlpha;
-    ListPreference mNotificationsBehavior;
     CheckBoxPreference mHideExtras;
-    CheckBoxPreference mDualpane;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mFullscreenKeyboard;
     CheckBoxPreference mCrtOff;
-    CheckBoxPreference mStatusBarHide;
     ListPreference mCrtMode;
     CheckBoxPreference mKeyboardRotationToggle;
     ListPreference mKeyboardRotationTimeout;
-
-    String mCustomLabelText = null;
-
-    private int seekbarProgress;
-    private int mAllowedLocations;
 
     private boolean mIsCrtOffChecked = false;
 
@@ -138,29 +110,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver cr = mContext.getContentResolver();
 
-        mCustomLabel = prefSet.findPreference(PREF_CUSTOM_CARRIER_LABEL);
-        updateCustomLabelTextSummary();
-
         mShowActionOverflow = (CheckBoxPreference) findPreference(PREF_SHOW_OVERFLOW);
         mShowActionOverflow.setChecked(Settings.System.getBoolean(getActivity().
                         getApplicationContext().getContentResolver(),
                         Settings.System.UI_FORCE_OVERFLOW_BUTTON, false));
-
-        mStatusBarHide = (CheckBoxPreference) findPreference(STATUSBAR_HIDDEN);
-        mStatusBarHide.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
-                Settings.System.STATUSBAR_HIDDEN, false));
-
-        mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(PREF_STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(), 
-                Settings.System.STATUS_BAR_NOTIF_COUNT, false));
-
-        mStatusbarSliderPreference = (CheckBoxPreference) prefSet.findPreference(PREF_STATUSBAR_BRIGHTNESS);
-        mStatusbarSliderPreference.setChecked(Settings.System.getBoolean(cr,
-                Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, true));
-
-        mNotificationWallpaper = findPreference(PREF_NOTIFICATION_WALLPAPER);
-
-        mWallpaperAlpha = (Preference) findPreference(PREF_NOTIFICATION_WALLPAPER_ALPHA);
 
         // respect device default configuration
         // true fades while false animates
@@ -208,23 +161,10 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         updateRotationTimeout(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT, TIMEOUT_DEFAULT));
 
-        mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
-        if (mDualpane != null) {
-            mDualpane.setChecked(Settings.System.getBoolean(cr,
-                            Settings.System.FORCE_DUAL_PANEL, getResources().getBoolean(
-                            com.android.internal.R.bool.preferences_prefer_dual_pane)));
 
-            mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
-            mHideExtras.setChecked(Settings.System.getBoolean(cr,
-                            Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
-        }
-
-        mNotificationsBehavior = (ListPreference) findPreference(PREF_NOTIFICATION_BEHAVIOUR);
-        int CurrentBehavior = Settings.System.getInt(getContentResolver(),
-                Settings.System.NOTIFICATIONS_BEHAVIOUR, 0);
-        mNotificationsBehavior.setValue(String.valueOf(CurrentBehavior));
-        mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
-        mNotificationsBehavior.setOnPreferenceChangeListener(this);
+        mHideExtras = (CheckBoxPreference) findPreference(PREF_HIDE_EXTRAS);
+        mHideExtras.setChecked(Settings.System.getBoolean(cr,
+                       Settings.System.HIDE_EXTRAS_SYSTEM_BAR, false));
 
         mRamBar = findPreference(PREF_RECENTS_RAM_BAR);
         updateRamBar();
@@ -253,16 +193,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
             mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
     }
 
-    private void updateCustomLabelTextSummary() {
-        mCustomLabelText = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.CUSTOM_CARRIER_LABEL);
-        if (mCustomLabelText == null || mCustomLabelText.length() == 0) {
-            mCustomLabel.setSummary(R.string.custom_carrier_label_notset);
-        } else {
-            mCustomLabel.setSummary(mCustomLabelText);
-        }
-    }
-
     public void updateRotationTimeout(int timeout) {
         if (timeout == 0)
             timeout = TIMEOUT_DEFAULT;
@@ -272,41 +202,7 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mCustomLabel) {
-            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-
-            alert.setTitle(R.string.custom_carrier_label_title);
-            alert.setMessage(R.string.custom_carrier_label_explain);
-
-            // Set an EditText view to get user input
-            final EditText input = new EditText(getActivity());
-            input.setText(mCustomLabelText != null ? mCustomLabelText : "");
-            alert.setView(input);
-
-            alert.setPositiveButton(getResources().getString(R.string.ok), new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    String value = ((Spannable) input.getText()).toString();
-                    Settings.System.putString(getActivity().getContentResolver(),
-                            Settings.System.CUSTOM_CARRIER_LABEL, value);
-                    updateCustomLabelTextSummary();
-                    Intent i = new Intent();
-                    i.setAction("com.xylon.settings.LABEL_CHANGED");
-                    mContext.sendBroadcast(i);
-                }
-            });
-            alert.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    // Canceled.
-                }
-            });
-
-            alert.show();
-        } else if (preference == mStatusbarSliderPreference) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_BRIGHTNESS_SLIDER, checked ? true : false);
-            return true;
-        } else if (preference == mShowActionOverflow) {
+        if (preference == mShowActionOverflow) {
             boolean enabled = mShowActionOverflow.isChecked();
             Settings.System.putBoolean(getContentResolver(),
                     Settings.System.UI_FORCE_OVERFLOW_BUTTON, enabled ? true : false);
@@ -318,91 +214,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                 Toast.makeText(getActivity(), R.string.show_overflow_toast_disable,
                         Toast.LENGTH_LONG).show();
             }
-            return true;
-        } else if (preference == mStatusBarNotifCount) {
-            boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_NOTIF_COUNT, checked ? true : false);
-            return true;
-        } else if (preference == mNotificationWallpaper) {
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            int width = display.getWidth();
-            int height = display.getHeight();
-            Rect rect = new Rect();
-            Window window = getActivity().getWindow();
-            window.getDecorView().getWindowVisibleDisplayFrame(rect);
-            int statusBarHeight = rect.top;
-            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
-            int titleBarHeight = contentViewTop - statusBarHeight;
-
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            boolean isPortrait = getResources()
-                    .getConfiguration().orientation
-                    == Configuration.ORIENTATION_PORTRAIT;
-            intent.putExtra("aspectX", isPortrait ? width : height - titleBarHeight);
-            intent.putExtra("aspectY", isPortrait ? height - titleBarHeight : width);
-            intent.putExtra("outputX", width);
-            intent.putExtra("outputY", height);
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", true);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, getNotificationExternalUri());
-            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-
-            startActivityForResult(intent, REQUEST_PICK_WALLPAPER);
-            return true;
-        } else if (preference == mWallpaperAlpha) {
-            Resources res = getActivity().getResources();
-            String cancel = res.getString(R.string.cancel);
-            String ok = res.getString(R.string.ok);
-            String title = res.getString(R.string.alpha_dialog_title);
-            float savedProgress = Settings.System.getFloat(getActivity()
-                        .getContentResolver(), Settings.System.NOTIF_WALLPAPER_ALPHA, 1.0f);
-
-            LayoutInflater factory = LayoutInflater.from(getActivity());
-            final View alphaDialog = factory.inflate(R.layout.seekbar_dialog, null);
-            SeekBar seekbar = (SeekBar) alphaDialog.findViewById(R.id.seek_bar);
-            OnSeekBarChangeListener seekBarChangeListener = new OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekbar, int progress, boolean fromUser) {
-                    seekbarProgress = seekbar.getProgress();
-                }
-                @Override
-                public void onStopTrackingTouch(SeekBar seekbar) {
-                }
-                @Override
-                public void onStartTrackingTouch(SeekBar seekbar) {
-                }
-            };
-            seekbar.setProgress((int) (savedProgress * 100));
-            seekbar.setMax(100);
-            seekbar.setOnSeekBarChangeListener(seekBarChangeListener);
-            new AlertDialog.Builder(getActivity())
-                    .setTitle(title)
-                    .setView(alphaDialog)
-                    .setNegativeButton(cancel, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // nothing
-                }
-            })
-            .setPositiveButton(ok, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    float val = ((float) seekbarProgress / 100);
-                    Settings.System.putFloat(getActivity().getContentResolver(),
-                        Settings.System.NOTIF_WALLPAPER_ALPHA, val);
-                    Helpers.restartSystemUI();
-                }
-            })
-            .create()
-            .show();
-            return true;
-        } else if (preference == mDualpane) {
-            Settings.System.putBoolean(mContext.getContentResolver(),
-                    Settings.System.FORCE_DUAL_PANEL,
-                    ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mHideExtras) {
             Settings.System.putBoolean(mContext.getContentResolver(),
@@ -433,10 +244,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     mKeyboardRotationToggle.isChecked() ? TIMEOUT_DEFAULT : 0);
             updateRotationTimeout(TIMEOUT_DEFAULT);
             return true;
-        } else if (preference == mStatusBarHide) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putBoolean(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_HIDDEN, checked ? true : false);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
@@ -451,15 +258,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.SYSTEM_POWER_CRT_MODE, crtMode);
             mCrtMode.setSummary(mCrtMode.getEntries()[index]);
             return true;
-        } else if (preference == mNotificationsBehavior) {
-            String val = (String) newValue;
-            Settings.System.putInt(getContentResolver(),
-                Settings.System.NOTIFICATIONS_BEHAVIOUR,
-            Integer.valueOf(val));
-            int index = mNotificationsBehavior.findIndexOfValue(val);
-            mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
-            Helpers.restartSystemUI();
-            return true;
         } else if (preference == mKeyboardRotationTimeout) {
             int timeout = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -470,26 +268,6 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         return false;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.general_ui, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-        switch (item.getItemId()) {
-            case R.id.remove_wallpaper:
-                File f = new File(mContext.getFilesDir(), WALLPAPER_NAME);
-                mContext.deleteFile(WALLPAPER_NAME);
-                Helpers.restartSystemUI();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
-    }
-
     public void mKeyboardRotationDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(R.string.keyboard_rotation_dialog);
@@ -497,47 +275,5 @@ public class GeneralUI extends SettingsPreferenceFragment implements OnPreferenc
         builder.setPositiveButton(getResources().getString(com.android.internal.R.string.ok), null);
         AlertDialog alert = builder.create();
         alert.show();
-    }
-
-    private Uri getNotificationExternalUri() {
-        File dir = mContext.getExternalCacheDir();
-        File wallpaper = new File(dir, WALLPAPER_NAME);
-
-        return Uri.fromFile(wallpaper);
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == REQUEST_PICK_WALLPAPER) {
-
-                FileOutputStream wallpaperStream = null;
-                try {
-                    wallpaperStream = mContext.openFileOutput(WALLPAPER_NAME,
-                            Context.MODE_WORLD_READABLE);
-                } catch (FileNotFoundException e) {
-                    return; // NOOOOO
-                }
-
-                Uri selectedImageUri = getNotificationExternalUri();
-                Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath());
-
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, wallpaperStream);
-                Helpers.restartSystemUI();
-            }
-        }
-    }
-
-    public void copy(File src, File dst) throws IOException {
-        InputStream in = new FileInputStream(src);
-        FileOutputStream out = new FileOutputStream(dst);
-
-        // Transfer bytes from in to out
-        byte[] buf = new byte[1024];
-        int len;
-        while ((len = in.read(buf)) > 0) {
-            out.write(buf, 0, len);
-        }
-        in.close();
-        out.close();
     }
 }
